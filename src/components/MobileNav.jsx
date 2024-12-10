@@ -20,14 +20,14 @@ const MobileNav = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
   
     return (
-      <div className="relative">
+      <div className="relative z-10">
         {/* Menu Button */}
         <button
           className="flex justify-center items-center text-2xl"
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          <CiMenuBurger className="text-[32px] text-lightText" />
+          <CiMenuBurger className="text-[32px] text-darkText" />
         </button>
   
         {/* Navigation Menu */}

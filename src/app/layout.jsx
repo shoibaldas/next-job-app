@@ -3,6 +3,7 @@ import "./globals.css";
 import { Roboto } from "next/font/google"
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
+import Footer from "@/components/footer";
 
 const roboto = Roboto({
   subsets: ["latin"], weight: ["100", "300", "400", "500", "700", "900"],
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
           <PageTransition>
             {children}
           </PageTransition>
+          <Footer/>
       </body>
     </html>
   );

@@ -18,19 +18,29 @@ const links = [
     }
 ]
 
-const Nav = () => {
+const Nav = ({ isScrolled }) => {
     const pathname = usePathname();
     return (
         <nav className="flex gap-8">
-            {links.map((link, index) => {
-                return (
-                    <Link href={link.path} key={index}
-                        className={`${link.path === pathname ? 'text-primary border-b-2 border-primary' : ''} capitalize font-medium transition-all
-                        `}>
-                        {link.name}
-                    </Link>
-                )
-            })}
+            {links.map((link, index) => (
+                <Link
+                    href={link.path}
+                    key={index}
+                    className={`
+            ${link.path === pathname
+                            ? isScrolled
+                                ? 'text-primary border-b-2 border-primary'
+                                : 'text-white border-b-2 border-white'
+                            : isScrolled
+                                ? 'text-primary'
+                                : 'text-white'
+                        }
+            capitalize font-medium transition-all
+          `}
+                >
+                    {link.name}
+                </Link>
+            ))}
         </nav>
     )
 }
