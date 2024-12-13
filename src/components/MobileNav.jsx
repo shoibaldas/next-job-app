@@ -7,10 +7,30 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 
 const links = [
-  { name: "Home", path: "/" },
-  { name: "Services", path: "/services" },
-  { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
+  {
+      name: "home",
+      path: "/"
+  },
+  {
+      name: "who we are",
+      path: "/about"
+  },
+  { 
+      name: "consultants", 
+      path: "/consultants" 
+  },
+  {
+      name: "products",
+      path: "/products"
+  },
+  {
+      name: "services",
+      path: "/services"
+  },
+  {
+      name: "contact us",
+      path: "/contact"
+  }
 ];
 
 const MobileNav = () => {

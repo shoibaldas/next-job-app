@@ -8,13 +8,24 @@ const links = [
         path: "/"
     },
     {
+        name: "who we are",
+        path: "/about"
+    },
+    { 
+        name: "consultants", 
+        path: "/consultants" 
+    },
+    {
+        name: "products",
+        path: "/products"
+    },
+    {
         name: "services",
         path: "/services"
     },
-    { name: "about", path: "/about" },
     {
-        name: "contact",
-        path: "/contact"
+        name: "contact us",
+        path: "/contact-us"
     }
 ]
 
@@ -29,10 +40,10 @@ const Nav = ({ isScrolled }) => {
                     className={`
             ${link.path === pathname
                             ? isScrolled
-                                ? 'text-primary border-b-2 border-primary'
+                                ? 'text-blue-800 border-b-2 border-primary'
                                 : 'text-white border-b-2 border-white'
                             : isScrolled
-                                ? 'text-primary'
+                                ? 'text-blue-800'
                                 : 'text-white'
                         }
             capitalize font-medium transition-all

@@ -21,19 +21,19 @@ const Header = () => {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md text-primary py-4'
+          ? 'bg-white shadow-md text-blue-800 py-4'
           : 'bg-transparent text-white py-8 xl:py-12'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="mx-8 flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <h1
             className={`text-4xl font-semibold ${
-              isScrolled ? 'text-primary' : 'text-white'
+              isScrolled ? 'text-blue-800' : 'text-white'
             }`}
           >
-            ICEL TECH<span className={isScrolled ? 'text-primary' : 'text-darkText'}>.</span>
+            ICEL TECH<span className={isScrolled ? 'text-blue-800' : 'text-darkText'}>.</span>
           </h1>
         </Link>
 

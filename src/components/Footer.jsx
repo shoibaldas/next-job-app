@@ -59,7 +59,7 @@ const Footer = () => {
                     {/* Copyright */}
                     <div className="text-center">
                         <p className="text-sm text-gray-400">
-                            Techalph © {new Date().getFullYear()} All rights reserved |{' '}
+                            ICEL TECH © {new Date().getFullYear()} All rights reserved |{' '}
                             <Link href="/privacy-policy" className="text-white hover:text-gray-400">
                                 Privacy Policy
                             </Link>
