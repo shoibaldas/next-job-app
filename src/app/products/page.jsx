@@ -1,6 +1,6 @@
 'use client';
 
-const Resume = () => {
+const Products = () => {
   return (
     <div
       className="
@@ -10,4 +10,4 @@ const Resume = () => {
   )
 }
 
-export default Resume
+export default Products;
