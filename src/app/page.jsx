@@ -1,6 +1,7 @@
 'use client';
 import AboutSection from "@/components/AboutSection";
 import Carousel from "@/components/Carousel";
+import ContactSection from "@/components/ContactSection";
 import ServicesSection from "@/components/ServicesSection";
 import Image from 'next/image';
 
@@ -37,6 +38,9 @@ const Home = () => {
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
           <ServicesSection></ServicesSection>
         </div>
+      </div>
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
+        <ContactSection/>
       </div>
       {/* <div className="container mx-auto h-full">Home Page1</div> */}
     </section>
