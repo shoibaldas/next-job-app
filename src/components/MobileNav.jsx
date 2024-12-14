@@ -47,7 +47,7 @@ const MobileNav = () => {
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          <CiMenuBurger className="text-[32px] text-darkText" />
+          <CiMenuBurger className="text-[32px] text-blue-800" />
         </button>
   
         {/* Navigation Menu */}
@@ -58,7 +58,7 @@ const MobileNav = () => {
         >
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 text-2xl text-lightText"
+            className="absolute top-4 right-4 text-2xl text-"
             onClick={toggleMenu}
             aria-label="Close Menu"
           >

@@ -53,3 +53,28 @@ html {
   width: 100%; /* Ensures full width */
   overflow: hidden; /* Prevents overflow during zoom */
 }
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.fade-in-text {
+  animation: fadeIn 2s ease-in-out; /* 2s is the duration */
+}

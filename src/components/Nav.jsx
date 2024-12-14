@@ -40,7 +40,7 @@ const Nav = ({ isScrolled }) => {
                     className={`
             ${link.path === pathname
                             ? isScrolled
-                                ? 'text-blue-800 border-b-2 border-primary'
+                                ? 'text-blue-800 border-b-2 border-blue-400'
                                 : 'text-white border-b-2 border-white'
                             : isScrolled
                                 ? 'text-blue-800'
@@ -56,4 +56,4 @@ const Nav = ({ isScrolled }) => {
     )
 }
 
-export default Nav
+export default Nav;
