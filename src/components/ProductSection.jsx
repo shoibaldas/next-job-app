@@ -5,6 +5,7 @@ import Carousel from './Carousel';
 import Link from 'next/link';
 import { MdNavigateNext } from "react-icons/md";
 import { AiFillProduct } from "react-icons/ai";
+import { FaEye } from "react-icons/fa";
 
 const ProductSection = () => {
     const [current, setCurrent] = useState(0);
@@ -67,9 +68,10 @@ const ProductSection = () => {
                                 <p className="text-gray-600 mt-2 flex-grow text-sm lg:text-base">
                                     {card.description}
                                 </p>
-                                <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                <Link href="#" className="inline-flex justify-center items-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     View Product
-                                </button>
+                                    <FaEye className='mx-2 text-lg'/>
+                                </Link>
                             </div>
                         </div>
                     ))}

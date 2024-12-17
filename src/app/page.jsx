@@ -1,5 +1,6 @@
 'use client';
 import AboutSection from "@/components/AboutSection";
+import ConsultantSection from "@/components/ConsultantSection";
 import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import ProductSection from "@/components/ProductSection";
@@ -19,13 +20,16 @@ const Home = () => {
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
         <AboutSection />
       </div>
-      <div className="bg-black">
+      <div className="w-full h-full bg-[url('/service.jpg')] bg-cover bg-no-repeat bg-center">
         <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
           <ServicesSection></ServicesSection>
         </div>
       </div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
         <ProductSection/>
+      </div>
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
+        <ConsultantSection />
       </div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 lg:py-20">
         <ContactSection />
