@@ -53,7 +53,7 @@ const ServicesSection = () => {
                     </p>
                 </div>
                 <div>
-                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-600 hover:bg-blue-600"
+                    <Link href="/services" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 transition duration-200 text-white bg-blue-600 hover:bg-blue-700"
                     >
                         <span className="mx-2">View All Services</span>
                         <div

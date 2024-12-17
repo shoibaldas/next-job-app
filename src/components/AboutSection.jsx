@@ -47,7 +47,7 @@ const AboutSection = () => {
                     </p>
                 </div>
                 <div>
-                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-600 hover:bg-blue-600"
+                    <Link href="/services" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
                     >
                         <span className="mx-2">Discover More About Us</span>
                         <div
