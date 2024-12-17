@@ -32,11 +32,11 @@ const AboutSection = () => {
             {/* Text Section */}
             <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                 <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-800 text-white mb-4">
+                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-white mb-4">
                         <MdBusinessCenter />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-blue-900 sm:text-2xl sm:leading-none lg:text-4xl">
+                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
                             Who We Are ?
                         </h2>
                     </div>
@@ -47,7 +47,7 @@ const AboutSection = () => {
                     </p>
                 </div>
                 <div>
-                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-800 hover:bg-blue-600"
+                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-600 hover:bg-blue-600"
                     >
                         <span className="mx-2">Discover More About Us</span>
                         <div

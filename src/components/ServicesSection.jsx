@@ -38,7 +38,7 @@ const ServicesSection = () => {
             {/* Text Section */}
             <div className="flex flex-col justify-center items-center lg:px-0 mt-10 lg:mt-0">
                 <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-gray-100 text-blue-800 mb-4">
+                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-gray-100 text-blue-600 mb-4">
                         <GrServices />
                     </div>
                     <div>
@@ -53,7 +53,7 @@ const ServicesSection = () => {
                     </p>
                 </div>
                 <div>
-                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-800 hover:bg-blue-600"
+                    <Link href="/services" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-600 hover:bg-blue-600"
                     >
                         <span className="mx-2">View All Services</span>
                         <div
@@ -68,11 +68,11 @@ const ServicesSection = () => {
                     {servicesData.map((service, index) => (
                         <div key={index} className="relative max-w-sm h-64 rounded-lg overflow-hidden shadow-lg bg-white">
                             {/* Half Circle at the bottom-left corner */}
-                            <div className="absolute right-0 bottom-0 w-48 h-48 bg-blue-800 rounded-full transform translate-x-[50%] translate-y-[50%]"></div>
+                            <div className="absolute right-0 bottom-0 w-48 h-48 bg-blue-600 rounded-full transform translate-x-[50%] translate-y-[50%]"></div>
                             <div className="absolute right-4 bottom-1">{service.icon}</div>
                             {/* Card Content */}
                             <div className="p-6">
-                                <h2 className="text-2xl font-semibold text-blue-800">{service.title}</h2>
+                                <h2 className="text-2xl font-semibold text-blue-600">{service.title}</h2>
                                 <p className="mt-4 text-gray-600">
                                     {service.description}
                                 </p>
@@ -86,7 +86,7 @@ const ServicesSection = () => {
                 <div>
                     <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                         <div className="flex">
-                            <div className="flex justify-center items-center text-4xl h-12 text-blue-800 mb-4">
+                            <div className="flex justify-center items-center text-4xl h-12 text-blue-600 mb-4">
                                 <GrShieldSecurity />
                             </div>
                             <div>
@@ -105,7 +105,7 @@ const ServicesSection = () => {
                 <div>
                     <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                         <div className="flex">
-                            <div className="flex justify-center items-center text-4xl h-12 text-blue-800 mb-4">
+                            <div className="flex justify-center items-center text-4xl h-12 text-blue-600 mb-4">
                                 <GrCloudSoftware />
                             </div>
                             <div>
@@ -124,7 +124,7 @@ const ServicesSection = () => {
                 <div>
                     <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                         <div className="flex">
-                            <div className="flex justify-center items-center text-4xl h-12 text-blue-800 mb-4">
+                            <div className="flex justify-center items-center text-4xl h-12 text-blue-600 mb-4">
                                 <BsGraphUpArrow />
                             </div>
                             <div>
@@ -143,7 +143,7 @@ const ServicesSection = () => {
                 <div>
                     <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                         <div className="flex">
-                            <div className="flex justify-center items-center text-4xl h-12 text-blue-800 mb-4">
+                            <div className="flex justify-center items-center text-4xl h-12 text-blue-600 mb-4">
                                 <SiAuthelia />
                             </div>
                             <div>

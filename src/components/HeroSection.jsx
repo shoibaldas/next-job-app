@@ -51,11 +51,14 @@ const HeroSection = () => {
 
     return (
         <div>
-            <Carousel slides={slides}
+            <Carousel
                 current={current}
                 next={next}
                 prev={prev}
-                autoSlide={true} autoSlideInterval={10000}>
+                autoSlide={true}
+                autoSlideInterval={10000}
+                transitionType="fade"
+            >
                 {slides.map((slide) => (
                     <div key={slide.id} className="h-screen w-full relative">
                         <div className="image-container">
@@ -82,8 +85,8 @@ const HeroSection = () => {
                     </div>
                 ))}
             </Carousel>
+
             {/* Fixed buttons */}
-            {/* <div className="absolute bottom-48 transform -translate-x-1/2 px-4 left-44 lg:transform-none space-x-4"> */}
             <div className="absolute inset-x-0 flex justify-center bottom-48 space-x-4">
                 <div>
                     <Link
@@ -96,13 +99,13 @@ const HeroSection = () => {
                 <div>
                     <Link
                         href="#"
-                        className="bg-white text-blue-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
+                        className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
                     >
                         Learn More
                     </Link>
                 </div>
-
             </div>
+
             {/* External Navigation Buttons */}
             <div className="absolute bottom-20 inset-x-0 flex justify-center items-center space-x-4">
                 <button
@@ -123,7 +126,7 @@ const HeroSection = () => {
                 </button>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default HeroSection
+export default HeroSection;

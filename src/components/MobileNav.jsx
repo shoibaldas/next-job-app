@@ -47,7 +47,7 @@ const MobileNav = () => {
           onClick={toggleMenu}
           aria-label="Toggle Menu"
         >
-          <CiMenuBurger className="text-[32px] text-blue-800" />
+          <CiMenuBurger className="text-[32px] text-blue-600" />
         </button>
   
         {/* Navigation Menu */}

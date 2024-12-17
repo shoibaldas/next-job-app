@@ -40,10 +40,10 @@ const Nav = ({ isScrolled }) => {
                     className={`
             ${link.path === pathname
                             ? isScrolled
-                                ? 'text-blue-800 border-b-2 border-blue-400'
+                                ? 'text-blue-600 border-b-2 border-blue-400'
                                 : 'text-white border-b-2 border-white'
                             : isScrolled
-                                ? 'text-blue-800'
+                                ? 'text-blue-600'
                                 : 'text-white'
                         }
             capitalize font-medium transition-all

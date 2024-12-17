@@ -1,0 +1,119 @@
+'use client';
+
+import { useState } from 'react';
+import Carousel from './Carousel';
+import Link from 'next/link';
+import { MdNavigateNext } from "react-icons/md";
+
+const ProductSection = () => {
+    const [current, setCurrent] = useState(0);
+
+    const cards = [
+        {
+            id: 1,
+            title: 'Card 1',
+            description: 'This is a brief description for Card 1.',
+            image: '/connect.jpg',
+        },
+        {
+            id: 2,
+            title: 'Card 2',
+            description: 'This is a brief description for Card 2.',
+            image: '/shop.jpg',
+        },
+        {
+            id: 3,
+            title: 'Card 3',
+            description: 'This is a brief description for Card 3.',
+            image: '/care.jpg',
+        },
+    ];
+
+    const next = () => {
+        setCurrent((current) => (current === cards.length - 1 ? 0 : current + 1));
+    };
+
+    const prev = () => {
+        setCurrent((current) => (current === 0 ? cards.length - 1 : current - 1));
+    };
+
+    return (
+        <div className="relative w-full h-[500px] flex items-center justify-between">
+            {/* Left Side: Carousel */}
+            <div className="w-1/2 h-full relative px-24">
+                <Carousel
+                    current={current}
+                    next={next}
+                    prev={prev}
+                    autoSlide={true}
+                    autoSlideInterval={5000}
+                    transitionType="slide"
+                >
+                    {cards.map((card) => (
+                        <div
+                        key={card.id}
+                        className="p-0 bg-white rounded-lg shadow-md flex flex-col h-[500px] mx-4 overflow-hidden"
+                    >
+                        <div className="relative w-full h-1/2">
+                            <img
+                                src={card.image}
+                                alt={card.title}
+                                className="w-full h-full object-cover rounded-t-lg"
+                            />
+                        </div>
+                        <div className="p-6 flex flex-col justify-between text-center flex-grow">
+                            <h2 className="text-xl font-bold">{card.title}</h2>
+                            <p className="text-gray-600 mt-2 flex-grow">{card.description}</p>
+                            <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                View Product
+                            </button>
+                        </div>
+                    </div>
+                    ))}
+                </Carousel>
+
+                {/* Navigation Buttons */}
+                <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
+                    <button
+                        onClick={prev}
+                        className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
+                    >
+                        &#8592;
+                    </button>
+                </div>
+                <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
+                    <button
+                        onClick={next}
+                        className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
+                    >
+                        &#8594;
+                    </button>
+                </div>
+            </div>
+
+            {/* Right Side: Content */}
+            <div className="w-1/2 h-full bg-white flex flex-col justify-center px-8">
+                <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Products</h2>
+                <p className="text-gray-600 mb-6">
+                    Discover our range of innovative and high-quality products
+                    designed to make your life easier. Browse our collections to
+                    find what suits your needs.
+                </p>
+                <div>
+                    <Link href="/products" className="inline-flex items-center rounded-md font-semibold px-3 py-1 transition-colors duration-200 text-white bg-blue-600 hover:bg-blue-600"
+                    >
+                        <span className="mx-2">View All Products</span>
+                        <div
+                            className="text-2xl"
+                        >
+                            <MdNavigateNext />
+                        </div>
+
+                    </Link>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ProductSection;

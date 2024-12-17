@@ -27,7 +27,7 @@ html {
     --radius: 0.5rem;
   }
   body {
-    @apply font-primary bg-white text-blue-800 leading-loose;
+    @apply font-primary bg-white text-blue-600 leading-loose;
   }
 }
 

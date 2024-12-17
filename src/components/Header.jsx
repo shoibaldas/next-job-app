@@ -21,7 +21,7 @@ const Header = () => {
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white shadow-md text-blue-800 py-4'
+          ? 'bg-white shadow-md text-blue-600 py-4'
           : 'bg-transparent text-white py-8 xl:py-12'
       }`}
     >
@@ -30,10 +30,10 @@ const Header = () => {
         <Link href="/">
           <h1
             className={`text-4xl font-semibold ${
-              isScrolled ? 'text-blue-800' : 'text-white'
+              isScrolled ? 'text-blue-600' : 'text-white'
             }`}
           >
-            ICEL TECH<span className={isScrolled ? 'text-blue-800' : 'text-darkText'}>.</span>
+            ICEL TECH<span className={isScrolled ? 'text-blue-600' : 'text-darkText'}>.</span>
           </h1>
         </Link>
 
