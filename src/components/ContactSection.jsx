@@ -46,7 +46,7 @@ const ContactSection = () => {
                                 <IoPersonCircle className="text-xl" />
                             </div>
                             <div className="">
-                                <label for="name" className="block text-sm font-medium text-gray-700">Name</label>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                             </div>
                         </div>
                         <input type="text" id="name" className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name" />
@@ -57,7 +57,7 @@ const ContactSection = () => {
                                 <MdAlternateEmail className="text-xl" />
                             </div>
                             <div className="">
-                                <label for="email" className="block text-sm font-medium text-blue-800">Email</label>
+                                <label htmlFor="email" className="block text-sm font-medium text-blue-800">Email</label>
 
                             </div>
                         </div>
@@ -69,7 +69,7 @@ const ContactSection = () => {
                                 <MdOutlineMessage className="text-xl" />
                             </div>
                             <div className="">
-                                <label for="message" className="block text-sm font-medium text-gray-700">Message</label>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
 
                             </div>
                         </div>
