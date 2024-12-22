@@ -7,6 +7,7 @@ import { MdNavigateNext } from "react-icons/md";
 import { AiFillProduct } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
 import Image from 'next/image';
+import { MdOutlineNavigateBefore, MdOutlineNavigateNext } from "react-icons/md";
 
 const ProductSection = () => {
     const [current, setCurrent] = useState(0);
@@ -43,7 +44,7 @@ const ProductSection = () => {
     return (
         <div className="relative w-full h-auto flex flex-col-reverse lg:flex-row items-center justify-between">
             {/* Left Side: Carousel */}
-            <div className="w-full lg:w-1/2 h-[400px] lg:h-[500px] relative px-4 lg:px-12">
+            <div className="w-full lg:w-1/2 h-[400px] lg:h-[500px] relative px-4 lg:px-16">
                 <Carousel
                     current={current}
                     next={next}
@@ -86,7 +87,7 @@ const ProductSection = () => {
                         onClick={prev}
                         className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
                     >
-                        &#8592;
+                        <MdOutlineNavigateBefore className='text-2xl'/>
                     </button>
                 </div>
                 <div className="absolute top-1/2 right-2 lg:right-4 transform -translate-y-1/2">
@@ -94,7 +95,7 @@ const ProductSection = () => {
                         onClick={next}
                         className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
                     >
-                        &#8594;
+                       <MdOutlineNavigateNext className='text-2xl'/>
                     </button>
                 </div>
             </div>
