@@ -34,7 +34,7 @@ const About = () => {
   return (
     <div>
       <div className='relative'>
-        <Banner customTitle="Who We are?"></Banner>
+        <Banner customTitle="About ICEL TECH LLC-FZ UAE"></Banner>
       </div>
 
       <div className="
@@ -92,7 +92,7 @@ const About = () => {
           <div className="flex justify-center items-center flex-col mb-12">
             <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Founders</h2></div>
             <div><h1 className="text-4xl font-bold text-gray-800 mb-4">
-              Meet Our Team
+              Meet The Brains
             </h1></div>
               <div><p className="text-gray-600 text-lg">
                 These people work on making our product best.
