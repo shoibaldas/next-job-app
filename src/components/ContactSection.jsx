@@ -21,7 +21,7 @@ const ContactSection = () => {
                     </div>
                 </div>
                 <p className="text-gray-700 text-lg mb-6">
-                    We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out.
+                    We&apos;d love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out.
                 </p>
                 <div className="flex space-x-4">
                     <Link href="#" className="text-blue-500 hover:text-blue-600 shadow">

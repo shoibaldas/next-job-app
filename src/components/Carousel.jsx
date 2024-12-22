@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 const Carousel = ({
     children: slides,
@@ -11,15 +11,21 @@ const Carousel = ({
     autoSlideInterval = 3000,
     transitionType = "fade" // "fade" or "slide"
 }) => {
+
+    const memoizedNext = useCallback(() => {
+        next();
+    }, [next]); // Only recreate `next` when `next` changes
+
     useEffect(() => {
         if (!autoSlide || slides.length === 0) return;
 
         const slideInterval = setInterval(() => {
-            next();
+            memoizedNext(); // Use the memoized version of `next`
         }, autoSlideInterval);
 
         return () => clearInterval(slideInterval);
-    }, [autoSlide, autoSlideInterval, slides.length]);
+    }, [autoSlide, autoSlideInterval, slides.length, memoizedNext]); // Add `memoizedNext` to the dependency array
+
 
     return (
         <div className="overflow-hidden relative h-screen w-full">

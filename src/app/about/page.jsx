@@ -48,14 +48,15 @@ const About = () => {
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2">
                 <div className="max-w-lg">
-                <h1 className="text-4xl font-bold text-gray-800 mb-4">
-                  Simplify Your Business, Empower Your Future
-                </h1>
+                  <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                    Simplify Your Business, Empower Your Future
+                  </h1>
                 </div>
               </div>
               <div className="w-full lg:w-1/2 px-5">
                 <p className="text-gray-600 text-lg">
-                  "At ICEL TECH LLC-FZ UAE, we believe in making life simpler with our philosophy of 'I Choose Easy Life.' Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly."            </p>
+                  &quot;At ICEL TECH LLC-FZ UAE, we believe in making life simpler with our philosophy of &apos;I Choose Easy Life.&apos; Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly.&quot;
+                </p>
 
               </div>
             </div>
@@ -75,7 +76,7 @@ const About = () => {
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6">
                 <h3 className="text-white text-2xl font-bold mb-2">Our Story</h3>
                 <p className="text-gray-300 text-sm">
-                  ICEL TECH LLC-FZ UAE is driven by the philosophy of 'I Choose Easy Life.' We strive to make daily life easier by offering innovative IT products, cutting-edge services, and global expertise. We prioritize security in all we do, ensuring trust and reliability.                </p>
+                  ICEL TECH LLC-FZ UAE is driven by the philosophy of &apos;I Choose Easy Life.&apos; We strive to make daily life easier by offering innovative IT products, cutting-edge services, and global expertise. We prioritize security in all we do, ensuring trust and reliability.                </p>
               </div>
             </div>
 
