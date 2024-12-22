@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { FaPeopleGroup } from "react-icons/fa6";
+import Image from "next/image";
 
 const ConsultantSection = () => {
     const teamMembers = [
@@ -74,10 +75,12 @@ const ConsultantSection = () => {
                         className="bg-white shadow-lg rounded-lg overflow-hidden text-center"
                     >
                         <div className="relative w-full h-40">
-                            <img
+                            <Image
                                 src={member.avatar}
                                 alt={member.name}
                                 className="w-full h-full object-cover"
+                                width={400}
+                                height={250}
                             />
                         </div>
                         <div className="p-6">

@@ -1,4 +1,5 @@
 import Banner from '@/components/Banner';
+import Image from 'next/image';
 import React from 'react';
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
@@ -55,7 +56,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Side */}
             <div className="relative rounded-xl overflow-hidden">
-              <img
+              <Image
                 src="/about.jpg" // Replace with your image URL
                 alt="Our Story"
                 className="w-full h-full object-cover"
@@ -108,7 +109,7 @@ const About = () => {
               >
                 {/* Image */}
                 <div className="w-72 h-48 mb-4 relative">
-                  <img
+                  <Image
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"

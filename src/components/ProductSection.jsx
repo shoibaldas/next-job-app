@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { MdNavigateNext } from "react-icons/md";
 import { AiFillProduct } from "react-icons/ai";
 import { FaEye } from "react-icons/fa";
+import Image from 'next/image';
 
 const ProductSection = () => {
     const [current, setCurrent] = useState(0);
@@ -57,10 +58,12 @@ const ProductSection = () => {
                             className="p-0 bg-white rounded-lg shadow-md flex flex-col h-[400px] lg:h-[500px] mx-2 overflow-hidden"
                         >
                             <div className="relative w-full h-1/2">
-                                <img
+                                <Image
                                     src={card.image}
                                     alt={card.title}
                                     className="w-full h-full object-cover rounded-t-lg"
+                                    width={600}
+                                    height={400}
                                 />
                             </div>
                             <div className="p-4 lg:p-6 flex flex-col justify-between text-center flex-grow">
@@ -70,7 +73,7 @@ const ProductSection = () => {
                                 </p>
                                 <Link href="#" className="inline-flex justify-center items-center mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
                                     View Product
-                                    <FaEye className='mx-2 text-lg'/>
+                                    <FaEye className='mx-2 text-lg' />
                                 </Link>
                             </div>
                         </div>

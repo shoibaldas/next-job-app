@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { MdBusinessCenter, MdNavigateNext } from "react-icons/md";
@@ -5,32 +6,41 @@ import { MdBusinessCenter, MdNavigateNext } from "react-icons/md";
 
 const AboutSection = () => {
     return (
-        <div className="flex flex-col lg:flex-row justify-center">
+        <div className="flex flex-col lg:flex-row justify-center gap-10">
             {/* Image Section */}
-            <div className="flex items-center justify-center mx-0 lg:mx-4 pl-0 lg:pl-6">
+            <div className="w-full lg:w-1/2 flex items-center justify-center pl-0 lg:pl-6">
                 <div className="flex flex-col items-end space-y-6">
-                    <img
-                        className="object-cover rounded shadow-lg w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72"
-                        src="/cybersecurity.jpg"
-                        alt="Cyber Security"
-                    />
-                    <img
-                        className="object-cover rounded shadow-lg w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-48 xl:w-56 xl:h-56"
-                        src="/digitalmarketing.jpg"
-                        alt="Digital Marketing"
-                    />
+                    <div className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-4">
+                        <Image
+                            className="object-cover rounded-lg"
+                            src="/cybersecurity.jpg"
+                            alt="Cyber Security"
+                            layout="fill"
+                        />
+                    </div>
+                    <div className="relative w-24 h-24 sm:w-36 sm:h-36 lg:w-48 lg:h-48 xl:w-56 xl:h-56 mx-4">
+                        <Image
+                            className="object-cover rounded-lg"
+                            src="/digitalmarketing.jpg"
+                            alt="Digital Marketing"
+                            layout="fill"
+                        />
+                    </div>
                 </div>
-                <div className="px-6">
-                    <img
-                        className="object-cover rounded-md shadow-lg w-44 h-44 sm:w-60 sm:h-60 lg:w-80 lg:h-80 xl:w-[500px] xl:h-[500px]"
+
+                <div className="relative w-44 h-44 sm:w-60 sm:h-60 lg:w-80 lg:h-80 xl:w-[500px] xl:h-[500px]">
+                    <Image
+                        className="object-cover rounded-lg"
                         src="/softwaredev.jpeg"
                         alt="Software Development"
+                        layout="fill"
                     />
                 </div>
+
             </div>
 
             {/* Text Section */}
-            <div className="flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
+            <div className="w-full lg:w-1/2 flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
                 <div className="flex">
                     <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-white mb-4">
                         <MdBusinessCenter />
