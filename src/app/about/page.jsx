@@ -45,21 +45,32 @@ const About = () => {
           {/* Top Section */}
           <div className="text-center md:text-left mb-12">
             <h2 className="text-blue-600 text-sm font-semibold uppercase">About Us</h2>
-            <h1 className="text-4xl font-bold text-gray-800 mb-4">
-              Simplify Your Business, Empower Your Future
-            </h1>
-            <p className="text-gray-600 text-lg">
-              "At ICEL TECH LLC-FZ UAE, we believe in making life simpler with our philosophy of 'I Choose Easy Life.' Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly."            </p>
+            <div className="flex flex-col lg:flex-row">
+              <div className="w-full lg:w-1/2">
+                <div className="max-w-lg">
+                <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                  Simplify Your Business, Empower Your Future
+                </h1>
+                </div>
+              </div>
+              <div className="w-full lg:w-1/2 px-5">
+                <p className="text-gray-600 text-lg">
+                  "At ICEL TECH LLC-FZ UAE, we believe in making life simpler with our philosophy of 'I Choose Easy Life.' Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly."            </p>
+
+              </div>
+            </div>
+
           </div>
 
           {/* Bottom Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Left Side */}
-            <div className="relative rounded-xl overflow-hidden">
+            <div className="relative h-96 w-full rounded-xl overflow-hidden">
               <Image
-                src="/about.jpg" // Replace with your image URL
+                src="/about.jpg"
                 alt="Our Story"
-                className="w-full h-full object-cover"
+                layout='fill'
+                className=''
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6">
                 <h3 className="text-white text-2xl font-bold mb-2">Our Story</h3>
@@ -95,9 +106,9 @@ const About = () => {
             <div><h1 className="text-4xl font-bold text-gray-800 mb-4">
               Meet The Brains
             </h1></div>
-              <div><p className="text-gray-600 text-lg">
-                These people work on making our product best.
-              </p></div>
+            <div><p className="text-gray-600 text-lg">
+              These people work on making our product best.
+            </p></div>
           </div>
 
           {/* Team Members */}
@@ -112,7 +123,8 @@ const About = () => {
                   <Image
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover"
+                    className="object-cover"
+                    layout='fill'
                   />
                 </div>
                 {/* Name and Role */}
