@@ -7,8 +7,8 @@ const Banner = ({ customTitle }) => {
   const defaultTitle = pathname === "/" ? "Home" : pathname.slice(1).replace("-", " ").replace("/", " ");
 
   return (
-    <div className="relative bg-black text-white text-center">
-      <div className="py-28 md:py-40 ">
+    <div className="relative bg-[url('/service.jpg')] bg-cover bg-no-repeat bg-center text-white text-center">
+      <div className="py-28 xl:py-40">
         <h1 className="text-2xl md:text-4xl font-bold">{customTitle || defaultTitle}</h1>
       </div>
       {/* Curved Blue Line and Parabola */}
