@@ -76,7 +76,7 @@ const ContactSection = () => {
                         <textarea id="message" rows="4" className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Message"></textarea>
                     </div>
                     <button type="submit" className="inline-flex items-center justify-center w-full bg-blue-600 text-white py-2 px-4 font-semibold rounded-md hover:bg-blue-700">
-                        Submit
+                        Send Message
                         <div
                             className="px-2 text-2xl"
                         >

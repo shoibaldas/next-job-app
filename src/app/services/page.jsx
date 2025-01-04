@@ -4,6 +4,8 @@ import Banner from "@/components/Banner";
 import { GrShieldSecurity, GrCloudSoftware } from 'react-icons/gr';
 import { BsGraphUpArrow } from 'react-icons/bs';
 import { SiAuthelia } from 'react-icons/si';
+import { FiPlus } from "react-icons/fi";
+import Link from "next/link";
 
 const Services = () => {
 
@@ -65,10 +67,22 @@ const Services = () => {
             </div>
 
             {/* CTA Button */}
-            <div className="text-center mt-12">
+            {/* <div className="text-center mt-12">
               <button className="px-8 py-3 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700">
-                Request a Service
+                
               </button>
+            </div> */}
+            <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
+                    >
+                        <span className="mx-2">Request a Service</span>
+                        <div
+                            className="text-2xl"
+                        >
+                            <FiPlus />
+                        </div>
+
+                    </Link>
             </div>
           </div>
         </section>

@@ -26,7 +26,7 @@ const About = () => {
     },
     {
       name: "Shoibal Das",
-      role: "Devolper",
+      role: "Web Developer",
       image: "/avatar.png",
       socials: { twitter: "#", instagram: "#", linkedin: "#" },
     },
