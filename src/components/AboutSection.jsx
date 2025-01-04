@@ -40,22 +40,20 @@ const AboutSection = () => {
             </div>
 
             {/* Text Section */}
-            <div className="w-full lg:w-1/2 flex flex-col px-10 lg:px-0  mt-10 lg:mt-0 justify-center">
-                <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-white mb-4">
+            <div className="w-full lg:w-1/2 flex flex-col px-10 lg:px-0 mt-10 lg:mt-0 justify-center items-center lg:items-start">
+                <div className="flex justify-center lg:justify-start items-center mb-4">
+                    <div className="flex justify-center items-center text-4xl p-2 rounded-full bg-blue-600 text-white">
                         <MdBusinessCenter />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
+                        <h2 className="px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
                             Who We Are ?
                         </h2>
                     </div>
                 </div>
-                <div className="lg:max-w-lg mb-6">
-                    <p className="text-base text-gray-700 md:text-lg lg:text-xl">
-                        ICEL TECH LLC-FZ UAE is committed to providing innovative IT products, services, and human resources with a focus on best security practices. We specialize in cybersecurity, digital marketing, project management, and software development.
-                    </p>
-                </div>
+                <p className="text-base text-gray-700 md:text-lg lg:text-xl mb-6">
+                    ICEL TECH LLC-FZ UAE is committed to providing innovative IT products, services, and human resources with a focus on best security practices. We specialize in cybersecurity, digital marketing, project management, and software development.
+                </p>
                 <div>
                     <Link href="/about" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
                     >

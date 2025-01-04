@@ -87,7 +87,7 @@ const ProductSection = () => {
                         onClick={prev}
                         className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
                     >
-                        <MdOutlineNavigateBefore className='text-2xl'/>
+                        <MdOutlineNavigateBefore className='text-2xl' />
                     </button>
                 </div>
                 <div className="absolute top-1/2 right-2 lg:right-4 transform -translate-y-1/2">
@@ -95,19 +95,19 @@ const ProductSection = () => {
                         onClick={next}
                         className="p-2 bg-white rounded-full shadow hover:bg-gray-200"
                     >
-                       <MdOutlineNavigateNext className='text-2xl'/>
+                        <MdOutlineNavigateNext className='text-2xl' />
                     </button>
                 </div>
             </div>
 
             {/* Right Side: Content */}
             <div className="w-full lg:w-1/2 h-auto bg-white flex flex-col justify-center p-6 lg:px-8 lg:py-12 text-center lg:text-left">
-                <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-white mb-4">
+                <div className="flex justify-center lg:justify-start items-center mb-4">
+                    <div className="flex justify-center items-center text-4xl p-2 rounded-full bg-blue-600 text-white">
                         <AiFillProduct />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
+                        <h2 className="px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
                             Our Products
                         </h2>
                     </div>

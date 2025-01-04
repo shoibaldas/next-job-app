@@ -9,21 +9,21 @@ import Link from 'next/link';
 
 const ContactSection = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-between px-6">
-            <div className="md:w-1/2 w-full md:pr-8 mb-8 md:mb-0">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-8">
+            <div className="lg:w-1/2 w-full md:pr-8 mb-8 md:mb-0  bg-white flex flex-col justify-center text-center lg:text-left">
 
-                <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-white mb-4">
+                <div className="flex justify-center lg:justify-start items-center mb-4">
+                    <div className="flex justify-center items-center text-4xl p-2 rounded-full bg-blue-600 text-white">
                         <MdConnectWithoutContact />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 mb-4 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">Get in Touch</h2>
+                        <h2 className="px-2 mb-4 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">Get in Touch</h2>
                     </div>
                 </div>
-                <p className="text-gray-700 text-lg mb-6">
+                <p className="text-base text-gray-700 md:text-lg lg:text-xl mb-6">
                     We&apos;d love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out.
                 </p>
-                <div className="flex space-x-4">
+                <div className="flex justify-center lg:justify-start space-x-4 mb-6">
                     <Link href="#" className="text-blue-500 hover:text-blue-600 shadow">
                         <FaFacebookSquare className="text-2xl" />
                     </Link>
@@ -38,7 +38,7 @@ const ContactSection = () => {
                     </Link>
                 </div>
             </div>
-            <div className="md:w-1/2 w-full bg-gray-50 shadow-lg rounded-lg p-6 md:p-8">
+            <div className="lg:w-1/2 w-full bg-gray-50 shadow-lg rounded-lg p-6 md:p-8">
                 <form>
                     <div className="mb-4">
                         <div className="flex items-center">

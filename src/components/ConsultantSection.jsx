@@ -36,12 +36,12 @@ const ConsultantSection = () => {
         <div className="bg-gray-50 rounded-lg py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-screen-xl mx-auto text-center">
                 {/* Title and Intro */}
-                <div className="flex justify-center">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-blue-600 text-gray-100 mb-4">
+                <div className="flex justify-center items-center mb-4">
+                    <div className="flex justify-center items-center p-2 text-4xl rounded-full bg-blue-600 text-gray-100">
                         <FaPeopleGroup />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
+                        <h2 className="px-2 font-sans text-3xl font-bold tracking-tight text-blue-600 sm:text-2xl sm:leading-none lg:text-4xl">
                             Meet Our Consultants
                         </h2>
                     </div>

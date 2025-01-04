@@ -37,12 +37,12 @@ const ServicesSection = () => {
         <div className="flex flex-col justify-center gap-10">
             {/* Text Section */}
             <div className="flex flex-col justify-center items-center lg:px-0 mt-10 lg:mt-0">
-                <div className="flex">
-                    <div className="flex justify-center items-center text-4xl w-16 h-16 rounded-full bg-gray-100 text-blue-600 mb-4">
+                <div className="flex justify-center items-center mb-4">
+                    <div className="flex justify-center items-center p-2 text-4xl rounded-full bg-gray-100 text-blue-600">
                         <GrServices />
                     </div>
                     <div>
-                        <h2 className="max-w-lg mt-2 px-2 font-sans text-3xl font-bold tracking-tight text-gray-100 sm:text-2xl sm:leading-none lg:text-4xl">
+                        <h2 className="px-2 font-sans text-3xl font-bold tracking-tight text-gray-100 sm:text-2xl sm:leading-none lg:text-4xl">
                             Our Services
                         </h2>
                     </div>
