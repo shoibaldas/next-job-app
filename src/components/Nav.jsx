@@ -4,30 +4,30 @@ import { usePathname } from "next/navigation";
 
 const links = [
     {
-        name: "home",
-        path: "/"
+      name: "home",
+      path: "/"
     },
     {
-        name: "who we are",
-        path: "/about"
-    },
-    { 
-        name: "consultants", 
-        path: "/consultants" 
+      name: "who we are",
+      path: "/about"
     },
     {
-        name: "products",
-        path: "/products"
+      name: "services",
+      path: "/services"
     },
     {
-        name: "services",
-        path: "/services"
+      name: "products",
+      path: "/products"
     },
     {
-        name: "contact",
-        path: "/contact"
+      name: "consultants",
+      path: "/consultants"
+    },
+    {
+      name: "contact",
+      path: "/contact"
     }
-]
+  ]
 
 const Nav = ({ isScrolled }) => {
     const pathname = usePathname();
