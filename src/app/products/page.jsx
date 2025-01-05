@@ -10,9 +10,9 @@ const Products = () => {
     <div>
       <div className='relative'>
         <Banner customTitle="Products"></Banner>
-      </div>
-      <div className="px-16 md:px-24 mt-4 md:mt-0">
-        <BreadCrumbs></BreadCrumbs>
+        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+          <BreadCrumbs></BreadCrumbs>
+        </div>
       </div>
       <div className="
     min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText">Products</div>

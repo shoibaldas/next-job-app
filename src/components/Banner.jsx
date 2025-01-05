@@ -7,7 +7,7 @@ const Banner = ({ customTitle }) => {
   const defaultTitle = pathname === "/" ? "Home" : pathname.slice(1).replace("-", " ").replace("/", " ");
 
   return (
-    <div className="relative bg-[url('/service.jpg')] bg-cover bg-no-repeat bg-center text-white text-center">
+    <div className="relative bg-[url('/service.jpg')] bg-cover bg-no-repeat bg-center text-white text-start px-24 md:px-32">
       <div className="py-28 xl:py-40">
         <h1 className="text-2xl md:text-4xl font-bold">{customTitle || defaultTitle}</h1>
       </div>

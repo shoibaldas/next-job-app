@@ -8,9 +8,9 @@ const BreadCrumbs = ({ className }) => {
     const breadcrumbs = useBreadcrumbs();
 
     return (
-        <nav aria-label="breadcrumb" className={`text-sm text-gray-600 ${className}`}>
+        <nav aria-label="breadcrumb" className={`text-sm text-white ${className}`}>
             <div className='flex items-center'>
-                <RiGalleryView2 className="text-lg text-gray-700 mr-2" />
+                <RiGalleryView2 className="text-lg text-white mr-2" />
                 <ol className="flex space-x-2">
                     <li>
                         <Link href="/" className="hover:underline">
@@ -22,7 +22,7 @@ const BreadCrumbs = ({ className }) => {
                             <span>/</span>
                             <Link
                                 href={crumb.href}
-                                className={`hover:underline ${index === breadcrumbs.length - 1 ? 'text-gray-900 font-bold' : ''
+                                className={`hover:underline ${index === breadcrumbs.length - 1 ? 'text-white font-bold' : ''
                                     }`}
                             >
                                 {crumb.label}
