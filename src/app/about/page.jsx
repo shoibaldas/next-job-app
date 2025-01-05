@@ -1,5 +1,6 @@
 import Banner from '@/components/Banner';
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
@@ -135,24 +136,24 @@ const About = () => {
                 </p>
                 {/* Social Media Links */}
                 <div className="flex items-center justify-center gap-4 mt-4">
-                  <a
+                  <Link
                     href={member.socials.twitter}
                     className="text-gray-400 hover:text-gray-800"
                   >
                     <FaTwitter size={20} />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href={member.socials.instagram}
                     className="text-gray-400 hover:text-gray-800"
                   >
                     <FaInstagram size={20} />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href={member.socials.linkedin}
                     className="text-gray-400 hover:text-gray-800"
                   >
                     <FaLinkedin size={20} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

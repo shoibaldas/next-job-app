@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react'; // Import useEffect and useState
 import { FaLinkedin, FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -18,7 +19,15 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center">
           {/* Left Column: Company Name and Links */}
           <div className="mb-6 sm:mb-0">
-            <h2 className="text-2xl font-bold text-white mb-4">ICEL TECH LLC-FZ UAE</h2>
+            {/* <h2 className="text-2xl font-bold text-white mb-4">ICEL TECH LLC-FZ UAE</h2> */}
+            <div>
+              <Image
+                          src='/logo.png'
+                          alt= "ICEL TECH"
+                          width={150}
+                          height={100}
+                        />
+            </div>
             <div className="flex items-center">
               {/* Privacy Policy Link */}
               <Link href="/privacy-policy" className="hover:text-blue-400 transition duration-300">

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const Header = () => {
   const [activeSection, setActiveSection] = useState('');
@@ -14,13 +15,13 @@ const Header = () => {
   const handleScroll = () => {
     const scrolled = window.scrollY > 50;
     setIsScrolled(scrolled);
-    console.log('Scrolled:', scrolled); // Debug: Log scroll state
+    // console.log('Scrolled:', scrolled);
   };
 
   useEffect(() => {
     // Select all divs with an id (you can use section as well)
     const sections = document.querySelectorAll('div[id]');
-    console.log('Sections to observe:', sections); // Debug: Ensure correct sections are selected
+    // console.log('Sections to observe:', sections);
 
     // Create the IntersectionObserver
     const observer = new IntersectionObserver(
@@ -29,7 +30,7 @@ const Header = () => {
           console.log('Entry:', entry); // Log each entry
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
-            console.log('Active Section:', entry.target.id); // Log active section
+            // console.log('Active Section:', entry.target.id);
           }
         });
       },
@@ -60,9 +61,15 @@ const Header = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md text-blue-600 py-4' : 'bg-transparent text-white py-8 xl:py-12'}`}>
       <div className="mx-8 flex justify-between items-center">
         <Link href="/">
-          <h1 className={`text-4xl font-semibold ${isScrolled ? 'text-blue-600' : 'text-white'}`}>
+          {/* <h1 className={`text-4xl font-semibold ${isScrolled ? 'text-blue-600' : 'text-white'}`}>
             ICEL TECH<span className={isScrolled ? 'text-blue-600' : 'text-darkText'}>.</span>
-          </h1>
+          </h1> */}
+          <Image
+            src='/logo.png'
+            alt= "ICEL TECH"
+            width={100}
+            height={50}
+          />
         </Link>
 
         <div className="hidden xl:flex items-center gap-8">
