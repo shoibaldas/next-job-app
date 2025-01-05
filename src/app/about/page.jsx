@@ -1,10 +1,14 @@
+'use client';
 import Banner from '@/components/Banner';
+import BreadCrumbs from '@/components/BreadCrumbs';
+import usePageTitle from '@/components/hooks/usePageTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
 const About = () => {
+  usePageTitle("About");
 
   const teamMembers = [
     {
@@ -38,7 +42,9 @@ const About = () => {
       <div className='relative'>
         <Banner customTitle="About ICEL TECH LLC-FZ UAE"></Banner>
       </div>
-
+      <div className="px-4 md:px-24 mt-4 md:mt-0">
+        <BreadCrumbs></BreadCrumbs>
+      </div>
       <div className="
     min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
 

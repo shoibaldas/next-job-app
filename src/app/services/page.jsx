@@ -6,6 +6,8 @@ import { BsGraphUpArrow } from 'react-icons/bs';
 import { SiAuthelia } from 'react-icons/si';
 import { FiPlus } from "react-icons/fi";
 import Link from "next/link";
+import BreadCrumbs from "@/components/BreadCrumbs";
+import usePageTitle from "@/components/hooks/usePageTitle";
 
 const Services = () => {
 
@@ -32,12 +34,16 @@ const Services = () => {
     }
   ];
 
+  usePageTitle('Services');
+
   return (
     <div>
       <div className='relative'>
         <Banner customTitle="Our Services"></Banner>
       </div>
-
+      <div className="px-4 md:px-24 mt-4 md:mt-0">
+        <BreadCrumbs></BreadCrumbs>
+      </div>
       <div
         className="
       min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText">
@@ -73,16 +79,16 @@ const Services = () => {
               </button>
             </div> */}
             <div className="text-center mt-12">
-            <Link href="/contact" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
-                    >
-                        <span className="mx-2">Request a Service</span>
-                        <div
-                            className="text-2xl"
-                        >
-                            <FiPlus />
-                        </div>
+              <Link href="/contact" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
+              >
+                <span className="mx-2">Request a Service</span>
+                <div
+                  className="text-2xl"
+                >
+                  <FiPlus />
+                </div>
 
-                    </Link>
+              </Link>
             </div>
           </div>
         </section>

@@ -7,12 +7,19 @@ import { MdConnectWithoutContact } from "react-icons/md";
 import { FaFacebookSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import Link from "next/link";
+import BreadCrumbs from "@/components/BreadCrumbs";
+import usePageTitle from "@/components/hooks/usePageTitle";
 
 const Contact = () => {
+  usePageTitle("Contact Us");
+  
   return (
     <div>
       <div className='relative'>
         <Banner customTitle="Contact Us"></Banner>
+      </div>
+      <div className="px-4 md:px-24 mt-8 md:mt-0">
+        <BreadCrumbs></BreadCrumbs>
       </div>
       <div className="
     min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText">
