@@ -29,13 +29,12 @@ const MobileNav = ({ isScrolled }) => {
         onClick={toggleMenu}
         aria-label="Toggle Menu"
       >
-        <CiMenuBurger className={`text-[32px] ${isScrolled ? "text-blue-700 " : "text-white"} `} />
+        <CiMenuBurger className={`text-[32px] ${isScrolled ? "text-blue-700" : "text-white"} `} />
       </button>
 
       {/* Navigation Menu */}
       <div
-        className={`fixed top-0 right-0 w-3/4 h-full bg-blue-900 text-darkText transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
-          } shadow-lg`}
+        className={`fixed top-0 right-0 w-3/4 h-full bg-blue-900 text-darkText transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"} shadow-lg`}
       >
         {/* Close Button */}
         <button
@@ -57,14 +56,11 @@ const MobileNav = ({ isScrolled }) => {
               key={index}
               href={link.path}
               scroll={false}
-              className={`${link.path === pathname
-                ? "text-white border-b-2 border-white"
-                : ""
-                } capitalize font-medium transition-all`}
+              className={`capitalize font-medium transition-all ${link.path === pathname ? "text-white border-b-2 border-white" : "text-darkText"
+                } cursor-pointer`}
               onClick={(e) => {
-                e.preventDefault();
-                setIsOpen(false);
-                window.location.href = link.path;
+                e.stopPropagation();
+                toggleMenu();
               }}
             >
               {link.name}
@@ -76,7 +72,7 @@ const MobileNav = ({ isScrolled }) => {
       {/* Backdrop when the menu is open */}
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-10 z-10"
+          className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-10 z-[-100]" // Set z-0 for backdrop
           onClick={toggleMenu}
         />
       )}
