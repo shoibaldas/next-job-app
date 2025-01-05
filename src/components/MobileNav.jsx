@@ -7,33 +7,15 @@ import { CiMenuBurger } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
 
 const links = [
-  {
-    name: "home",
-    path: "/"
-  },
-  {
-    name: "who we are",
-    path: "/about"
-  },
-  {
-    name: "services",
-    path: "/services"
-  },
-  {
-    name: "products",
-    path: "/products"
-  },
-  {
-    name: "consultants",
-    path: "/consultants"
-  },
-  {
-    name: "contact",
-    path: "/contact"
-  }
+  { name: "home", path: "/" },
+  { name: "who we are", path: "/about" },
+  { name: "services", path: "/services" },
+  { name: "products", path: "/products" },
+  { name: "consultants", path: "/consultants" },
+  { name: "contact", path: "/contact" }
 ];
 
-const MobileNav = () => {
+const MobileNav = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -47,17 +29,17 @@ const MobileNav = () => {
         onClick={toggleMenu}
         aria-label="Toggle Menu"
       >
-        <CiMenuBurger className="text-[32px] text-white" />
+        <CiMenuBurger className={`text-[32px] ${isScrolled ? "text-blue-700 " : "text-white"} `} />
       </button>
 
       {/* Navigation Menu */}
       <div
-        className={`fixed top-0 right-0 w-3/4 h-full bg-primary text-darkText transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 w-3/4 h-full bg-blue-900 text-darkText transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
           } shadow-lg`}
       >
         {/* Close Button */}
         <button
-          className="absolute top-4 right-4 text-2xl text-"
+          className="absolute top-4 right-4 text-2xl"
           onClick={toggleMenu}
           aria-label="Close Menu"
         >
@@ -72,13 +54,18 @@ const MobileNav = () => {
         <nav className="flex flex-col justify-center items-center gap-8">
           {links.map((link, index) => (
             <Link
-              href={link.path}
               key={index}
+              href={link.path}
+              scroll={false}
               className={`${link.path === pathname
-                  ? "text-white border-b-2 border-white"
-                  : ""
+                ? "text-white border-b-2 border-white"
+                : ""
                 } capitalize font-medium transition-all`}
-              onClick={() => setIsOpen(false)} // Close menu on link click
+              onClick={(e) => {
+                e.preventDefault();
+                setIsOpen(false);
+                window.location.href = link.path;
+              }}
             >
               {link.name}
             </Link>
@@ -86,7 +73,7 @@ const MobileNav = () => {
         </nav>
       </div>
 
-      {/* Optional: Backdrop when the menu is open */}
+      {/* Backdrop when the menu is open */}
       {isOpen && (
         <div
           className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-10 z-10"

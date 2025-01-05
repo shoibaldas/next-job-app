@@ -77,7 +77,7 @@ const Header = () => {
         </div>
 
         <div className="xl:hidden flex items-center gap-6">
-          <MobileNav />
+          <MobileNav isScrolled={isScrolled} />
         </div>
       </div>
     </header>

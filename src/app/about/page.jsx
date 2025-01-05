@@ -40,7 +40,7 @@ const About = () => {
   return (
     <div>
       <div className='relative'>
-        <Banner customTitle="About ICEL TECH LLC-FZ UAE"></Banner>
+        <Banner customTitle="About ICEL TECH LLC-FZ"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">
           <BreadCrumbs></BreadCrumbs>
         </div>

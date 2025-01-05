@@ -12,7 +12,8 @@ const nextConfig = {
           headers: [
             {
               key: 'Cache-Control',
-              value: 'public, max-age=31536000, immutable', // Cache static assets for 1 year
+              //value: 'public, max-age=31536000, immutable', // Cache static assets for 1 year
+               value: 'no-store'
             },
           ],
         },
