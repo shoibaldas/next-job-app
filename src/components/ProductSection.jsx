@@ -16,19 +16,19 @@ const ProductSection = () => {
         {
             id: 1,
             title: 'iConnect',
-            description: 'This is a brief description for Card 1.',
+            description: 'This is a brief description for I-Connect...',
             image: '/connect.jpg',
         },
         {
             id: 2,
             title: 'iShop',
-            description: 'This is a brief description for Card 2.',
+            description: 'This is a brief description for I-Shop...',
             image: '/shop.jpg',
         },
         {
             id: 3,
             title: 'iCareBot',
-            description: 'This is a brief description for Card 3.',
+            description: 'This is a brief description for I-Carebot...',
             image: '/care.jpg',
         },
     ];
