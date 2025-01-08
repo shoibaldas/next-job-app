@@ -9,10 +9,52 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import usePageTitle from "@/components/hooks/usePageTitle";
+import { useState } from "react";
 
 const Contact = () => {
   usePageTitle("Contact Us");
-  
+
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      setStatus("An error occurred. Please try again later.");
+    }
+  };
+
   return (
     <div>
       <div className='relative'>
@@ -114,50 +156,74 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="card bg-blue-50 rounded-lg h-fit max-w-6xl p-5 md:p-12" id="form">
-                  <form>
+                  <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                       <div className="flex items-center">
                         <div className="pe-1 text-blue-600">
                           <IoPersonCircle className="text-xl" />
                         </div>
-                        <div className="">
+                        <div>
                           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                         </div>
                       </div>
-                      <input type="text" id="name" className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Name" />
+                      <input
+                        type="text"
+                        id="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Your Name"
+                        required
+                      />
                     </div>
                     <div className="mb-4">
                       <div className="flex items-center">
                         <div className="pe-1 text-blue-600">
                           <MdAlternateEmail className="text-xl" />
                         </div>
-                        <div className="">
+                        <div>
                           <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-
                         </div>
                       </div>
-                      <input type="email" id="email" className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Email" />
+                      <input
+                        type="email"
+                        id="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Your Email"
+                        required
+                      />
                     </div>
                     <div className="mb-4">
                       <div className="flex items-center">
                         <div className="pe-1 text-blue-600">
                           <MdOutlineMessage className="text-xl" />
                         </div>
-                        <div className="">
+                        <div>
                           <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
-
                         </div>
                       </div>
-                      <textarea id="message" rows="4" className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="Your Message"></textarea>
+                      <textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows="4"
+                        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
                     </div>
-                    <button type="submit" className="inline-flex items-center justify-center w-full bg-blue-600 text-white py-2 px-4 font-semibold rounded-md hover:bg-blue-700">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center w-full bg-blue-600 text-white py-2 px-4 font-semibold rounded-md hover:bg-blue-700"
+                    >
                       Send Message
-                      <div
-                        className="px-2 text-2xl"
-                      >
+                      <div className="px-2 text-2xl">
                         <IoIosSend />
                       </div>
                     </button>
+                    {status && <p className="mt-4 text-center">{status}</p>}
                   </form>
                 </div>
               </div>
