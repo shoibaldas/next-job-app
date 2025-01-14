@@ -9,7 +9,8 @@ const Carousel = ({
     prev,
     autoSlide = false,
     autoSlideInterval = 3000,
-    transitionType = "fade" // "fade" or "slide"
+    transitionType = "fade", // "fade" or "slide"
+    showDots = true
 }) => {
 
     const memoizedNext = useCallback(() => {
@@ -30,23 +31,25 @@ const Carousel = ({
     return (
         <div className="overflow-hidden relative h-screen w-full">
             <div
-                className={`flex transition-transform duration-1000 ease-in-out ${
-                    transitionType === 'slide'
-                        ? `-translate-x-[${current * 100}%]`
-                        : ''
-                }`}
-                style={{ transform: transitionType === 'slide' ? `translateX(-${current * 100}%)` : '' }}
+                className={`flex ${transitionType === 'slide' ? 'transition-transform' : ''
+                    } duration-1000 ease-in-out`}
+                style={{
+                    transform: transitionType === 'slide' ? `translateX(-${current * 100}%)` : '',
+                    position: transitionType === 'fade' ? 'relative' : 'static',
+                }}
             >
                 {slides.map((slide, index) => (
                     <div
                         key={index}
-                        className={`w-full flex-shrink-0 ${
-                            transitionType === 'fade'
-                                ? `absolute inset-0 transition-opacity duration-1000 ${
-                                      index === current ? 'opacity-100' : 'opacity-0'
-                                  }`
-                                : ''
-                        }`}
+                        className={`w-full flex-shrink-0 ${transitionType === 'fade'
+                            ? `absolute inset-0 transition-opacity duration-1000 ${index === current ? 'opacity-100' : 'opacity-0'
+                            }`
+                            : ''
+                            }`}
+                        style={{
+                            height: '100%', // Ensure consistent height
+                            width: '100%', // Ensure consistent width
+                        }}
                     >
                         {slide}
                     </div>
@@ -54,18 +57,19 @@ const Carousel = ({
             </div>
 
             {/* Pagination Dots */}
-            <div className="absolute bottom-4 right-0 left-0">
-                <div className="flex items-center justify-center gap-2">
-                    {slides.map((_, i) => (
-                        <div
-                            key={i}
-                            className={`transition-all w-3 h-3 bg-white rounded-full ${
-                                current === i ? 'p-2' : 'bg-opacity-50'
-                            }`}
-                        />
-                    ))}
+            {showDots && (
+                <div className="absolute bottom-4 right-0 left-0">
+                    <div className="flex items-center justify-center gap-2">
+                        {slides.map((_, i) => (
+                            <div
+                                key={i}
+                                className={`transition-all w-3 h-3 bg-white rounded-full ${current === i ? 'p-2' : 'bg-opacity-50'
+                                    }`}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

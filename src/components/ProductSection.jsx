@@ -52,6 +52,7 @@ const ProductSection = () => {
                     autoSlide={true}
                     autoSlideInterval={5000}
                     transitionType="slide"
+                    showDots={false}
                 >
                     {cards.map((card) => (
                         <div
