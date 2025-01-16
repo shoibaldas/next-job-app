@@ -14,26 +14,26 @@ const About = () => {
     {
       name: "Nasir Uddin",
       role: "CEO",
-      image: "/avatar.png",
+      image: "/nasir.jpg",
       socials: { twitter: "#", instagram: "#", linkedin: "#" },
     },
     {
       name: "Mohammad S Jabr",
       role: "CTO",
-      image: "/avatar.png",
+      image: "/sahr.jpg",
       socials: { twitter: "#", instagram: "#", linkedin: "#" },
     },
     {
       name: "Ikhlas Taleb",
       role: "Marketing Head",
-      image: "/avatar.png",
+      image: "/iklas.jpg",
       socials: { twitter: "#", instagram: "#", linkedin: "#" },
     },
     {
       name: "Shoibal Das",
-      role: "Web Developer",
-      image: "/avatar.png",
-      socials: { twitter: "#", instagram: "#", linkedin: "#" },
+      role: "Full Stack Developer",
+      image: "/shoibal.jpg",
+      socials: { twitter: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/shoibaldas/" },
     },
   ];
 
@@ -107,7 +107,7 @@ const About = () => {
             </div>
           </div>
         </section>
-        <section className="px-6 md:px-12 lg:px-24 py-16 bg-white">
+        <section className="w-4/4 px-6 md:px-12 lg:px-24 py-16 bg-white">
           {/* Header Section */}
           <div className="flex justify-center items-center flex-col mb-12">
             <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Founders</h2></div>
@@ -120,46 +120,49 @@ const About = () => {
           </div>
 
           {/* Team Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-start">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 items-start">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6 transition-transform transform hover:scale-105"
+                className="w-full sm:w-[300px] flex flex-col items-center text-center bg-white shadow-md rounded-lg transition-transform transform hover:scale-105"
               >
                 {/* Image */}
-                <div className="w-72 h-48 mb-4 relative">
+                <div className="w-full h-96 mb-4 relative overflow-hidden rounded-t-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
                     className="object-cover"
-                    layout='fill'
+                    layout="fill"
+                    // objectFit="cover"
                   />
                 </div>
-                {/* Name and Role */}
-                <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-                <p className="text-sm text-gray-600">
-                  {member.role}
-                </p>
-                {/* Social Media Links */}
-                <div className="flex items-center justify-center gap-4 mt-4">
-                  <Link
-                    href={member.socials.twitter}
-                    className="text-gray-400 hover:text-gray-800"
-                  >
-                    <FaTwitter size={20} />
-                  </Link>
-                  <Link
-                    href={member.socials.instagram}
-                    className="text-gray-400 hover:text-gray-800"
-                  >
-                    <FaInstagram size={20} />
-                  </Link>
-                  <Link
-                    href={member.socials.linkedin}
-                    className="text-gray-400 hover:text-gray-800"
-                  >
-                    <FaLinkedin size={20} />
-                  </Link>
+                <div className='p-3'>
+                  {/* Name and Role */}
+                  <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
+                  <p className="text-sm text-gray-600">
+                    {member.role}
+                  </p>
+                  {/* Social Media Links */}
+                  <div className="flex items-center justify-center gap-4 mt-4">
+                    <Link
+                      href={member.socials.twitter}
+                      className="text-gray-400 hover:text-gray-800"
+                    >
+                      <FaTwitter size={20} />
+                    </Link>
+                    <Link
+                      href={member.socials.instagram}
+                      className="text-gray-400 hover:text-gray-800"
+                    >
+                      <FaInstagram size={20} />
+                    </Link>
+                    <Link
+                      href={member.socials.linkedin}
+                      className="text-gray-400 hover:text-gray-800"
+                    >
+                      <FaLinkedin size={20} />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
