@@ -133,7 +133,7 @@ const About = () => {
                     alt={member.name}
                     className="object-cover"
                     layout="fill"
-                    // objectFit="cover"
+                  // objectFit="cover"
                   />
                 </div>
                 <div className='p-3'>
@@ -147,18 +147,24 @@ const About = () => {
                     <Link
                       href={member.socials.twitter}
                       className="text-gray-400 hover:text-gray-800"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaTwitter size={20} />
                     </Link>
                     <Link
                       href={member.socials.instagram}
                       className="text-gray-400 hover:text-gray-800"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaInstagram size={20} />
                     </Link>
                     <Link
                       href={member.socials.linkedin}
                       className="text-gray-400 hover:text-gray-800"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <FaLinkedin size={20} />
                     </Link>
