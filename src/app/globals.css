@@ -78,17 +78,3 @@ html {
 .fade-in-text {
   animation: fadeIn 2s ease-in-out; /* 2s is the duration */
 }
-
-.aspect-ratio-4-3 {
-  position: relative;
-  width: 100%;
-  padding-top: 50%; /* 4:3 aspect ratio (3/4 * 100) */
-}
-
-.aspect-ratio-4-3 > * {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
