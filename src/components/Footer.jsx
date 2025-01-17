@@ -37,7 +37,7 @@ const Footer = () => {
                 <span className='text-white mx-2'>|</span>
               </div>
               {/* Terms of Use Link */}
-              <Link href="/terms-of-use" className="hover:text-blue-400 transition duration-300">
+              <Link href="/terms" className="hover:text-blue-400 transition duration-300">
                 Terms of Use
               </Link>
             </div>
