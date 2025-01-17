@@ -17,27 +17,32 @@ const Services = () => {
     {
       title: "Cybersecurity",
       description: "We specialize in cybersecurity, safeguarding your business with advanced threat detection, risk management, and robust defense strategies. Trust our expertise to secure your data and operations.",
-      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><GrShieldSecurity /></div>
+      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><GrShieldSecurity /></div>,
+      url: "#"
     },
     {
       title: "Digital Marketing",
       description: "We excel in digital marketing, driving growth with data-driven strategies, SEO, social media, and content marketing. Trust our expertise to boost engagement, leads, and conversions.",
-      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><BsGraphUpArrow /></div>
+      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><BsGraphUpArrow /></div>,
+      url: "#"
     },
     {
       title: "Software Development",
       description: "We offer exceptional expertise in enterprise software, legacy system modernization, and seamless integration, eliminating workflow issues and implementing advanced technology to streamline application portfolios efficiently.",
-      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><GrCloudSoftware /></div>
+      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><GrCloudSoftware /></div>,
+      url: "#"
     },
     {
       title: "Identity and Access Management",
       description: "We excel in Identity and Access Management, ensuring secure authentication, seamless user access, and robust compliance. Trust us to protect your systems and streamline operations.",
-      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><SiAuthelia /></div>
+      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><SiAuthelia /></div>,
+      url: "#"
     },
     {
       title: "Ready to go Solutions ",
       description: "we offer tailored Azure-based solutions for all industries and businesses—whether you're a restaurant owner, a shipping company, a corporate enterprise, a logistics provider, a small business, a local shop, or even an individual housewife selling dresses from home. Our scalable and secure services include app development, process automation, data management, and AI-driven insights to help you grow and streamline your operations. No matter the size of your business, we’ve got you covered with innovative, cost-effective, and user-friendly solutions. Empower your business with the power of Azure—let’s build your success together!",
-      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><VscAzure /></div>
+      icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><VscAzure /></div>,
+      url: "#"
     }
   ];
 
@@ -106,15 +111,15 @@ const Services = () => {
                   </div>
                 </div>
                 <div className="ms-12 mt-4">
-                  <a
-                    href="#"
+                  <Link
+                    href={service?.url}
                     className="inline-flex items-center font-semibold px-6 py-3 transition duration-200 text-white bg-blue-600 hover:bg-blue-700"
                   >
-                    <span className="mx-2">Read More</span>
+                    <span className="mx-2">Explore</span>
                     <div className="text-2xl">
                       <MdNavigateNext />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
 

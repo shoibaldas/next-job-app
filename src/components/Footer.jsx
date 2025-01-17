@@ -54,25 +54,25 @@ const Footer = () => {
 
             {/* Social Media Links */}
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://www.linkedin.com/company/iceltech" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 <FaLinkedin size={20} />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              <a href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 <FaFacebookF size={20} />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
+              {/* <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 <FaInstagram size={20} />
               </a>
               <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
                 <FaYoutube size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
 
         {/* Copyright Text */}
         <div className="text-center mt-8 text-sm text-gray-400">
-          <p>&copy; {currentYear || new Date().getFullYear()} ICEL TECH LLC-FZ UAE. All Rights Reserved.</p>
+          <p>&copy; {currentYear || new Date().getFullYear()} ICEL TECH LLC-FZ. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

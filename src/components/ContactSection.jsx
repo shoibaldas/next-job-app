@@ -66,16 +66,16 @@ const ContactSection = () => {
                     We&apos;d love to hear from you! Whether you have a question, feedback, or just want to say hi, feel free to reach out.
                 </p>
                 <div className="flex justify-center lg:justify-start space-x-4 mb-6">
-                    <Link href="#" className="text-blue-500 hover:text-blue-600 shadow">
+                    <Link href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 shadow">
                         <FaFacebookSquare className="text-2xl" />
                     </Link>
-                    <Link href="#" className="text-black hover:text-gray-800 shadow">
+                    {/* <Link href="#" className="text-black hover:text-gray-800 shadow">
                         <FaSquareXTwitter className="text-2xl" />
                     </Link>
                     <Link href="#" className="text-pink-500 hover:text-pink-600 shadow">
                         <FaInstagramSquare className="text-2xl" />
-                    </Link>
-                    <Link href="#" className="text-blue-600 hover:text-blue-600 shadow">
+                    </Link> */}
+                    <Link href="https://www.linkedin.com/company/iceltech" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-600 shadow">
                         <FaLinkedin className="text-2xl" />
                     </Link>
                 </div>

@@ -144,13 +144,13 @@ const Contact = () => {
                     <div className="border-t border-gray-300 my-4"></div>
                   </div>
                   <div className="flex space-x-4">
-                    <Link href="#" className="text-blue-500 hover:text-blue-600 shadow">
+                    <Link href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 shadow">
                       <FaFacebookSquare className="text-2xl" />
                     </Link>
-                    <Link href="#" className="text-black hover:text-gray-800 shadow">
+                    {/* <Link href="#" className="text-black hover:text-gray-800 shadow">
                       <FaSquareXTwitter className="text-2xl" />
-                    </Link>
-                    <Link href="#" className="text-blue-600 hover:text-blue-600 shadow">
+                    </Link> */}
+                    <Link href="https://www.linkedin.com/company/iceltech" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-600 shadow">
                       <FaLinkedin className="text-2xl" />
                     </Link>
                   </div>
