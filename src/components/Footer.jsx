@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center">
               {/* Privacy Policy Link */}
-              <Link href="/privacy-policy" className="hover:text-blue-400 transition duration-300">
+              <Link href="/privacy" className="hover:text-blue-400 transition duration-300">
                 Privacy Policy
               </Link>
               <div>
