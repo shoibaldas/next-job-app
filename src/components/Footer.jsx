@@ -22,11 +22,11 @@ const Footer = () => {
             {/* <h2 className="text-2xl font-bold text-white mb-4">ICEL TECH LLC-FZ UAE</h2> */}
             <div>
               <Image
-                          src='/logo.png'
-                          alt= "ICEL TECH"
-                          width={150}
-                          height={100}
-                        />
+                src='/logo.png'
+                alt="ICEL TECH"
+                width={150}
+                height={100}
+              />
             </div>
             <div className="flex items-center">
               {/* Privacy Policy Link */}
@@ -46,10 +46,23 @@ const Footer = () => {
           {/* Right Column: Contact Info and Social Media */}
           <div className="flex flex-col space-y-4">
             {/* Contact Information */}
-            <div>
-              <p className="text-sm text-gray-400">Email: <a href="mailto:info@iceltech.com" className="hover:text-blue-400">info@iceltech.com</a></p>
-              <p className="text-sm text-gray-400">Phone: <a href="tel:+97123456789" className="hover:text-blue-400">+971 000 000 00</a></p>
-              <p className="text-sm text-gray-400">Address: Dubai, UAE</p>
+            <div className="text-sm text-gray-400 space-y-2">
+              <p>
+                Email:
+                <span className="hover:text-blue-400 cursor-pointer"> contactus@iceltech.com</span>
+              </p>
+              <p>
+                Phone:
+                <span className="hover:text-blue-400 cursor-pointer"> +1-813-563-2612</span> (Americas and Canada),
+                <span className="hover:text-blue-400 cursor-pointer"> +216-23-189-129</span> (Africa)
+              </p>
+              <p>
+                Whatsapp:
+                <span className="hover:text-blue-400 cursor-pointer"> +971-58-221-0358</span> (Middle East and Asia Pacific)
+              </p>
+              <p>
+                Head Office: 7901 4th St N STE 300, St. Petersburg, FL 33702, USA
+              </p>
             </div>
 
             {/* Social Media Links */}
@@ -69,10 +82,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
+        <div className="mt-8 block md:hidden">
+          <div className="border-t border-gray-400 mt-4"></div>
+        </div>
         {/* Copyright Text */}
-        <div className="text-center mt-8 text-sm text-gray-400">
-          <p>&copy; {currentYear || new Date().getFullYear()} ICEL TECH LLC-FZ. All Rights Reserved.</p>
+        <div className='mt-4 md:mt-20 flex flex-col md:flex-row justify-center gap-2'>
+          <div className="text-center text-sm text-gray-400">
+            <p>&copy; {currentYear || new Date().getFullYear()} ICEL TECH LLC </p>
+          </div>
+          <div className="text-center text-sm text-gray-400">
+            <p>(I Choose Easy Life Technology Solutions)</p>
+          </div>
+          <div className="text-center text-sm text-gray-400">
+            <p>All Rights Reserved.</p>
+          </div>
         </div>
       </div>
     </footer>

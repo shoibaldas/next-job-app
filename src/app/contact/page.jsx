@@ -99,11 +99,19 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div className="ml-4 mb-4">
-                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address
-                        </h3>
-                        {/* <p className="text-gray-600 dark:text-slate-400">1230 Maecenas Street Donec Road</p> */}
-                        <p className="text-gray-600 dark:text-slate-400">Dubai, UAE</p>
+                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address</h3>
+                        <p className="text-gray-600 dark:text-slate-400">
+                          <strong>Head Office:</strong> 7901 4th St N STE 300, St. Petersburg, FL 33702, USA
+                        </p>
+                        <p className="text-gray-600 dark:text-slate-400">
+                          <strong>Local Branches:</strong>
+                        </p>
+                        <ul className="list-disc pl-5 text-gray-600 dark:text-slate-400">
+                          <li>Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates</li>
+                          <li>Four Seasons Building, Near Intileka building, Beb Bhar, Sfax, Tunisia</li>
+                        </ul>
                       </div>
+
                     </li>
                     <li className="flex">
                       <div className="flex h-10 w-10 items-center justify-center rounded bg-blue-600 text-gray-50">
@@ -118,10 +126,11 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div className="ml-4 mb-4">
-                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact
-                        </h3>
-                        <p className="text-gray-600 dark:text-slate-400">Phone:  +971 000 000 00</p>
-                        <p className="text-gray-600 dark:text-slate-400">Mail:  info@iceltech.com</p>
+                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact</h3>
+                        <p className="text-gray-600 dark:text-slate-400">Phone: +1-813-563-2612 (Americas and Canada)</p>
+                        <p className="text-gray-600 dark:text-slate-400">Phone: +216-23-189-129 (Africa)</p>
+                        <p className="text-gray-600 dark:text-slate-400">Whatsapp: +971-58-221-0358 (Middle East and Asia Pacific)</p>
+                        <p className="text-gray-600 dark:text-slate-400">Mail: contactus@iceltech.com</p>
                       </div>
                     </li>
                     <li className="flex">
@@ -140,22 +149,8 @@ const Contact = () => {
                       </div>
                     </li>
                   </ul>
-                  <div className="pe-0 md:pe-4">
-                    <div className="border-t border-gray-300 my-4"></div>
-                  </div>
-                  <div className="flex space-x-4">
-                    <Link href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 shadow">
-                      <FaFacebookSquare className="text-2xl" />
-                    </Link>
-                    {/* <Link href="#" className="text-black hover:text-gray-800 shadow">
-                      <FaSquareXTwitter className="text-2xl" />
-                    </Link> */}
-                    <Link href="https://www.linkedin.com/company/iceltech" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-600 shadow">
-                      <FaLinkedin className="text-2xl" />
-                    </Link>
-                  </div>
                 </div>
-                <div className="card bg-blue-50 rounded-lg h-fit max-w-6xl p-5 md:p-12" id="form">
+                <div className="bg-blue-50 rounded-lg max-w-6xl h-full p-5 md:p-12" id="form">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                       <div className="flex items-center">
@@ -216,7 +211,7 @@ const Contact = () => {
                     </div>
                     <button
                       type="submit"
-                      className="inline-flex items-center justify-center w-full bg-blue-600 text-white py-2 px-4 font-semibold rounded-md hover:bg-blue-700"
+                      className="inline-flex items-center justify-center w-full bg-blue-600 text-white mt-6 py-2 px-4 font-semibold rounded-md hover:bg-blue-700"
                     >
                       Send Message
                       <div className="px-2 text-2xl">
@@ -224,6 +219,23 @@ const Contact = () => {
                       </div>
                     </button>
                     {status && <p className="mt-4 text-center">{status}</p>}
+                    <div className="mt-10 mb-4 md:mt-12 md:mb-0">
+                    <div className="">
+                      <div className="border-t border-gray-300 my-2"></div>
+                    </div>
+                    <div><h3 className="text-center my-2">Find us here</h3></div>
+                    <div className="flex justify-center space-x-4">
+                      <Link href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 shadow">
+                        <FaFacebookSquare className="text-2xl" />
+                      </Link>
+                      {/* <Link href="#" className="text-black hover:text-gray-800 shadow">
+                      <FaSquareXTwitter className="text-2xl" />
+                    </Link> */}
+                      <Link href="https://www.linkedin.com/company/iceltech" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-600 shadow">
+                        <FaLinkedin className="text-2xl" />
+                      </Link>
+                    </div>
+                    </div>
                   </form>
                 </div>
               </div>
