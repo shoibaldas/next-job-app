@@ -31,7 +31,7 @@ const Consultants = () => {
         </form> */}
         <main className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r text-primary text-center p-4">
           <h1 className="text-5xl font-bold mb-4">Coming Soon!</h1>
-          <p className="text-lg mb-8">We're working hard to bring you something amazing. Stay tuned!</p>
+          <p className="text-lg mb-8">We&apos;re working hard to bring you something amazing. Stay tuned!</p>
         </main>
       </div>
 

@@ -63,7 +63,7 @@ const ContactSection = () => {
                     </div>
                 </div>
                 <p className="text-base text-gray-700 md:text-lg lg:text-xl mb-6">
-                    We&apos;d love to hear from you! Whether you're running a global enterprise or a small home business, ICEL TECH has the right solution for you. If you have a question, feedback, or just want to say hi, feel free to reach out.
+                    We&apos;d love to hear from you! Whether you&apos;re running a global enterprise or a small home business, ICEL TECH has the right solution for you. If you have a question, feedback, or just want to say hi, feel free to reach out.
                 </p>
                 <div className="flex justify-center lg:justify-start space-x-4 mb-6">
                     <Link href="https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-600 shadow">
