@@ -94,7 +94,7 @@ export default function AzureSolution() {
                 Innovative PowerApps and SharePoint Solutions
               </h1>
               <p className="text-xl mb-8 text-gray-800">
-                At ICEL TECH, we specialize in delivering customized PowerApps and SharePoint solutions to streamline workflows, enhance productivity, and revolutionize your business processes. Led by experienced professionals like Syed Md Maruf Hasan, our team leverages the latest Microsoft technologies to provide tailored solutions for diverse industries and business sizes.
+                At ICEL TECH, we specialize in delivering customized PowerApps and SharePoint solutions to streamline workflows, enhance productivity, and revolutionize your business processes. Our team leverages the latest Microsoft technologies to provide tailored solutions for diverse industries and business sizes.
               </p>
               <Link href="/contact" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
               >
