@@ -78,3 +78,19 @@ html {
 .fade-in-text {
   animation: fadeIn 2s ease-in-out; /* 2s is the duration */
 }
+
+.hero-section {
+  position: relative;
+  background-color: #1e3a8a; /* Tailwind's bg-blue-900 */
+  padding-top: 24px;
+}
+
+.hero-background {
+  position: absolute;
+  bottom: -60px; /* Adjust based on your design */
+  left: 0;
+  right: 0;
+  height: 60px; /* Height of the curve */
+  background-color: #1e3a8a; /* Same as hero background */
+  clip-path: ellipse(50% 100% at 50% 0%); /* Adjust for desired curve */
+}

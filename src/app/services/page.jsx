@@ -42,14 +42,14 @@ const Services = () => {
       title: "Ready to go Solutions ",
       description: "we offer tailored Azure-based solutions for all industries and businesses—whether you're a restaurant owner, a shipping company, a corporate enterprise, a logistics provider, a small business, a local shop, or even an individual housewife selling dresses from home. Our scalable and secure services include app development, process automation, data management, and AI-driven insights to help you grow and streamline your operations. No matter the size of your business, we’ve got you covered with innovative, cost-effective, and user-friendly solutions. Empower your business with the power of Azure—let’s build your success together!",
       icon: <div className="text-4xl text-gray-600 hover:text-blue-700"><VscAzure /></div>,
-      url: "#"
+      url: "/services/solutions"
     }
   ];
 
   usePageTitle('Services');
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Services"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">
@@ -59,7 +59,6 @@ const Services = () => {
       <div
         className="
        flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
-
         <section className="px-6 md:px-12 lg:px-24 py-16 bg-white">
           {/* Top Section */}
           <div className="text-center md:text-left mb-12">
@@ -67,7 +66,7 @@ const Services = () => {
             <div className="flex flex-col lg:flex-row items-center">
               <div className="w-full lg:w-1/2">
                 <div className="max-w-lg">
-                  <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                     We Offer a Wide Variety of IT Services
                   </h1>
                 </div>

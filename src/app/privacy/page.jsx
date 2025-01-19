@@ -8,15 +8,14 @@ import React from 'react'
 const PrivacyPolicy = () => {
     usePageTitle('Privacy Policy')
     return (
-        <div>
+        <div className="min-h-screen">
             <div className='relative'>
                 <Banner customTitle="Privacy Policy"></Banner>
                 <div className="absolute top-40 xl:top-52 px-24 md:px-32">
                     <BreadCrumbs></BreadCrumbs>
                 </div>
             </div>
-            <div className="
-    min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText">
+            <div className="flex flex-col items-center justify-center bg-lightBackground text-lightText">
                 <main className="container mx-auto px-4 py-8 my-16">
                     <section className="bg-white rounded shadow p-6">
                         <div className="mb-4">

@@ -38,16 +38,14 @@ const About = () => {
   ];
 
   return (
-    <div>
+    <div className='min-h-screen'>
       <div className='relative'>
         <Banner customTitle="About ICEL TECH LLC-FZ"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
-      <div className="
-    min-h-screen flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
-
+      <div className="flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
         <section className="px-6 md:px-12 lg:px-24 py-16 bg-white">
           {/* Top Section */}
           <div className="text-center md:text-left mb-12">
@@ -55,7 +53,7 @@ const About = () => {
             <div className="flex flex-col lg:flex-row">
               <div className="w-full lg:w-1/2">
                 <div className="max-w-lg">
-                  <h1 className="text-4xl font-bold text-gray-800 mb-4">
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
                     Simplify Your Business, Empower Your Future
                   </h1>
                 </div>

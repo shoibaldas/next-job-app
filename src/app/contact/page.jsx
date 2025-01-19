@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Contact Us"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">
@@ -72,14 +72,14 @@ const Contact = () => {
               <div className="grid md:grid-cols-2">
                 <div className="h-full pr-0 md:pr-6 mb-6 md:mb-0">
                   <div className="mb-6 max-w-3xl text-center sm:text-start md:mb-6">
-                    <p className="text-base font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-200">
+                    <p className="text-base font-semibold uppercase tracking-wide text-blue-600">
                       Contact Form
                     </p>
                     <h2
-                      className="font-heading font-bold tracking-tight text-gray-900 dark:text-white text-3xl sm:text-5xl">
+                      className="font-heading font-bold tracking-tight text-gray-800 text-4xl md:text-5xl">
                       Get in Touch
                     </h2>
-                    <p className="mt-3 text-lg text-gray-600 dark:text-slate-400">
+                    <p className="mt-3 text-lg text-gray-600">
                       This is your gateway to contact with us directly. Whether you have inquires, feedback, or simply want to say hello.
                     </p>
                     <div className="pe-0 md:pe-4">
@@ -99,14 +99,14 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div className="ml-4 mb-4">
-                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Our Address</h3>
-                        <p className="text-gray-600 dark:text-slate-400">
+                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-800">Our Address</h3>
+                        <p className="text-gray-600">
                           <strong>Head Office:</strong> 7901 4th St N STE 300, St. Petersburg, FL 33702, USA
                         </p>
-                        <p className="text-gray-600 dark:text-slate-400">
+                        <p className="text-gray-600">
                           <strong>Local Branches:</strong>
                         </p>
-                        <ul className="list-disc pl-5 text-gray-600 dark:text-slate-400">
+                        <ul className="list-disc pl-5 text-gray-600">
                           <li>Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates</li>
                           <li>Four Seasons Building, Near Intileka building, Beb Bhar, Sfax, Tunisia</li>
                         </ul>
@@ -126,11 +126,11 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div className="ml-4 mb-4">
-                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Contact</h3>
-                        <p className="text-gray-600 dark:text-slate-400">Phone: +1-813-563-2612 (Americas and Canada)</p>
-                        <p className="text-gray-600 dark:text-slate-400">Phone: +216-23-189-129 (Africa)</p>
-                        <p className="text-gray-600 dark:text-slate-400">Whatsapp: +971-58-221-0358 (Middle East and Asia Pacific)</p>
-                        <p className="text-gray-600 dark:text-slate-400">Mail: contactus@iceltech.com</p>
+                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-800">Contact</h3>
+                        <p className="text-gray-600">Phone: +1-813-563-2612 (Americas and Canada)</p>
+                        <p className="text-gray-600">Phone: +216-23-189-129 (Africa)</p>
+                        <p className="text-gray-600">Whatsapp: +971-58-221-0358 (Middle East and Asia Pacific)</p>
+                        <p className="text-gray-600">Mail: contactus@iceltech.com</p>
                       </div>
                     </li>
                     <li className="flex">
@@ -143,9 +143,9 @@ const Contact = () => {
                         </svg>
                       </div>
                       <div className="ml-4 mb-4">
-                        <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 dark:text-white">Working
+                        <h3 className="mb-2 text-lg font-medium leading-6 text-8ray-900">Working
                           hours</h3>
-                        <p className="text-gray-600 dark:text-slate-400">Monday - Friday: 08:00 - 17:00</p>
+                        <p className="text-gray-600">Monday - Friday: 08:00 - 17:00</p>
                       </div>
                     </li>
                   </ul>

@@ -28,7 +28,7 @@ const Products = () => {
   ];
 
   return (
-    <div>
+    <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Products"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">

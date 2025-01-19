@@ -20,13 +20,7 @@ const Banner = ({ customTitle }) => {
           className="w-full h-auto"
         >
           {/* Blue Curve */}
-          <path
-            fill="none"
-            stroke="#2563eb" /* Tailwind's text-blue-600 in hex */
-            strokeWidth="30"
-            d="M0,64 C360,128 1080,0 1440,64"
-            className="sm:stroke-4 md:stroke-6 lg:stroke-8"
-          />
+          
           {/* White Parabola */}
           <path
             fill="white"
