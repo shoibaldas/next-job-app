@@ -107,7 +107,7 @@ export default function AzureSolution() {
 
               </Link>
             </div>
-            <div className="absolute bottom-0 right-20 w-1/3 hidden lg:block">
+            <div className="absolute bottom-5 right-10 w-1/3 hidden lg:block">
               <img src="/power.png" alt="Dashboard Preview" className="object-cover" />
             </div>
           </div>
