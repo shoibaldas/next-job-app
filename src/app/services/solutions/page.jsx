@@ -88,7 +88,7 @@ export default function AzureSolution() {
         {/* Hero Section */}
         <div className="relative text-white">
           {/* Hero Content */}
-          <div className="container mx-auto px-6 md:px-12 py-16">
+          <div className="container mx-auto px-6 md:px-12 lg:px-24 py-16">
             <div className="max-w-4xl">
               <h1 className="text-4xl md:text-5xl text-gray-800 font-bold mb-6">
                 Innovative PowerApps and SharePoint Solutions
@@ -114,7 +114,7 @@ export default function AzureSolution() {
         </div>
         {/* Services Section */}
         <div className="py-16 mt-0 md:mt-10 bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 to-blue-800">
-          <div className="container mx-auto px-6 md:px-12">
+          <div className="container mx-auto px-6 md:px-12 lg:px-24">
             <h2 className="text-3xl font-bold text-white text-center mb-12">Our Services</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* PowerApps Development */}
@@ -131,7 +131,7 @@ export default function AzureSolution() {
 
         {/* Industries Section */}
         <div className="py-16 px-4">
-          <div className="container mx-auto px-6 md:px-12">
+          <div className="container mx-auto px-6 md:px-12 lg:px-24">
             <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Industries We Serve</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {industryData.map((industry, index) => (
