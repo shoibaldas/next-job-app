@@ -26,7 +26,7 @@ export default function AzureSolution() {
     },
     {
       title: "SharePoint Customization",
-      description: "Create custom web parts, APIs, and secure permission levels to match your organization’s needs, whether it’s a large shipping company or a local business.",
+      description: "Create custom web parts, APIs, and secure permission levels to match your organizations needs, whether it is a large shipping company or a local business.",
       icon: <FiLayout className="w-12 h-12 text-blue-600 mb-4" />
     },
     {
@@ -155,7 +155,7 @@ export default function AzureSolution() {
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Let's discuss how our PowerApps and SharePoint solutions can help streamline your operations.
+              Let&apos;s discuss how our PowerApps and SharePoint solutions can help streamline your operations.
             </p>
             <Link href="/contact" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
             >
