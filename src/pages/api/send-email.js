@@ -12,8 +12,8 @@ export default async function handler(req, res) {
 
         try {
             await sendgrid.send({
-                to: "codemen.shoibal@gmail.com", // Replace with your Gmail address
-                from: "codemen.shoibal@gmail.com", // Replace with a verified email in SendGrid
+                to: "contactus@iceltech.com", // Replace with your Gmail address
+                from: "contactus@iceltech.com", // Replace with a verified email in SendGrid
                 subject: `New Message from ${name}`,
                 text: `Message from ${name} (${email}): ${message}`,
                 // html: `
