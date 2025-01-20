@@ -108,7 +108,7 @@ const Contact = () => {
                         </p>
                         <ul className="list-disc pl-5 text-gray-600">
                           <li>Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates</li>
-                          <li>Four Seasons Building, Near Intileka building, Beb Bhar, Sfax, Tunisia</li>
+                          <li>Four Seasons Building, Block C, Floor 3, Near Intileka building, Beb Bhar, Sfax, Tunisia</li>
                         </ul>
                       </div>
 
