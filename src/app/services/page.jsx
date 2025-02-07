@@ -59,7 +59,7 @@ const Services = () => {
       <div
         className="
        flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
-        <section className="px-6 md:px-12 lg:px-24 py-16 bg-white">
+        <section className="px-6 md:px-12 lg:px-24 py-16">
           {/* Top Section */}
           <div className="text-center md:text-left mb-12">
             <h2 className="text-blue-600 text-sm font-semibold uppercase">our services</h2>
