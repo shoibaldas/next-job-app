@@ -1,9 +1,10 @@
 'use client';
 import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
-import React from 'react';
+import React, { useState } from 'react';
 import { FiTrash2, FiPlus } from "react-icons/fi";
 import { useForm, useFieldArray } from "react-hook-form";
+import axios from 'axios';
 
 const HireMe = () => {
     const {
@@ -30,10 +31,93 @@ const HireMe = () => {
         name: "projects",
     });
 
-    const onSubmit = (data) => {
-        console.log("Form Data:", data);
-        alert(JSON.stringify(data, null, 2));
-    };
+    const [resume, setResume] = useState(null);
+    const [profilePic, setProfilePic] = useState(null);
+
+    const uploadFileToS3 = async (file, folder) => {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("folder", folder);
+    
+        const response = await axios.post("http://localhost:3307/api/upload", formData, {
+            headers: { "Content-Type": "multipart/form-data" },
+        });
+    
+        return response.data.fileUrl;
+    }; 
+
+    const onSubmit = async (data) => {
+        // try {
+        //     const formData = new FormData();
+        //     formData.append("firstName", data.firstName);
+        //     formData.append("lastName", data.lastName);
+        //     formData.append("email", data.email);
+        //     formData.append("address", data.address);
+        //     formData.append("designation", data.designation);
+        //     formData.append("employer", data.employer);
+        //     formData.append("skills", data.skills);
+        //     formData.append("bio", data.bio);
+        //     formData.append("resume", resume);  // Attach resume file
+        //     formData.append("profilePic", profilePic);  // Attach profile picture
+
+        //     // Append projects dynamically
+        //     data.projects.forEach((project, index) => {
+        //         formData.append(`projects[${index}][title]`, project.title);
+        //         formData.append(`projects[${index}][description]`, project.description);
+        //         formData.append(`projects[${index}][url]`, project.url);
+        //     });
+
+        //     const response = await axios.post('http://localhost:3307/upload', formData, {
+        //         headers: {
+        //             'Content-Type': 'multipart/form-data',
+        //         },
+        //     });
+
+        //     console.log("Response:", response.data);
+        //     alert("Form submitted successfully!");
+        // } catch (error) {
+        //     console.error("Error submitting form:", error);
+        //     alert("Failed to submit the form. Please try again.");
+        // }
+        try {
+        let resumeUrl = null, profilePicUrl = null;
+
+        // Upload Resume if available
+        if (resume) {
+            resumeUrl = await uploadFileToS3(resume, "consultants");
+        }
+
+        // Upload Profile Picture if available
+        if (profilePic) {
+            profilePicUrl = await uploadFileToS3(profilePic, "consultants");
+        }
+
+        // Now send consultant data in JSON format
+        const consultantData = {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            address: data.address,
+            designation: data.designation,
+            employer: data.employer,
+            skills: data.skills,
+            bio: data.bio,
+            resumeUrl,
+            profilePicUrl,
+            projects: data.projects,
+        };
+
+        const response = await axios.post("http://localhost:3307/api/consultants", consultantData, {
+            headers: { "Content-Type": "application/json" },
+        });
+
+        console.log("Response:", response.data);
+        alert("Consultant profile submitted successfully!");
+    } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("Submission failed. Please try again.");
+    }
+};
 
     return (
         <div className="min-h-screen">
@@ -58,7 +142,6 @@ const HireMe = () => {
                                 <p className="text-gray-600 text-lg">
                                     Showcase your talents to the right audience and unlock endless opportunities! Our platform connects skilled professionals like you with businesses and individuals actively seeking your expertise. Gain visibility, grow your network, and land exciting projects—all in one place. Don&apos;t just wait for opportunities—create them! 🚀
                                 </p>
-
                             </div>
                         </div>
 
@@ -66,7 +149,8 @@ const HireMe = () => {
                     <div className="px-6">
                         <div className="max-w-7xl mx-auto bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 p-10 rounded-lg shadow-lgs mt-16">
                             <div className="bg-lightBackground text-lightText p-10 rounded-lg">
-                                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                            {/* onSubmit={handleSubmit(onSubmit)} */}
+                                <form encType="multipart/form-data" className="space-y-4">
                                     {/* First Name & Last Name */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
@@ -152,7 +236,7 @@ const HireMe = () => {
                                             type="file"
                                             accept=".pdf,.doc,.docx"
                                             onChange={(e) => setResume(e.target.files[0])}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 text-white"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
                                         />
                                     </div>
 
@@ -163,7 +247,7 @@ const HireMe = () => {
                                             type="file"
                                             accept="image/*"
                                             onChange={(e) => setProfilePic(e.target.files[0])}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300 text-white"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
                                         />
                                     </div>
 
