@@ -164,7 +164,7 @@ export default Example
 
 //     try {
 //       // Make API call to your Node.js backend /upload route
-//       const res = await fetch('http://localhost:5000/upload', {  // Assuming the backend is running at this port
+//       const res = await fetch('https://next-job-backend.vercel.app:5000/upload', {  // Assuming the backend is running at this port
 //         method: 'POST',
 //         body: formData,
 //       });
