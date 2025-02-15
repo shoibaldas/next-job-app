@@ -21,9 +21,9 @@ const nextConfig = {
     },
   
     // Image optimization (example if you're using images from external domains)
-    // images: {
-    //   domains: ['your-image-cdn.com'], // Add any external image domains here
-    // },
+    images: {
+      domains: ['iceltech-024.s3.us-east-2.amazonaws.com'], // Add any external image domains here
+    },
   
     // Webpack customizations (optional)
     webpack(config) {
