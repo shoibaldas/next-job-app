@@ -38,13 +38,13 @@ const HireMe = () => {
         const formData = new FormData();
         formData.append("file", file);
         formData.append("folder", folder);
-    
-        const response = await axios.post("http://localhost:3307/api/upload", formData, {
+
+        const response = await axios.post("https://next-job-backend.vercel.app/api/upload", formData, {
             headers: { "Content-Type": "multipart/form-data" },
         });
-    
+
         return response.data.fileUrl;
-    }; 
+    };
 
     const onSubmit = async (data) => {
         // try {
@@ -67,7 +67,7 @@ const HireMe = () => {
         //         formData.append(`projects[${index}][url]`, project.url);
         //     });
 
-        //     const response = await axios.post('http://localhost:3307/upload', formData, {
+        //     const response = await axios.post('https://next-job-backend.vercel.app:3307/upload', formData, {
         //         headers: {
         //             'Content-Type': 'multipart/form-data',
         //         },
@@ -80,44 +80,47 @@ const HireMe = () => {
         //     alert("Failed to submit the form. Please try again.");
         // }
         try {
-        let resumeUrl = null, profilePicUrl = null;
+            let resumeUrl = null, profilePicUrl = null;
 
-        // Upload Resume if available
-        if (resume) {
-            resumeUrl = await uploadFileToS3(resume, "consultants");
+            // Upload Resume if available
+            if (resume) {
+                resumeUrl = await uploadFileToS3(resume, "consultants");
+            }
+
+            // Upload Profile Picture if available
+            if (profilePic) {
+                profilePicUrl = await uploadFileToS3(profilePic, "consultants");
+            }
+
+            // Now send consultant data in JSON format
+            const consultantData = {
+                firstName: data.firstName,
+                lastName: data.lastName,
+                email: data.email,
+                contact: data.contact,
+                address: data.address,
+                designation: data.designation,
+                employer: data.employer,
+                skills: data.skills,
+                bio: data.bio,
+                resumeUrl,
+                profilePicUrl,
+                projects: data.projects,
+                isPending: true,
+                isApprove: false
+            };
+
+            const response = await axios.post("https://next-job-backend.vercel.app:3307/api/consultants", consultantData, {
+                headers: { "Content-Type": "application/json" },
+            });
+
+            console.log("Response:", response.data);
+            alert("Consultant profile submitted successfully!");
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Submission failed. Please try again.");
         }
-
-        // Upload Profile Picture if available
-        if (profilePic) {
-            profilePicUrl = await uploadFileToS3(profilePic, "consultants");
-        }
-
-        // Now send consultant data in JSON format
-        const consultantData = {
-            firstName: data.firstName,
-            lastName: data.lastName,
-            email: data.email,
-            address: data.address,
-            designation: data.designation,
-            employer: data.employer,
-            skills: data.skills,
-            bio: data.bio,
-            resumeUrl,
-            profilePicUrl,
-            projects: data.projects,
-        };
-
-        const response = await axios.post("http://localhost:3307/api/consultants", consultantData, {
-            headers: { "Content-Type": "application/json" },
-        });
-
-        console.log("Response:", response.data);
-        alert("Consultant profile submitted successfully!");
-    } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("Submission failed. Please try again.");
-    }
-};
+    };
 
     return (
         <div className="min-h-screen">
@@ -149,8 +152,8 @@ const HireMe = () => {
                     <div className="px-6">
                         <div className="max-w-7xl mx-auto bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 p-10 rounded-lg shadow-lgs mt-16">
                             <div className="bg-lightBackground text-lightText p-10 rounded-lg">
-                            {/* onSubmit={handleSubmit(onSubmit)} */}
-                                <form encType="multipart/form-data" className="space-y-4">
+                                {/* onSubmit={handleSubmit(onSubmit)} */}
+                                <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data" className="space-y-4">
                                     {/* First Name & Last Name */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                         <div>
@@ -172,17 +175,35 @@ const HireMe = () => {
                                         </div>
                                     </div>
 
-                                    {/* Email & Address */}
-                                    <div>
-                                        <label className="block font-medium">Email</label>
-                                        <input
-                                            type="email"
-                                            {...register("email", { required: "Email is required" })}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
-                                        />
-                                        {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-                                    </div>
+                                    {/* Email, Contact & Address */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label className="block font-medium">Email</label>
+                                            <input
+                                                type="email"
+                                                {...register("email", { required: "Email is required" })}
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                                            />
+                                            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                                        </div>
 
+                                        <div>
+                                            <label className="block font-medium">Contact</label>
+                                            <input
+                                                type="tel"
+                                                {...register("phone", {
+                                                    required: "Contact is required",
+                                                    pattern: {
+                                                        value: /^\+?[1-9]\d{1,14}$/,
+                                                        message: "Invalid phone number"
+                                                    }
+                                                })}
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                                                placeholder="+1 (555) 123-4567"
+                                            />
+                                            {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+                                        </div>
+                                    </div>
                                     <div>
                                         <label className="block font-medium">Address</label>
                                         <textarea
@@ -230,25 +251,26 @@ const HireMe = () => {
                                     </div>
 
                                     {/* Resume Upload */}
-                                    <div>
-                                        <label className="block font-medium">Upload Resume</label>
-                                        <input
-                                            type="file"
-                                            accept=".pdf,.doc,.docx"
-                                            onChange={(e) => setResume(e.target.files[0])}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
-                                        />
-                                    </div>
-
-                                    {/* Profile Picture Upload */}
-                                    <div>
-                                        <label className="block font-medium">Upload Profile Picture</label>
-                                        <input
-                                            type="file"
-                                            accept="image/*"
-                                            onChange={(e) => setProfilePic(e.target.files[0])}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
-                                        />
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        {/* Profile Picture Upload */}
+                                        <div>
+                                            <label className="block font-medium">Upload Profile Picture</label>
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                onChange={(e) => setProfilePic(e.target.files[0])}
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                                            />
+                                        </div>
+                                        <div>
+                                            <label className="block font-medium">Upload Resume</label>
+                                            <input
+                                                type="file"
+                                                accept=".pdf,.doc,.docx"
+                                                onChange={(e) => setResume(e.target.files[0])}
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                                            />
+                                        </div>
                                     </div>
 
                                     {/* Projects (Repeater Field) */}
