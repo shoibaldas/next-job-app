@@ -5,8 +5,6 @@ import ContactSection from "@/components/ContactSection";
 import HeroSection from "@/components/HeroSection";
 import ProductSection from "@/components/ProductSection";
 import ServicesSection from "@/components/ServicesSection";
-import Link from "next/link";
-
 
 
 const Home = () => {
