@@ -1,13 +1,15 @@
-// app/dashboard/layout.js (Dashboard Layout)
+// app/dashboard/layout.js
 import PageTransition from "@/components/PageTransition";
+import Drawer from "@/components/Drawer";
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex min-h-screen">
-      {/* Add any sidebar or other components here if necessary */}
-      <div className="flex-1">
-        <PageTransition>{children}</PageTransition>
-      </div>
+    <div>
+      <PageTransition>
+        <Drawer>
+          {children}
+        </Drawer>
+      </PageTransition>
     </div>
   );
 }
