@@ -17,6 +17,7 @@ const HireMe = () => {
             firstName: "",
             lastName: "",
             email: "",
+            contact: "",
             address: "",
             designation: "",
             employer: "",
@@ -97,7 +98,7 @@ const HireMe = () => {
                 firstName: data.firstName,
                 lastName: data.lastName,
                 email: data.email,
-                contact: data.contact,
+                contact: data.phone,
                 address: data.address,
                 designation: data.designation,
                 employer: data.employer,
@@ -107,7 +108,7 @@ const HireMe = () => {
                 profilePicUrl,
                 projects: data.projects,
                 isPending: true,
-                isApprove: false
+                isApproved: false
             };
 
             const response = await axios.post("https://next-job-backend.vercel.app:3307/api/consultants", consultantData, {
@@ -325,9 +326,6 @@ const HireMe = () => {
                         </div>
                     </div>
                 </section>
-
-
-
             </div>
         </div>
     )

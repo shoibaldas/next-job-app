@@ -15,6 +15,7 @@ export default function ConsultantProfile() {
   const customLabels = {
     "/consultants/67a9f25515fb4def81e0990d": `${name}`,
   };
+
   const { id } = useParams();
   const [consultant, setConsultant] = useState(null);
   const [loading, setLoading] = useState(true);

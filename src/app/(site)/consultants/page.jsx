@@ -22,7 +22,6 @@ const Consultants = () => {
       try {
         const response = await axios.get("https://next-job-backend.vercel.app/api/consultant-profiles");
         setConsultants(response.data);
-        console.log(response)
       } catch (err) {
         setError("Failed to fetch consultants data");
         console.error(err);
