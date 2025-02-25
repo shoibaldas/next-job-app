@@ -15,26 +15,32 @@ const About = () => {
       name: "Nasir Uddin",
       role: "CEO",
       image: "/nasir.jpg",
-      socials: { twitter: "#", instagram: "#", linkedin: "#" },
+      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/nasiru/" },
     },
     {
       name: "Mohammad S Jabr",
       role: "CTO",
       image: "/sahr.jpg",
-      socials: { twitter: "#", instagram: "#", linkedin: "#" },
+      socials: { twitter: "#", linkedin: "#" },
     },
     {
       name: "Ikhlas Taleb",
       role: "Marketing Head",
       image: "/iklas.jpg",
-      socials: { twitter: "#", instagram: "#", linkedin: "#" },
+      socials: { twitter: "#", linkedin: "#" },
     },
     {
       name: "Shoibal Das",
       role: "Full Stack Developer",
       image: "/shoibal.jpg",
-      socials: { twitter: "#", instagram: "#", linkedin: "https://www.linkedin.com/in/shoibaldas/" },
+      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/shoibaldas/" },
     },
+    {
+      name: "Nahid Amin",
+      role: "Full Stack Developer",
+      image: "/nahid.jpg",
+      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
+    }
   ];
 
   return (
@@ -108,7 +114,7 @@ const About = () => {
         <section className="w-4/4 px-6 md:px-12 lg:px-24 py-16 bg-white">
           {/* Header Section */}
           <div className="flex justify-center items-center flex-col mb-12">
-            <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Founders</h2></div>
+            {/* <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Founders</h2></div> */}
             <div><h1 className="text-4xl font-bold text-gray-800 mb-4">
               Meet The Brains
             </h1></div>
@@ -149,14 +155,6 @@ const About = () => {
                       rel="noopener noreferrer"
                     >
                       <FaTwitter size={20} />
-                    </Link>
-                    <Link
-                      href={member.socials.instagram}
-                      className="text-gray-400 hover:text-gray-800"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram size={20} />
                     </Link>
                     <Link
                       href={member.socials.linkedin}
