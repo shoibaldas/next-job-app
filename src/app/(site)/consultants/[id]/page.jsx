@@ -2,15 +2,18 @@
 import React, { useEffect, useState } from 'react';
 import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
-import { FaBriefcase, FaMapMarkerAlt, FaCode, FaFilePdf, FaEnvelope } from "react-icons/fa";
+import { FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
 import { FiClock } from "react-icons/fi";
 import { MdBusinessCenter, MdOutlineEventAvailable } from "react-icons/md";
 import { useParams, useSearchParams } from 'next/navigation';
 import Loader from '@/components/Loader';
 import axios from 'axios';
 import Image from 'next/image';
+import Modal from '@/components/Modal';
+import { useForm } from 'react-hook-form';
 
 export default function ConsultantProfile() {
+
   const searchParams = useSearchParams();
   const name = searchParams.get("name");
 
@@ -22,9 +25,33 @@ export default function ConsultantProfile() {
   const [consultant, setConsultant] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
   const formatText = (text) => {
     return text.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
+  const onSubmit = async (data) => {
+    const payload = {
+      consultantId: consultant._id,
+      email: data.email,
+      message: data.message,
+      isRead: false
+    };
+  
+    try {
+      
+      await axios.post('https://next-job-backend.vercel.app/api/hiring-request', payload);
+      
+      setIsModalOpen(false);
+      alert("Request submitted successfully!");
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form.");
+    }
   };
 
   useEffect(() => {
@@ -91,7 +118,7 @@ export default function ConsultantProfile() {
               </div>
             </div>
             <div>
-              <button
+              <button onClick={() => setIsModalOpen(true)}
                 className="flex items-center text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg"
               >
                 <MdBusinessCenter className="mr-2" /> Hire
@@ -124,7 +151,7 @@ export default function ConsultantProfile() {
           </div>
 
           <div className='flex items-center gap-2 mt-3'>
-            
+
           </div>
 
           {/* Skills */}
@@ -190,7 +217,49 @@ export default function ConsultantProfile() {
 
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        headerContent="Consultant Hire Request"
+        bodyContent={
+          <form id="modal-form" onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <label htmlFor="email" className="block font-medium text-gray-700">Email</label>
+              <input
+                id="email"
+                type="email"
+                {...register('email', { required: "Email is required", pattern: { value: /\S+@\S+\.\S+/, message: "Invalid email address" } })}
+                className="w-full p-3 border border-gray-300 rounded-lg mt-1 text-gray-800"
+              />
+              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+            </div>
 
+            <div className="mt-4">
+              <label htmlFor="message" className="block font-medium text-gray-700">Message</label>
+              <textarea
+                id="message"
+                {...register('message', { required: "Message is required" })}
+                className="w-full p-3 border border-gray-300 rounded-lg mt-1 text-gray-800"
+              ></textarea>
+              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+            </div>
+          </form>
+        }
+        footerContent={
+          <>
+            <button onClick={() => setIsModalOpen(false)} className="px-4 py-2 bg-gray-400 text-white rounded-lg">
+              Cancel
+            </button>
+            <button
+              type="submit"
+              form="modal-form"
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg">
+              Save
+            </button>
+          </>
+        }
+      >
+      </Modal>
     </div>
   )
 }

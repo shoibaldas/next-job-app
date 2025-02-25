@@ -12,6 +12,7 @@ const HireMe = () => {
         control,
         handleSubmit,
         formState: { errors },
+        reset
     } = useForm({
         defaultValues: {
             firstName: "",
@@ -94,6 +95,7 @@ const HireMe = () => {
 
             console.log("Response:", response.data);
             alert("Consultant profile submitted successfully!");
+            reset();
             window.location.reload();
         } catch (error) {
             console.error("Error submitting form:", error);
