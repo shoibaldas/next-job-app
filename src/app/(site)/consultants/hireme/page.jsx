@@ -96,7 +96,7 @@ const HireMe = () => {
             console.log("Response:", response.data);
             alert("Consultant profile submitted successfully!");
             reset();
-            window.location.reload();
+            // window.location.reload();
         } catch (error) {
             console.error("Error submitting form:", error);
             alert("Submission failed. Please try again.");

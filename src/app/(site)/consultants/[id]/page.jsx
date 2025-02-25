@@ -218,6 +218,7 @@ export default function ConsultantProfile() {
         </div>
       </div>
       <Modal
+        maxWidth="max-w-lg" 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         headerContent="Consultant Hire Request"
