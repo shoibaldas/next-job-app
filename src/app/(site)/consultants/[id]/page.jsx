@@ -36,15 +36,16 @@ export default function ConsultantProfile() {
   const onSubmit = async (data) => {
     const payload = {
       consultantId: consultant._id,
+      name: data.name,
       email: data.email,
       message: data.message,
       isRead: false
     };
-  
+
     try {
-      
+
       await axios.post('https://next-job-backend.vercel.app/api/hiring-request', payload);
-      
+
       setIsModalOpen(false);
       alert("Request submitted successfully!");
       reset();
@@ -218,12 +219,20 @@ export default function ConsultantProfile() {
         </div>
       </div>
       <Modal
-        maxWidth="max-w-lg" 
+        maxWidth="max-w-lg"
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         headerContent="Consultant Hire Request"
         bodyContent={
           <form id="modal-form" onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <label className="block font-medium text-gray-700">Your Full Name</label>
+              <input
+                {...register("name", { required: "First name is required" })}
+                className="w-full p-3 border border-gray-300 rounded-lg mt-1 text-gray-800"
+              />
+              {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
+            </div>
             <div>
               <label htmlFor="email" className="block font-medium text-gray-700">Email</label>
               <input
