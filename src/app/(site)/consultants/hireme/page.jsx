@@ -21,15 +21,22 @@ const HireMe = () => {
             address: "",
             designation: "",
             employer: "",
-            skills: "",
+            skills: [{ name: "" }],
             bio: "",
             projects: [{ title: "", description: "", url: "" }],
+            availability: "Immediate",
+            workHours: "As_Per_Customer_Requirement",
         },
     });
 
     const { fields, append, remove } = useFieldArray({
         control,
         name: "projects",
+    });
+
+    const { fields: skillFields, append: appendSkill, remove: removeSkill } = useFieldArray({
+        control,
+        name: "skills",
     });
 
     const [resume, setResume] = useState(null);
@@ -48,38 +55,6 @@ const HireMe = () => {
     };
 
     const onSubmit = async (data) => {
-        // try {
-        //     const formData = new FormData();
-        //     formData.append("firstName", data.firstName);
-        //     formData.append("lastName", data.lastName);
-        //     formData.append("email", data.email);
-        //     formData.append("address", data.address);
-        //     formData.append("designation", data.designation);
-        //     formData.append("employer", data.employer);
-        //     formData.append("skills", data.skills);
-        //     formData.append("bio", data.bio);
-        //     formData.append("resume", resume);  // Attach resume file
-        //     formData.append("profilePic", profilePic);  // Attach profile picture
-
-        //     // Append projects dynamically
-        //     data.projects.forEach((project, index) => {
-        //         formData.append(`projects[${index}][title]`, project.title);
-        //         formData.append(`projects[${index}][description]`, project.description);
-        //         formData.append(`projects[${index}][url]`, project.url);
-        //     });
-
-        //     const response = await axios.post('https://next-job-backend.vercel.app:3307/upload', formData, {
-        //         headers: {
-        //             'Content-Type': 'multipart/form-data',
-        //         },
-        //     });
-
-        //     console.log("Response:", response.data);
-        //     alert("Form submitted successfully!");
-        // } catch (error) {
-        //     console.error("Error submitting form:", error);
-        //     alert("Failed to submit the form. Please try again.");
-        // }
         try {
             let resumeUrl = null, profilePicUrl = null;
 
@@ -102,21 +77,24 @@ const HireMe = () => {
                 address: data.address,
                 designation: data.designation,
                 employer: data.employer,
-                skills: data.skills,
+                skills: data.skills.map(skill => skill.name),
                 bio: data.bio,
                 resumeUrl,
                 profilePicUrl,
                 projects: data.projects,
+                availability: data.availability,
+                workHours: data.workHours,
                 isPending: true,
                 isApproved: false
             };
 
-            const response = await axios.post("https://next-job-backend.vercel.app:3307/api/consultants", consultantData, {
+            const response = await axios.post("https://next-job-backend.vercel.app/api/consultants", consultantData, {
                 headers: { "Content-Type": "application/json" },
             });
 
             console.log("Response:", response.data);
             alert("Consultant profile submitted successfully!");
+            window.location.reload();
         } catch (error) {
             console.error("Error submitting form:", error);
             alert("Submission failed. Please try again.");
@@ -232,15 +210,32 @@ const HireMe = () => {
                                         </div>
                                     </div>
 
-                                    {/* Skills & Bio */}
+                                    {/* Skills (Repeater Field) */}
                                     <div>
                                         <label className="block font-medium">Skills</label>
-                                        <input
-                                            {...register("skills")}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
-                                            placeholder="E.g. JavaScript, React, Next.js"
-                                        />
+                                        {skillFields.map((item, index) => (
+                                            <div key={item.id} className="flex items-center gap-2 mb-2">
+                                                <input
+                                                    {...register(`skills.${index}.name`, { required: "Skill is required" })}
+                                                    className="w-3/4 p-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300"
+                                                    placeholder="Skill Name"
+                                                />
+                                                {skillFields.length > 1 && ( // Prevent removal if it's the last skill
+                                                    <button type="button" onClick={() => removeSkill(index)} className="text-red-500">
+                                                        <FiTrash2 />
+                                                    </button>
+                                                )}
+                                            </div>
+                                        ))}
+                                        <button
+                                            type="button"
+                                            onClick={() => appendSkill({ name: "" })}
+                                            className="bg-blue-600 text-white px-3 py-2 rounded-lg flex items-center mt-2 text-sm"
+                                        >
+                                            <FiPlus className="mr-2" /> Add Skill
+                                        </button>
                                     </div>
+
 
                                     <div>
                                         <label className="block font-medium">Bio</label>
@@ -312,6 +307,28 @@ const HireMe = () => {
                                         >
                                             <FiPlus className="mr-2" /> Add Project
                                         </button>
+                                    </div>
+
+                                    {/* Availability (Radio Buttons) */}
+                                    <div>
+                                        <label className="block font-medium">Availability</label>
+                                        {["Immediate", "Two_Weeks", "One_Month", "After_One_Month"].map(value => (
+                                            <label key={value} className="block">
+                                                <input type="radio" value={value} {...register("availability")} className="mr-2" />
+                                                {value.replace(/_/g, " ")}
+                                            </label>
+                                        ))}
+                                    </div>
+
+                                    {/* Work Hours (Radio Buttons) */}
+                                    <div>
+                                        <label className="block font-medium">Work Hours</label>
+                                        {["As_Per_Customer_Requirement", "Mon_-_Fri", "Sat_-_Sun"].map(value => (
+                                            <label key={value} className="block">
+                                                <input type="radio" value={value} {...register("workHours")} className="mr-2" />
+                                                {value.replace(/_/g, " ")}
+                                            </label>
+                                        ))}
                                     </div>
 
                                     {/* Submit Button */}

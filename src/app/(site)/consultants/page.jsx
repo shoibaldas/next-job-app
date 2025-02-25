@@ -7,7 +7,8 @@ import axios from 'axios';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
-import { FiPlus, FiSearch } from "react-icons/fi";
+import { FiPlus, FiSearch, FiClock } from "react-icons/fi";
+import { MdOutlineEventAvailable } from "react-icons/md";
 
 const Consultants = () => {
   usePageTitle("Consultants");
@@ -16,12 +17,20 @@ const Consultants = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const formatText = (text) => {
+    return text.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
   useEffect(() => {
     // Make the API call when the component is mounted
     const fetchConsultants = async () => {
       try {
         const response = await axios.get("https://next-job-backend.vercel.app/api/consultant-profiles");
-        setConsultants(response.data);
+
+        const filteredConsultants = response.data.filter(
+          (consultant) => consultant.isPending && !consultant.isApproved
+        );
+        setConsultants(filteredConsultants);
       } catch (err) {
         setError("Failed to fetch consultants data");
         console.error(err);
@@ -109,18 +118,27 @@ const Consultants = () => {
                   <p className="text-gray-500 mt-2">{member.designation}</p>
                   <div className="mt-2">
                     <span className="mx-2">Skills:</span>
-                    {member.skills
-                      .split(',')
-                      .slice(0, 5)
-                      .map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`inline-block bg-${getSkillColor(index)}-100 text-${getSkillColor(index)}-800 rounded-full px-3 py-1 text-sm font-medium mr-2`}
-                        >
-                          {skill.trim()}
-                        </span>
-                      ))}
+                    {member.skills.slice(0, 5).map((skill, index) => (
+                      <span
+                        key={index}
+                        className={`inline-block bg-${getSkillColor(index)}-100 text-${getSkillColor(index)}-800 rounded-full px-3 py-1 text-sm font-medium mr-2`}
+                      >
+                        {skill} {/* Access skill.name instead of splitting a string */}
+                      </span>
+                    ))}
+
                   </div>
+                  <div className='flex justify-between items-center gap-2 mt-3'>
+                    <div className="flex items-center gap-1">
+                      <FiClock size={20} color='purple' />
+                      <span>{formatText(member.workHours)}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MdOutlineEventAvailable size={20} color='green'/>
+                      <span>{formatText(member.availability)}</span>
+                    </div>
+                  </div>
+
                 </div>
 
                 {/* View Button - Only visible when hovering */}
