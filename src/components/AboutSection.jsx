@@ -52,7 +52,7 @@ const AboutSection = () => {
                     </div>
                 </div>
                 <p className="text-base text-gray-700 md:text-lg lg:text-xl mb-6">
-                    ICEL TECH LLC-FZ UAE is committed to providing innovative IT products, services, and human resources with a focus on best security practices. We specialize in cybersecurity, digital marketing, project management, and software development.
+                    ICEL TECH LLC is committed to providing innovative IT products, services, and human resources with a focus on best security practices. We specialize in cybersecurity, digital marketing, project management, and software development.
                 </p>
                 <div>
                     <Link href="/about" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 duration-200 text-white bg-blue-600 hover:bg-blue-700 transition"
