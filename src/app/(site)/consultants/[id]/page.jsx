@@ -4,7 +4,7 @@ import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
 import { FaBriefcase, FaMapMarkerAlt } from "react-icons/fa";
 import { FiClock } from "react-icons/fi";
-import { MdBusinessCenter, MdOutlineEventAvailable } from "react-icons/md";
+import { MdBusinessCenter, MdOutlineEventAvailable, MdOutlineSubtitles } from "react-icons/md";
 import { useParams, useSearchParams } from 'next/navigation';
 import Loader from '@/components/Loader';
 import axios from 'axios';
@@ -73,10 +73,10 @@ export default function ConsultantProfile() {
     fetchConsultant();
   }, [id]);
 
-  const getSkillColor = (index) => {
-    const colors = ['blue', 'green', 'yellow', 'red', 'purple', 'indigo', 'teal', 'orange', 'pink'];
-    return colors[index % colors.length]; // Cycle through colors
-  };
+  // const getSkillColor = (index) => {
+  //   const colors = ['blue', 'green', 'yellow', 'red', 'purple', 'indigo', 'teal', 'orange', 'pink'];
+  //   return colors[index % colors.length]; // Cycle through colors
+  // };
 
   if (loading) return <Loader></Loader>;
   if (error) return <div className="text-red-500">{error}</div>;
@@ -109,12 +109,13 @@ export default function ConsultantProfile() {
                 <h2 className="text-2xl font-bold text-gray-800">
                   {consultant.firstName} {consultant.lastName}
                 </h2>
-                <p className="text-gray-600">{consultant.designation}</p>
+                <p className="text-gray-600 flex items-center justify-center md:justify-start">
+                  <MdOutlineSubtitles className="mr-2 text-purple-900" size={20} />{consultant.designation}</p>
                 <p className="text-gray-500 flex items-center justify-center md:justify-start">
-                  <FaBriefcase className="mr-2 text-blue-500" /> {consultant.employer}
+                  <FaBriefcase className="mr-2 text-blue-500" size={20} /> {consultant.employer ? consultant.employer : "N/A"}
                 </p>
                 <p className="text-gray-500 flex items-center justify-center md:justify-start">
-                  <FaMapMarkerAlt className="mr-2 text-red-500" /> {consultant.address}
+                  <FaMapMarkerAlt className="mr-2 text-red-500" size={20} /> {consultant.address}
                 </p>
               </div>
             </div>
@@ -159,14 +160,16 @@ export default function ConsultantProfile() {
           <div className="mt-6">
             <h3 className="text-lg font-semibold text-gray-700">Skills</h3>
             <p className="text-blue-600 flex items-center mt-2">
-              {consultant.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className={`inline-block bg-${getSkillColor(index)}-100 text-${getSkillColor(index)}-800 rounded-full px-3 py-1 text-sm font-medium mr-2`}
-                >
-                  {skill} {/* Access skill.name instead of splitting a string */}
-                </span>
-              ))}
+              {consultant.skills.map((skill, index) => {
+                return (
+                  <span
+                    key={index}
+                    className={`inline-block bg-blue-100 text-gray-700 rounded-md px-3 py-2 text-sm font-medium mr-2`}
+                  >
+                    {skill}
+                  </span>
+                );
+              })}
             </p>
           </div>
 
