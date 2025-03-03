@@ -1,6 +1,7 @@
 'use client';
 import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
+import ConsultantCard from '@/components/ConsultantCard';
 import usePageTitle from '@/components/hooks/usePageTitle';
 import Loader from '@/components/Loader';
 import axios from 'axios';
@@ -16,10 +17,6 @@ const Consultants = () => {
   const [consultants, setConsultants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const formatText = (text) => {
-    return text.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
-  };
 
   useEffect(() => {
     // Make the API call when the component is mounted
@@ -60,7 +57,7 @@ const Consultants = () => {
         </div>
       </div>
       <div className="bg-lightBackground text-lightText">
-        <section className="px-4 sm:px-6 md:px-12 lg:px-24 py-12">
+        <section className="px-4 sm:px-6 md:px-12 lg:px-24 pt-12">
           {/* Top Section */}
           <div className="mb-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -95,68 +92,16 @@ const Consultants = () => {
           <h1 className="text-5xl font-bold mb-4">Coming Soon!</h1>
           <p className="text-lg mb-8">We&apos;re working hard to bring you something amazing. Stay tuned!</p>
         </section> */}
-        <section className="min-h-screen lg:px-24">
+        <section className="min-h-screen px-6 lg:px-24 py-2">
           {consultants.length > 0 ?
             (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mx-auto">
+              <div className="card-container">
                 {consultants.map((member) => (
-                  <div
-                    key={member.id}
-                    className="bg-white shadow-lg rounded-lg overflow-hidden text-center group relative transition-all duration-300"
-                  >
-                    {/* Darken the whole card (including image) on hover */}
-                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-
-                    <div className="relative w-full h-96">
-                      <img
-                        src={member.profilePicUrl}
-                        alt={member.fullName}
-                        className="w-full h-full object-cover transition-opacity duration-300 group-hover:opacity-50"
-                      />
-                    </div>
-
-                    <div className="p-6">
-                      <h3 className="text-lg font-semibold text-gray-800">{member.fullName}</h3>
-                      <p className="text-gray-500 mt-2">{member.designation}</p>
-                      <div className="mt-2">
-                        <span className="mx-2">Skills:</span>
-                        {member.skills.slice(0, 5).map((skill, index) => (
-                          <span
-                            key={index}
-                            className={`inline-block bg-${getSkillColor(index)}-100 text-${getSkillColor(index)}-800 rounded-full px-3 py-1 text-sm font-medium mr-2`}
-                          >
-                            {skill} {/* Access skill.name instead of splitting a string */}
-                          </span>
-                        ))}
-
-                      </div>
-                      <div className='flex justify-between items-center gap-2 mt-3'>
-                        <div className="flex items-center gap-1">
-                          <FiClock size={20} color='purple' />
-                          <span>{formatText(member.workHours)}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MdOutlineEventAvailable size={20} color='green' />
-                          <span>{formatText(member.availability)}</span>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    {/* View Button - Only visible when hovering */}
-                    <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Link
-                        href={`/consultants/${member.id}?name=${member.fullName}`}
-                        className="px-4 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300"
-                      >
-                        View
-                      </Link>
-                    </div>
-                  </div>
+                  <ConsultantCard key={member.id} member={member} />
                 ))}
               </div>
             ) : <div className='flex justify-center'>
-                <h1>No data found</h1>
+              <h1>No data found</h1>
             </div>
           }
         </section>

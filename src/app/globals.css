@@ -94,3 +94,190 @@ html {
   background-color: #1e3a8a; /* Same as hero background */
   clip-path: ellipse(50% 100% at 50% 0%); /* Adjust for desired curve */
 }
+
+/* === Grid Layout === */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* === Card Styling === */
+.card {
+  position: relative;
+  width: 300px;
+  height: 450px; /* Fixed height for uniformity */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* === Dark Overlay on Hover === */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+/* === Image Section === */
+.card-image {
+  width: 100%;
+  height: 65%;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-image img {
+  opacity: 0.5;
+}
+
+/* === Card Content === */
+.card-content {
+  padding: 14px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title & Role */
+.card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-role {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* === Skills Section === */
+.card-skills {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap; /* Ensure wrapping to avoid overflow */
+}
+
+/* Skills Label */
+.skills-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #444;
+  white-space: nowrap;
+}
+
+/* Container for Skill Badges */
+.skills-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap; /* Allow badges to move to a new line if needed */
+}
+
+/* Individual Skill Badge */
+.skill-badge {
+  background: #f1f1f1;
+  color: #333;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* "+X" More Skills Badge */
+.more-skills {
+  background: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  min-width: 32px; /* Ensure consistent button size */
+  text-align: center;
+}
+
+/* === Footer Section === */
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+}
+
+/* === View Button === */
+.card-button {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .card-button {
+  opacity: 1;
+}
+
+.card-button a {
+  background: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.card-button a:hover {
+  background: #0056b3;
+}
+

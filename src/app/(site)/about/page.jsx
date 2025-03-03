@@ -5,7 +5,7 @@ import usePageTitle from '@/components/hooks/usePageTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
 
 const About = () => {
   usePageTitle("About");
@@ -15,31 +15,37 @@ const About = () => {
       name: "Nasir Uddin",
       role: "CEO",
       image: "/nasir.jpg",
-      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/nasiru/" },
+      socials: { linkedin: "https://www.linkedin.com/in/nasiru/" },
     },
     {
       name: "Mohammad S Jabr",
       role: "CTO",
       image: "/sahr.jpg",
-      socials: { twitter: "#", linkedin: "#" },
+      socials: { linkedin: "#" },
     },
     {
       name: "Ikhlas Taleb",
       role: "Marketing Head",
       image: "/iklas.jpg",
-      socials: { twitter: "#", linkedin: "#" },
+      socials: { linkedin: "#" },
+    },
+    {
+      name: "Taufiqul Wahab",
+      role: "Project Manager",
+      image: "/wahab.jpg",
+      socials: { linkedin: "#" },
     },
     {
       name: "Shoibal Das",
       role: "Full Stack Developer",
       image: "/shoibal.jpg",
-      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/shoibaldas/" },
+      socials: { linkedin: "https://www.linkedin.com/in/shoibaldas/" },
     },
     {
       name: "Nahid Amin",
       role: "Full Stack Developer",
       image: "/nahid.jpg",
-      socials: { twitter: "#", linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
+      socials: { linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
     }
   ];
 
@@ -128,47 +134,39 @@ const About = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="w-full sm:w-[300px] flex flex-col items-center text-center bg-white shadow-md rounded-lg transition-transform transform hover:scale-105"
+                className="w-full sm:w-[300px] flex flex-col items-center text-center bg-white shadow-md rounded-lg transition-transform transform hover:scale-105 relative overflow-hidden group"
               >
                 {/* Image */}
-                <div className="w-full h-96 mb-4 relative overflow-hidden rounded-t-lg">
+                <div className="w-full h-96 relative overflow-hidden rounded-t-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
                     className="object-cover"
                     layout="fill"
-                  // objectFit="cover"
                   />
                 </div>
-                <div className='p-3'>
+                <div className="p-3">
                   {/* Name and Role */}
                   <h3 className="text-lg font-semibold text-gray-800">{member.name}</h3>
-                  <p className="text-sm text-gray-600">
-                    {member.role}
-                  </p>
-                  {/* Social Media Links */}
-                  <div className="flex items-center justify-center gap-4 mt-4">
-                    <Link
-                      href={member.socials.twitter}
-                      className="text-gray-400 hover:text-gray-800"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaTwitter size={20} />
-                    </Link>
-                    <Link
-                      href={member.socials.linkedin}
-                      className="text-gray-400 hover:text-gray-800"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin size={20} />
-                    </Link>
-                  </div>
+                  <p className="text-sm text-gray-600">{member.role}</p>
+                </div>
+
+                {/* Social Media Links */}
+                {/* Social Media Links */}
+                <div className="absolute top-1/2 right-[-50px] transform -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:right-4 group-hover:opacity-100">
+                  <Link
+                    href={member.socials.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full shadow-md hover:bg-blue-800 transition-colors"
+                  >
+                    <FaLinkedin size={20} />
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
+
         </section>
       </div>
     </div>
