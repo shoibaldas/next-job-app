@@ -90,20 +90,20 @@ const HeroSection = () => {
             <div className="absolute inset-x-0 flex justify-center bottom-48 space-x-4">
                 <div>
                     <Link
-                        href="#"
+                        href="/services"
                         className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition"
                     >
                         Get Started
                     </Link>
                 </div>
-                <div>
+                {/* <div>
                     <Link
                         href="#"
                         className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition"
                     >
                         Learn More
                     </Link>
-                </div>
+                </div> */}
             </div>
 
             {/* External Navigation Buttons */}
