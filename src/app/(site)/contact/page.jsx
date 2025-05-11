@@ -108,7 +108,7 @@ const Contact = () => {
                         </p>
                         <ul className="list-disc pl-5 text-gray-600">
                           <li>Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates</li>
-                          <li>Four Seasons Building, Block C, Floor 3, Near Intileka building, Beb Bhar, Sfax, Tunisia</li>
+                          {/* <li>Four Seasons Building, Block C, Floor 3, Near Intileka building, Beb Bhar, Sfax, Tunisia</li> */}
                         </ul>
                       </div>
 
@@ -129,6 +129,7 @@ const Contact = () => {
                         <h3 className="mb-2 text-lg font-medium leading-6 text-gray-800">Contact</h3>
                         <p className="text-gray-600">Phone: +1-813-563-2612 (Americas and Canada)</p>
                         <p className="text-gray-600">Phone: +216-23-189-129 (Africa)</p>
+                        <p className="text-gray-600">Phone: +61-423-321-148 (Asia Pacific)</p>
                         <p className="text-gray-600">Whatsapp: +971-58-221-0358 (Middle East and Asia Pacific)</p>
                         <p className="text-gray-600">Mail: contactus@iceltech.com</p>
                       </div>
@@ -145,7 +146,7 @@ const Contact = () => {
                       <div className="ml-4 mb-4">
                         <h3 className="mb-2 text-lg font-medium leading-6 text-8ray-900">Working
                           hours</h3>
-                        <p className="text-gray-600">Monday - Friday: 08:00 - 17:00</p>
+                        <p className="text-gray-600">Monday - Friday 24 Hours.</p>
                       </div>
                     </li>
                   </ul>

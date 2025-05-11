@@ -36,15 +36,15 @@ const Products = () => {
         </div>
       </div>
       <div className="flex flex-col items-center justify-center bg-lightBackground text-lightText px-6 md:px-12 lg:px-24 py-16">
-      <div className="flex justify-center items-center flex-col mb-12">
-            <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Our Products</h2></div>
-            <div><h1 className="text-4xl font-bold text-gray-800 mb-4">
-              Browse Our Products
-            </h1></div>
-            {/* <div><p className="text-gray-600 text-lg">
+        <div className="flex justify-center items-center flex-col mb-12">
+          <div><h2 className="text-blue-600 text-sm font-semibold uppercase">Our Products</h2></div>
+          <div><h1 className="text-4xl font-bold text-gray-800 mb-4">
+            Browse Our Products
+          </h1></div>
+          {/* <div><p className="text-gray-600 text-lg">
               These people work on making our product best.
             </p></div> */}
-          </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mb-0 xl:mb-48">
           {productData.map((product, index) => {
@@ -58,15 +58,16 @@ const Products = () => {
                   </p>
                   <div className="my-6">
                     <Link
-                        href="/products"
-                        className="inline-flex items-center font-semibold px-6 py-3 transition duration-200 text-white bg-blue-600 hover:bg-blue-700"
+                      href="#"
+                      className="inline-flex items-center font-semibold px-6 py-3 transition duration-200 text-white bg-blue-600 hover:bg-blue-700"
                     >
-                        <span className="mx-2">Read More</span>
+                      <span className="mx-2">Coming Soon</span>
+                      {/* <span className="mx-2">Read More</span>
                         <div className="text-2xl">
                             <MdNavigateNext />
-                        </div>
+                        </div> */}
                     </Link>
-                </div>
+                  </div>
                 </div>
               </div>
             );

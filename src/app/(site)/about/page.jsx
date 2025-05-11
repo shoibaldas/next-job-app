@@ -24,8 +24,14 @@ const About = () => {
       socials: { linkedin: "#" },
     },
     {
+      name: "Mouad EL Jamil",
+      role: "CTO",
+      image: "/avatar.png",
+      socials: { linkedin: "https://www.linkedin.com/in/mouadeljamil/" },
+    },
+    {
       name: "Ikhlas Taleb",
-      role: "Marketing Head",
+      role: "Functional Designer and Analyst",
       image: "/iklas.jpg",
       socials: { linkedin: "#" },
     },
@@ -37,7 +43,7 @@ const About = () => {
     },
     {
       name: "Shoibal Das",
-      role: "Full Stack Developer",
+      role: "Software Engineer Lead",
       image: "/shoibal.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/shoibaldas/" },
     },
@@ -46,13 +52,31 @@ const About = () => {
       role: "Full Stack Developer",
       image: "/nahid.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
+    },
+    {
+      name: "Shihab Shahin",
+      role: "UI/UX Designer",
+      image: "/avatar.png",
+      socials: { linkedin: "https://www.linkedin.com/in/hasinshihab/" },
+    },
+    {
+      name: "Nazmus Shakib",
+      role: "Product Marketing | Worldwide",
+      image: "/sakib.jpg",
+      socials: { linkedin: "#" },
+    },
+    {
+      name: "Nazmun Rumi",
+      role: "Marketing Head | Asia Pacific",
+      image: "/avatar.png",
+      socials: { linkedin: "#" },
     }
   ];
 
   return (
     <div className='min-h-screen'>
       <div className='relative'>
-        <Banner customTitle="About ICEL TECH LLC-FZ"></Banner>
+        <Banner customTitle="About ICEL TECH LLC"></Banner>
         <div className="absolute top-40 xl:top-52 px-24 md:px-32">
           <BreadCrumbs></BreadCrumbs>
         </div>
@@ -72,7 +96,7 @@ const About = () => {
               </div>
               <div className="w-full lg:w-1/2 px-5">
                 <p className="text-gray-600 text-lg">
-                  &quot;At ICEL TECH LLC-FZ UAE, we believe in making life simpler with our philosophy of &apos;I Choose Easy Life.&apos; Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly.&quot;
+                  &quot;At ICEL TECH LLC, we believe in making life simpler with our philosophy of &apos;I Choose Easy Life.&apos; Our innovative IT products, cutting-edge services, and global expertise are designed to streamline your daily operations and empower your business. With a focus on security, trust, and reliability, we help you focus on what matters most—achieving your goals effortlessly.&quot;
                 </p>
 
               </div>
@@ -93,7 +117,7 @@ const About = () => {
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-6">
                 <h3 className="text-white text-2xl font-bold mb-2">Our Story</h3>
                 <p className="text-gray-300 text-sm">
-                  ICEL TECH LLC-FZ UAE is driven by the philosophy of &apos;I Choose Easy Life.&apos; We strive to make daily life easier by offering innovative IT products, cutting-edge services, and global expertise. We prioritize security in all we do, ensuring trust and reliability.                </p>
+                  ICEL TECH LLC is driven by the philosophy of &apos;I Choose Easy Life.&apos; We strive to make daily life easier by offering innovative IT products, cutting-edge services, and global expertise. We prioritize security in all we do, ensuring trust and reliability.                </p>
               </div>
             </div>
 

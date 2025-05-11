@@ -98,7 +98,7 @@ export default async function handler(req, res) {
 
                                 <!-- Footer -->
                                 <div class="footer">
-                                    <p>© 2025 ICEL TECH LLC-FZ UAE. All rights reserved.</p>
+                                    <p>©2025 ICEL TECH LLC. All rights reserved.</p>
                                 </div>
                             </div>
                         </body>
