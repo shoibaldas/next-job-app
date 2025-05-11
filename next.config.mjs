@@ -22,7 +22,14 @@ const nextConfig = {
   
     // Image optimization (example if you're using images from external domains)
     images: {
-      domains: ['iceltech-024.s3.us-east-2.amazonaws.com'], // Add any external image domains here
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'iceltech-024.s3.us-east-2.amazonaws.com',
+          port: '',
+          pathname: '/**',
+        },
+      ],
     },
   
     // Webpack customizations (optional)
