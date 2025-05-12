@@ -68,8 +68,8 @@ const About = () => {
     {
       name: "Nazmun Rumi",
       role: "Marketing Head | Asia Pacific",
-      image: "/avatar.png",
-      socials: { linkedin: "#" },
+      image: "/rumi.jpeg",
+      socials: { linkedin: "https://www.linkedin.com/in/nazmun-nahar-a74065254/" },
     }
   ];
 
