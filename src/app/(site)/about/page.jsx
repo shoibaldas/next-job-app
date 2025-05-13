@@ -39,7 +39,7 @@ const About = () => {
       name: "Taufiqul Wahab",
       role: "Project Manager",
       image: "/wahab.jpg",
-      socials: { linkedin: "#" },
+      socials: { linkedin: "https://www.linkedin.com/in/mdtaufiqulwahab/" },
     },
     {
       name: "Shoibal Das",
@@ -63,7 +63,7 @@ const About = () => {
       name: "Nazmus Shakib",
       role: "Product Marketing | Worldwide",
       image: "/sakib.jpg",
-      socials: { linkedin: "#" },
+      socials: { linkedin: "https://www.linkedin.com/in/md-nazmus-sakib-864659125/" },
     },
     {
       name: "Nazmun Rumi",
