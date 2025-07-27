@@ -67,13 +67,13 @@ const ServicesSection = () => {
                 <div className="text-center mb-12">
                     <div className='flex justify-center'>
                         <Heading
-                        level={2}
-                        color="text-white"
-                        fontFamily="akira"
-                        className="uppercase mb-4 text-4xl md:text-5xl"
-                    >
-                        OUR SERVICES<br />
-                    </Heading>
+                            level={2}
+                            color="text-white"
+                            fontFamily="akira"
+                            className="uppercase mb-4 text-4xl md:text-5xl"
+                        >
+                            OUR SERVICES<br />
+                        </Heading>
                     </div>
                     <Text
                         size="lg"
@@ -84,17 +84,17 @@ const ServicesSection = () => {
                     </Text>
                     <div className='mt-12'>
                         <Link href="/services">
-                        <Button
-                            variant="secondary"
-                            size="md"
-                            icon={<FiArrowRight />}
-                            iconPosition="right"
-                            asChild
-                        >
-                            Explore All Services
+                            <Button
+                                variant="secondary"
+                                size="md"
+                                icon={<FiArrowRight />}
+                                iconPosition="right"
+                                asChild
+                            >
+                                Explore All Services
 
-                        </Button>
-                    </Link>
+                            </Button>
+                        </Link>
                     </div>
 
                 </div>
@@ -104,13 +104,41 @@ const ServicesSection = () => {
                     {servicesData.map((service, index) => (
                         <div
                             key={index}
-                            className={`bg-white p-6 shadow-md`}
+                            className="bg-white p-6 shadow-md hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
+                            style={{ minWidth: '280px', minHeight: '240px' }}
                         >
-                            <div className="flex items-center mb-8">
-                                <div className="w-12 h-12 flex items-center justify-center">
+                            {/* Main icon that moves and fades on hover */}
+                            <div className="flex items-center mb-8 transition-all duration-300 group-hover:absolute group-hover:bottom-5 group-hover:right-5 group-hover:opacity-50 group-hover:mb-0">
+                                <div className="w-12 h-12 flex items-center justify-center rounded-lg">
                                     <SvgIcon svg={service.icon} />
                                 </div>
                             </div>
+
+                            {/* Button that appears on hover */}
+                            <div className="absolute bottom-8 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <Button
+                                    variant="primary"
+                                    size="lg"
+                                    className="transition-transform duration-300 group-hover:translate-y-0 translate-y-2 px-[-4]"
+                                    icon={<FiArrowRight />}
+                                >
+                                </Button>
+                                {/* Vertical line SVG positioned beside button */}
+                                <div className="absolute left-14 top-8 transform -translate-y-1/2 h-15">
+                                    <svg width="8.5" height="45" viewBox="0 0 2 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line x1="1.25" y1="60" x2="1.25" y2="-4.76836e-07" stroke="#2563EB" strokeWidth="2.5" />
+                                    </svg>
+                                </div>
+                                {/* Blue square with arrow in top right */}
+                                <div className="absolute top-10 left-4 transform translate-y-1/2 h-15">
+                                    <svg width="60" height="5" viewBox="0 0 60 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <line y1="1.25" x2="60" y2="1.25" stroke="#2563EB" stroke-width="2" />
+                                    </svg>
+
+                                </div>
+                            </div>
+
+                            {/* Card content */}
                             <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
                             <p className="text-gray-600">{service.description}</p>
                         </div>
