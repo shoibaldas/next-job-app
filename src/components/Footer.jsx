@@ -61,7 +61,7 @@ const Footer = () => {
             <div className="mb-2">
               <Image src="/logo.png" alt="ICEL TECH" width={120} height={60} className="mb-2" />
             </div>
-            <Text size="sm" color="text-white" fontFamily="primary" className="opacity-90">I CHOOSE EASY LIFE TECHNOLOGY SOLUTIONS.</Text>
+            <Text size="sm" color="text-white" fontFamily="primary" className="opacity-90">I CHOOSE EASY LIFE <br/> TECHNOLOGY SOLUTIONS.</Text>
           </div>
 
           {/* Links */}

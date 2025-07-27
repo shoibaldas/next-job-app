@@ -50,14 +50,14 @@ const Button = ({
       'focus:ring-[#2563EB]'
     ],
     secondary: [
-      'bg-brand-secondary',
-      'text-text-white',
-      'border-brand-secondary',
-      'hover:bg-brand-secondary-dark',
+      'bg-white',
+      'text-[#262626]',
+      'border-[#262626]',
+      'hover:bg-gray-100',
       'hover:transform',
       'hover:-translate-y-1',
       'hover:shadow-md',
-      'focus:ring-brand-secondary'
+      'focus:ring-[#262626]'
     ],
     outline: [
       'bg-transparent',
