@@ -1,10 +1,10 @@
 'use client';
-import AboutSection from "@/components/AboutSection";
-import ConsultantSection from "@/components/ConsultantSection";
-import ContactSection from "@/components/ContactSection";
-import HeroSection from "@/components/HeroSection";
-import ProductSection from "@/components/ProductSection";
-import ServicesSection from "@/components/ServicesSection";
+import AboutSection from "@/components/page-sections/AboutSection";
+import ConsultantSection from "@/components/page-sections/ConsultantSection";
+import ContactSection from "@/components/page-sections/ContactSection";
+import HeroSection from "@/components/page-sections/HeroSection";
+import ProductSection from "@/components/page-sections/ProductSection";
+import ServicesSection from "@/components/page-sections/ServicesSection";
 
 
 const Home = () => {

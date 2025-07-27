@@ -1,7 +1,7 @@
 'use client';
 import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
-import ConsultantCard from '@/components/ConsultantCard';
+import ConsultantCard from '@/components/page-sections/ConsultantCard';
 import usePageTitle from '@/components/hooks/usePageTitle';
 import Loader from '@/components/Loader';
 import axios from 'axios';
