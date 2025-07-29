@@ -1,15 +1,18 @@
 import React from "react";
 import clsx from "clsx";
 
-// Default heading styles mapped to levels
-const headingStyles = {
-  h1: "text-5xl font-bold text-text-primary",
-  h2: "text-4xl font-bold text-text-primary",
-  h3: "text-3xl font-bold text-text-primary",
-  h4: "text-2xl font-bold text-text-primary",
-  h5: "text-xl font-bold text-text-primary",
-  h6: "text-lg font-bold text-text-primary",
+// Base heading styles without color (color will be applied separately)
+const headingBaseStyles = {
+  h1: "text-5xl font-bold",
+  h2: "text-4xl font-bold",
+  h3: "text-3xl font-bold",
+  h4: "text-2xl font-bold",
+  h5: "text-xl font-bold",
+  h6: "text-lg font-bold",
 };
+
+// Default colors for when no custom color is provided
+const defaultHeadingColor = "text-text-primary";
 
 // Casing utility
 const casingClass = {
@@ -56,15 +59,16 @@ export function Heading({
   ...props
 }) {
   const Tag = `h${level}`;
-  const colorClass = color ? color : "";
+  const colorClass = color || defaultHeadingColor;
+  
   return (
     <Tag
       className={clsx(
-        headingStyles[`h${level}`],
+        headingBaseStyles[`h${level}`],
+        colorClass,
         alignClass[align],
         casingClass[casing],
         fontFamilyClass[fontFamily],
-        colorClass,
         className
       )}
       {...props}
@@ -114,7 +118,7 @@ export function Text({
     bold: "font-bold",
   }[weight];
 
-  const colorClass = color ? color : "text-text-secondary";
+  const colorClass = color || "text-text-secondary";
 
   return (
     <span
@@ -133,7 +137,3 @@ export function Text({
     </span>
   );
 }
-
-// Usage Example (remove/comment out in production):
-// <Heading level={1} align="center" casing="uppercase">Main Title</Heading>
-// <Text size="lg" weight="semibold" color="text-brand-primary" casing="capitalize">Some text here</Text> 
