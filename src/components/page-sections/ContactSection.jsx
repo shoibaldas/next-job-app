@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { MdConnectWithoutContact } from "react-icons/md";
-import { FaFacebookSquare, FaInstagramSquare, FaLinkedin } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
 import { IoPersonCircle } from "react-icons/io5";
 import { MdAlternateEmail, MdOutlineMessage } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
-import Link from 'next/link';
 import { Heading } from '../ui/Typography';
 import Button from '../ui/button';
 import subtract from '../../../public/contact/subtract.png'
