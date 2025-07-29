@@ -45,7 +45,7 @@ const ProductSection = () => {
     };*/
 
     return (
-        <div className='px-8'>
+        <div className='px-8 pt-8'>
             <div className="flex flex-col lg:flex-row justify-between">
                 <div className="lg:w-7/12 w-full">
                     <Heading

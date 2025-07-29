@@ -6,6 +6,7 @@ import ContactSection from "@/components/page-sections/ContactSection";
 import HeroSection from "@/components/page-sections/HeroSection";
 import ProductSection from "@/components/page-sections/ProductSection";
 import ServicesSection from "@/components/page-sections/ServicesSection";
+import TestimonySection from "@/components/page-sections/TestimonySection";
 
 
 const Home = () => {
@@ -33,6 +34,9 @@ const Home = () => {
       </div>
       <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:py-12 md:py-20 lg:py-24">
         <ChooseUsSection />
+      </div>
+      <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:py-12 md:py-20 lg:py-24">
+        <TestimonySection />
       </div>
       <div id="contact" className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 sm:py-12 md:py-20 lg:py-24">
         <ContactSection />
