@@ -89,7 +89,7 @@ const ServicesSection = () => {
                                 size="md"
                                 icon={<FiArrowRight />}
                                 iconPosition="right"
-                                asChild
+                                // asChild
                             >
                                 Explore All Services
 
@@ -132,7 +132,7 @@ const ServicesSection = () => {
                                 {/* Blue square with arrow in top right */}
                                 <div className="absolute top-10 left-4 transform translate-y-1/2 h-15">
                                     <svg width="60" height="5" viewBox="0 0 60 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <line y1="1.25" x2="60" y2="1.25" stroke="#2563EB" stroke-width="2" />
+                                        <line y1="1.25" x2="60" y2="1.25" stroke="#2563EB" strokeWidth="2" />
                                     </svg>
 
                                 </div>
