@@ -10,6 +10,7 @@ const Button = ({
   iconOnly = false,
   disabled = false,
   loading = false,
+  customColor = null,
   className,
   ...props
 }) => {
@@ -97,6 +98,16 @@ const Button = ({
     ]
   };
 
+  const customColorClasses = customColor
+    ? [
+      customColor.background,
+      customColor.text,
+      customColor.border || 'border-0',
+      customColor.hover,
+      customColor.focus
+    ]
+    : [];
+
   // Size classes (defaults that can be overridden)
   const sizeClasses = {
     xs: ['text-xs', 'gap-1'],
@@ -118,10 +129,12 @@ const Button = ({
   // Combine all classes
   const buttonClasses = cn(
     baseClasses,
-    variantClasses[variant] || variantClasses.primary,
+    customColor ? customColorClasses : variantClasses[variant] || variantClasses.primary,
     iconOnly ? iconOnlyClasses[size] : sizeClasses[size],
+    iconOnly && 'rounded-full',
     className
   );
+
 
   // Loading spinner component
   const LoadingSpinner = () => (
@@ -150,20 +163,21 @@ const Button = ({
   // Render icon
   const renderIcon = () => {
     if (!icon) return null;
-    
-    const iconElement = React.cloneElement(icon, {
-      className: cn(
-        'icon',
-        size === 'xs' ? 'w-3 h-3' :
-        size === 'sm' ? 'w-4 h-4' :
-        size === 'md' ? 'w-5 h-5' :
-        size === 'lg' ? 'w-6 h-6' :
-        'w-7 h-7'
-      )
-    });
 
-    return iconElement;
+    const sizeClass =
+      size === 'xs' ? 'w-3 h-3' :
+        size === 'sm' ? 'w-4 h-4' :
+          size === 'md' ? 'w-5 h-5' :
+            size === 'lg' ? 'w-6 h-6' :
+              'w-7 h-7';
+
+    const colorClass = customColor?.text || '';
+
+    return React.cloneElement(icon, {
+      className: cn('icon', sizeClass, colorClass)
+    });
   };
+
 
   // Render content based on icon-only or text+icon
   const renderContent = () => {
