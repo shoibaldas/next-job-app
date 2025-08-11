@@ -58,19 +58,19 @@ const ChooseUsSection = () => {
 
     return (
         <div className="flex flex-col lg:flex-row items-center justify-between">
-            <div className="lg:w-6/12 w-full">
+            <div className="lg:w-6/12 w-full mb-16 lg:mb-0">
                 <Image
                     src={choose}
                     alt="Future technology"
                     className=""
                 />
             </div>
-            <div className="lg:w-6/12 w-full pe-0 md:pe-16">
+            <div className="lg:w-6/12 w-full pe-0 md:pe-16 ">
                 <Heading
                     level={1}
                     color="text-[#2563EB]"
                     fontFamily="akira"
-                    className="text-3xl md:text-4xl lg:text-5xl flex justify-center"
+                    className="text-3xl md:text-4xl lg:text-5xl text-center lg:text-left"
                 >
                     Why Choose Us
                 </Heading>

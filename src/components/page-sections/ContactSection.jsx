@@ -52,7 +52,7 @@ const ContactSection = () => {
 
     return (
         <div className="flex flex-col lg:flex-row items-center justify-between px-8">
-            <div className="lg:w-7/12 w-full">
+            <div className="lg:w-7/12 w-full mb-16 lg:mb-0">
                 <Image
                     src={subtract}
                     alt="Future technology"
@@ -64,7 +64,7 @@ const ContactSection = () => {
                     level={1}
                     color="text-[#2563EB]"
                     fontFamily="akira"
-                    className="text-3xl md:text-4xl lg:text-5xl flex justify-center"
+                    className="text-3xl md:text-4xl lg:text-5xl text-center lg:text-left"
                 >
                     Get in Touch
                 </Heading>

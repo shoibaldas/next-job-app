@@ -3,11 +3,9 @@ import Banner from "@/components/Banner";
 import { IoPersonCircle } from "react-icons/io5";
 import { MdAlternateEmail, MdLocalPhone, MdOutlineMessage } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
-import Link from "next/link";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import usePageTitle from "@/components/hooks/usePageTitle";
 import { useState } from "react";
-import Button from "@/components/ui/button";
 import { Heading } from "@/components/ui/Typography";
 
 const Contact = () => {
@@ -91,7 +89,7 @@ const Contact = () => {
                     <div className="space-y-2">
                       <div className="flex items-center gap-3">
                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M2.77762 10.9424C1.8296 9.28931 1.37185 7.93948 1.09584 6.57121C0.687622 4.54758 1.62181 2.57081 3.16938 1.30947C3.82345 0.776383 4.57323 0.958518 4.96 1.6524L5.83318 3.21891C6.52529 4.46057 6.87134 5.08139 6.8027 5.73959C6.73407 6.39779 6.26737 6.93386 5.33397 8.00601L2.77762 10.9424ZM2.77762 10.9424C4.69651 14.2883 7.70784 17.3013 11.0576 19.2224M11.0576 19.2224C12.7107 20.1704 14.0605 20.6282 15.4288 20.9042C17.4524 21.3124 19.4292 20.3782 20.6905 18.8306C21.2236 18.1766 21.0415 17.4268 20.3476 17.04L18.7811 16.1668C17.5394 15.4747 16.9186 15.1287 16.2604 15.1973C15.6022 15.2659 15.0661 15.7326 13.994 16.666L11.0576 19.2224Z" stroke="#EAF9FA" strokeWidth="1.5" stroke-linejoin="round" />
+                          <path d="M2.77762 10.9424C1.8296 9.28931 1.37185 7.93948 1.09584 6.57121C0.687622 4.54758 1.62181 2.57081 3.16938 1.30947C3.82345 0.776383 4.57323 0.958518 4.96 1.6524L5.83318 3.21891C6.52529 4.46057 6.87134 5.08139 6.8027 5.73959C6.73407 6.39779 6.26737 6.93386 5.33397 8.00601L2.77762 10.9424ZM2.77762 10.9424C4.69651 14.2883 7.70784 17.3013 11.0576 19.2224M11.0576 19.2224C12.7107 20.1704 14.0605 20.6282 15.4288 20.9042C17.4524 21.3124 19.4292 20.3782 20.6905 18.8306C21.2236 18.1766 21.0415 17.4268 20.3476 17.04L18.7811 16.1668C17.5394 15.4747 16.9186 15.1287 16.2604 15.1973C15.6022 15.2659 15.0661 15.7326 13.994 16.666L11.0576 19.2224Z" stroke="#EAF9FA" strokeWidth="1.5" strokeLinejoin="round" />
                           <path d="M13 5.83185C14.4232 6.43624 15.5638 7.57677 16.1682 9M13.654 1C17.1912 2.02076 19.9791 4.80852 21 8.34563" stroke="#EAF9FA" strokeWidth="1.5" stroke-linecap="round" />
                         </svg>
 
@@ -104,8 +102,8 @@ const Contact = () => {
 
                       <div className="flex items-center gap-2">
                         <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1 4L7.91302 7.91697C10.4616 9.36101 11.5384 9.36101 14.087 7.91697L21 4" stroke="#EAF9FA" strokeWidth="1.5" stroke-linejoin="round" />
-                          <path d="M1.01577 11.4756C1.08114 14.5412 1.11383 16.0739 2.24496 17.2094C3.37608 18.3448 4.95033 18.3843 8.09883 18.4634C10.0393 18.5122 11.9607 18.5122 13.9012 18.4634C17.0497 18.3843 18.6239 18.3448 19.7551 17.2094C20.8862 16.0739 20.9189 14.5412 20.9842 11.4756C21.0053 10.4899 21.0053 9.51008 20.9842 8.52439C20.9189 5.45886 20.8862 3.92609 19.7551 2.79066C18.6239 1.65523 17.0497 1.61568 13.9012 1.53657C11.9607 1.48781 10.0393 1.48781 8.09882 1.53656C4.95033 1.61566 3.37608 1.65521 2.24495 2.79065C1.11382 3.92608 1.08114 5.45885 1.01576 8.52438C0.994745 9.51007 0.994745 10.4899 1.01577 11.4756Z" stroke="#EAF9FA" strokeWidth="1.5" stroke-linejoin="round" />
+                          <path d="M1 4L7.91302 7.91697C10.4616 9.36101 11.5384 9.36101 14.087 7.91697L21 4" stroke="#EAF9FA" strokeWidth="1.5" strokeLinejoin="round" />
+                          <path d="M1.01577 11.4756C1.08114 14.5412 1.11383 16.0739 2.24496 17.2094C3.37608 18.3448 4.95033 18.3843 8.09883 18.4634C10.0393 18.5122 11.9607 18.5122 13.9012 18.4634C17.0497 18.3843 18.6239 18.3448 19.7551 17.2094C20.8862 16.0739 20.9189 14.5412 20.9842 11.4756C21.0053 10.4899 21.0053 9.51008 20.9842 8.52439C20.9189 5.45886 20.8862 3.92609 19.7551 2.79066C18.6239 1.65523 17.0497 1.61568 13.9012 1.53657C11.9607 1.48781 10.0393 1.48781 8.09882 1.53656C4.95033 1.61566 3.37608 1.65521 2.24495 2.79065C1.11382 3.92608 1.08114 5.45885 1.01576 8.52438C0.994745 9.51007 0.994745 10.4899 1.01577 11.4756Z" stroke="#EAF9FA" strokeWidth="1.5" strokeLinejoin="round" />
                         </svg>
 
                         <span className="text-sm">contactus@icetech.com</span>
@@ -157,7 +155,7 @@ const Contact = () => {
                     <div className="pe-1 text-blue-600">
                       <IoPersonCircle className="text-xl" />
                     </div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name<span className="text-red-600">*</span></label>
                   </div>
                   <input
                     type="text"
@@ -174,7 +172,7 @@ const Contact = () => {
                     <div className="pe-1 text-blue-600">
                       <MdAlternateEmail className="text-xl" />
                     </div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email<span className="text-red-600">*</span></label>
                   </div>
                   <input
                     type="email"
@@ -191,7 +189,7 @@ const Contact = () => {
                     <div className="pe-1 text-blue-600">
                       <MdLocalPhone className="text-xl" />
                     </div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Your Phone Number</label>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Your Phone Number<span className="text-red-600">*</span></label>
                   </div>
                   <input
                     type="tel"
@@ -208,7 +206,7 @@ const Contact = () => {
                     <div className="pe-1 text-blue-600">
                       <MdOutlineMessage className="text-xl" />
                     </div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message<span className="text-red-600">*</span></label>
                   </div>
                   <textarea
                     id="message"
