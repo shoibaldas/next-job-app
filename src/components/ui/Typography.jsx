@@ -60,6 +60,10 @@ export function Heading({
 }) {
   const Tag = `h${level}`;
   const colorClass = color || defaultHeadingColor;
+
+  const fontClass = className.includes("font-")
+    ? ""
+    : fontFamilyClass[fontFamily];
   
   return (
     <Tag
@@ -68,7 +72,8 @@ export function Heading({
         colorClass,
         alignClass[align],
         casingClass[casing],
-        fontFamilyClass[fontFamily],
+        // fontFamilyClass[fontFamily],
+        fontClass,
         className
       )}
       {...props}
