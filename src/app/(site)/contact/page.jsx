@@ -56,11 +56,11 @@ const Contact = () => {
     <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Contact Us"></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 xl:top-52 px-6 lg:px-10 xl:px-20 md:px-10">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
-      <div className="max-w-7xl flex-1 mx-auto flex-col md:px-0 px-10 my-20">
+      <div className="max-w-7xl flex-1 mx-auto flex-col md:px-10 lg:px-10 px-6 my-20 xl:px-0">
         <div>
           <Heading
             level={1}
@@ -71,8 +71,8 @@ const Contact = () => {
             Have Any Question?
           </Heading>
         </div>
-        <div className="py-16 px-6 md:px-10 bg-white shadow-2xl rounded-2xl">
-          <div className="flex flex-col-reverse md:flex-row gap-10">
+        <div className="py-10 md:py-16 px-6 md:px-10 bg-white shadow-2xl rounded-2xl">
+          <div className="flex flex-col-reverse lg:flex-row gap-x-44 gap-5 md:gap-10">
             {/* Info Section */}
             <div className="flex-1">
               <div className="relative bg-[url('/contactbg.png')] bg-cover bg-center rounded-xl shadow-lg text-white p-6 md:p-8 min-h-[580px] flex flex-col justify-center">
@@ -148,7 +148,7 @@ const Contact = () => {
               </div>
             </div>
             {/* Form Section */}
-            <div className="flex-1 px-4">
+            <div className="flex-1 px-0 md:px-4">
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <div className="flex items-center">

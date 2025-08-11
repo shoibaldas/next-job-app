@@ -80,7 +80,7 @@ const Products = () => {
     <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Products"></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-52 px-6 md:px-10 lg:px-10 xl:px-20">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
@@ -94,7 +94,7 @@ const Products = () => {
           Browse Our Products
         </Heading>
         {/*Product Cards section*/}
-        <div className="mt-0 lg:mt-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10 xl:gap-18 mb-28 lg:mb-48">
+        <div className="mt-0 lg:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 xl:gap-18 mb-28 lg:mb-48">
           {productData.map((product, index) => {
             return (
               <div key={index} className="max-w-lg overflow-hidden shadow-lg bg-white">
@@ -132,7 +132,7 @@ const Products = () => {
         >
           Get in Touch
         </Heading>
-        <div className="flex flex-col lg:flex-row items-center justify-between px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between px-4 md:px-8">
           <div className="lg:w-7/12 w-full mb-16 lg:mb-0">
 
             <Image
@@ -142,7 +142,7 @@ const Products = () => {
             />
           </div>
           {/*Form Section*/}
-          <div className="lg:w-5/12 w-full p-6 md:p-8">
+          <div className="lg:w-5/12 w-full p-0 md:p-8">
 
             <div className='mt-10'>
               <form onSubmit={handleSubmit}>

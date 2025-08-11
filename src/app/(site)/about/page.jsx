@@ -125,7 +125,7 @@ const About = () => {
     <div className='min-h-screen'>
       <div className='relative'>
         <Banner customTitle="About ICEL TECH LLC" ></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-52 px-6 md:px-10 lg:px-10 xl:px-20">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
@@ -191,7 +191,7 @@ const About = () => {
                 level={4}
                 color="text-gray-50"
                 fontFamily="akira"
-                className="uppercase mb-4 text-2xl md:text-4xl"
+                className="uppercase mb-4 text-lg md:text-4xl"
               >
                 Innovating with Purpose, Securing with Trust, Delivering with Excellence
               </Heading>
@@ -226,9 +226,9 @@ const About = () => {
           Our Core Values
         </Heading>
         {/* Top Section */}
-        <div className="flex flex-col md:flex-row gap-10 items-start mt-12">
+        <div className="flex flex-col lg:flex-row gap-10 items-start mt-12">
           {/* Left Side */}
-          <div className="w-full md:w-7/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
+          <div className="w-full lg:w-7/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
             <Image
               src="/about/value.png"
               alt="Our Story"
@@ -240,20 +240,20 @@ const About = () => {
             </div>
           </div>
           {/* Right Side */}
-          <div className="w-full md:w-5/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
+          <div className="w-full lg:w-5/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
             <div className="absolute inset-0 flex flex-col items-center justify-center px-10 py-10">
               <Heading
                 level={4}
                 color="text-gray-50"
                 fontFamily="akira"
-                className="uppercase text-2xl md:text-3xl lg:text-5xl tracking-wider text-center max-w-lg"
+                className="uppercase text-xl md:text-2xl lg:3xl xl:text-4xl tracking-wider text-center max-w-lg"
               >
                 Drive More Impact with
               </Heading>
               <Heading
                 level={4}
                 fontFamily="akira"
-                className="uppercase text-2xl md:text-3xl lg:text-5xl outline-text-white tracking-wider text-center"
+                className="uppercase text-xl md:text-2xl lg:3xl xl:text-4xl outline-text-white tracking-wider text-center"
               >
                 Our Support
               </Heading>
@@ -273,7 +273,7 @@ const About = () => {
           </div>
         </div>
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row gap-10 mt-8">
+        <div className="flex flex-col lg:flex-row gap-10 mt-8">
           {/* Icon/Image */}
           {valueData.map((value, index) => (
             <div key={index} className="bg-[#E9EFFD] rounded-xl shadow-xl overflow-hidden p-4 md:p-6 min-h-[250px]">
@@ -321,8 +321,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      onError={e => e.currentTarget.style.border = '2px solid red'}
-                      className="w-full h-64 lg:h-72 xl:h-80 object-cover transition-transform duration-300 group-hover:scale-105 block"
+                      className="w-full h-52 md:h-64 lg:h-72 xl:h-80 object-cover transition-transform duration-300 group-hover:scale-105 block"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
