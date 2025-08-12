@@ -14,10 +14,17 @@ module.exports = {
         maxWidth: "100%",
       },
       screens:{
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px"
+        'xs': '320px',
+        'sm': '375px',
+        'md': '425px',
+        'lg': '768px',
+        'xl': '1024px',
+        '2xl': '1440px',
+      },
+      width: {
+        '18': '18px',
+        '20': '20px',
+        '22': '22px',
       },
       fontFamily: {
         primary: ["Roboto", "var(--font-family-fallback)"],
