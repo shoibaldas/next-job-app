@@ -52,7 +52,7 @@ const Consultants = () => {
     <div className='min-h-screen'>
       <div className='relative'>
         <Banner customTitle="Consultants"></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-48 2xl:top-52 px-6 lg:px-10 xl:px-10 2xl:px-20 md:px-6">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
