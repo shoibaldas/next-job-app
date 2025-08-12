@@ -102,6 +102,8 @@ module.exports = {
         '4xl': 'var(--text-4xl)',
         '5xl': 'var(--text-5xl)',
         '6xl': 'var(--text-6xl)',
+        'xxl': '1.75rem',
+
       },
       spacing: {
         'xs': 'var(--spacing-xs)',

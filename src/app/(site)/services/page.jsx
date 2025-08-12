@@ -1,15 +1,11 @@
 'use client';
 
 import Banner from "@/components/Banner";
-import { GrShieldSecurity, GrCloudSoftware } from 'react-icons/gr';
-import { BsGraphUpArrow } from 'react-icons/bs';
-import { SiAuthelia } from 'react-icons/si';
 import { FiPlus } from "react-icons/fi";
 import { FiArrowRight } from 'react-icons/fi';
 import Link from "next/link";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import usePageTitle from "@/components/hooks/usePageTitle";
-import { MdNavigateNext } from "react-icons/md";
 import { Heading } from "@/components/ui/Typography";
 import Button from "@/components/ui/button";
 
@@ -29,7 +25,7 @@ const Services = () => {
       <path d="M36.8184 44.3788H27.1791C24.5904 44.3788 22.4844 42.2726 22.4844 39.6838V31.8506C22.4844 29.2618 24.5904 27.1556 27.1791 27.1556H36.8184C39.4071 27.1556 41.5131 29.2618 41.5131 31.8506V39.6838C41.5131 42.2726 39.4071 44.3788 36.8184 44.3788ZM27.1791 29.1556C25.6932 29.1556 24.4844 30.3646 24.4844 31.8506V39.6838C24.4844 41.1698 25.6932 42.3788 27.1791 42.3788H36.8184C38.3043 42.3788 39.5131 41.1698 39.5131 39.6838V31.8506C39.5131 30.3646 38.3042 29.1556 36.8184 29.1556H27.1791ZM31.9988 36.9622C30.471 36.9622 29.2281 35.7193 29.2281 34.1916C29.2281 32.6637 30.471 31.4206 31.9988 31.4206C33.5265 31.4206 34.7694 32.6637 34.7694 34.1916C34.7694 35.7193 33.5265 36.9622 31.9988 36.9622ZM31.9988 33.4206C31.5738 33.4206 31.2281 33.7665 31.2281 34.1916C31.2281 34.6165 31.5738 34.9622 31.9988 34.9622C32.4237 34.9622 32.7694 34.6165 32.7694 34.1916C32.7694 33.7665 32.4237 33.4206 31.9988 33.4206Z" fill="#2563EB"/>
       <path d="M38.2262 29.1558C37.6739 29.1558 37.2262 28.7081 37.2262 28.1558V25.0928C37.2262 22.2104 34.8812 19.8655 31.9988 19.8655C29.1165 19.8655 26.7715 22.2105 26.7715 25.0928V28.1558C26.7715 28.7081 26.3238 29.1558 25.7715 29.1558C25.2192 29.1558 24.7715 28.7081 24.7715 28.1558V25.0928C24.7715 23.1623 25.5233 21.3474 26.8883 19.9823C28.2534 18.6173 30.0683 17.8655 31.9988 17.8655C33.9293 17.8655 35.7443 18.6173 37.1093 19.9823C38.4744 21.3474 39.2262 23.1623 39.2262 25.0928V28.1558C39.2262 28.7081 38.7785 29.1558 38.2262 29.1558ZM31.9988 39.9469C31.4465 39.9469 30.9988 39.4992 30.9988 38.9469V35.9622C30.9988 35.4099 31.4465 34.9622 31.9988 34.9622C32.5511 34.9622 32.9988 35.4099 32.9988 35.9622V38.9469C32.9988 39.4992 32.5511 39.9469 31.9988 39.9469Z" fill="#2563EB"/>
       </svg>`,
-      url: "#"
+      url: "/services/security"
     },
     {
       title: "Software Development",
@@ -145,7 +141,7 @@ const Services = () => {
                   </Heading>
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 flex items-start justify-center xs:justify-start xs:justify-start sm:justify-start sm:items-start md:justify-start lg:justify-end lg:items-end">
+              <div className="w-full lg:w-1/2 flex items-start justify-center xs:justify-start sm:justify-start sm:items-start md:justify-start lg:justify-end lg:items-end">
                 <div className="">
                   <Link href="/contact" passHref legacyBehavior
                   >
