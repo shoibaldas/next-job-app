@@ -1,6 +1,6 @@
 import React from 'react';
 import { Heading } from '../ui/Typography';
-import choose from '../../../public/about/choose.png'
+import choose from '../../../public/about/choose.png';
 import Image from 'next/image';
 
 const SvgIcon = ({ svg }) => (
