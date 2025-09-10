@@ -210,7 +210,7 @@ const Button = ({
   return (
     <button
       className={buttonClasses}
-      disabled={disabled || loading}
+      disabled={disabled || loading || props.href === '#'}
       {...props}
     >
       {renderContent()}
