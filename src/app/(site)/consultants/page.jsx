@@ -10,6 +10,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FiPlus, FiSearch, FiClock } from "react-icons/fi";
 import { MdOutlineEventAvailable } from "react-icons/md";
+import Button from '@/components/ui/button';
 
 const Consultants = () => {
   usePageTitle("Consultants");
@@ -77,9 +78,16 @@ const Consultants = () => {
 
               {/* Button */}
               <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-                <Link href="/consultants/hireme" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 transition duration-200">
-                  <span className="mx-2">Become a Consultant</span>
-                  <FiPlus className="text-2xl" />
+                <Link href="/consultants/hireme" passHref legacyBehavior>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    icon={<FiPlus />}
+                    iconPosition="right"
+                    className="text-xs sm:text-sm mt-8"
+                  >
+                    Become a Consultant
+                  </Button>
                 </Link>
               </div>
             </div>

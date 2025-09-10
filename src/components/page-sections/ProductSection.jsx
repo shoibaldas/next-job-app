@@ -18,20 +18,20 @@ const ProductSection = () => {
     const cards = [
         {
             id: 1,
-            title: 'iConnect',
-            description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien.',
+            title: 'iMed',
+            description: 'AI-powered healthcare platform for smarter patient care and hospital management. iMed improves diagnostics, secures records, and enhances treatment outcomes.',
             image: '/products/connect.jpg',
         },
         {
             id: 2,
-            title: 'iShop',
-            description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien.',
+            title: 'iStore',
+            description: 'A next-gen digital retail platform unifying AI, analytics, and e-commerce. iStore helps businesses boost sales, optimize inventory, and personalize shopping.',
             image: '/products/ishop.jpg',
         },
         {
             id: 3,
-            title: 'iCareBot',
-            description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien.',
+            title: 'iDelivery',
+            description: 'Smart logistics and delivery system with real-time tracking, optimized routes, and automation. iDelivery ensures faster, more reliable, and cost-efficient delivery.',
             image: '/products/carebot.jpg',
         },
     ];
@@ -45,14 +45,14 @@ const ProductSection = () => {
     };*/
 
     return (
-        <div className='px-8 pt-8'>
+        <div className='px-0 lg:px-8 pt-8'>
             <div className="flex flex-col lg:flex-row justify-between">
                 <div className="lg:w-7/12 w-full">
                     <Heading
                         level={1}
                         color="text-[#2563EB]"
                         fontFamily="akira"
-                        className="text-3xl md:text-4xl lg:text-5xl flex justify-start"
+                        className="text-xl lg:text-4xl 2xl:text-5xl flex justify-start"
                     >
                         Our Products
                     </Heading>
@@ -81,8 +81,8 @@ const ProductSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-w-6xl mt-16 container mx-auto">
-                <div className="flex flex-col lg:flex-row justify-center items-center gap-10 mx-auto">
+            <div className="w-full 2xl:max-w-6xl mt-16 container mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mx-auto">
                     {cards.map((product, index) => {
                         return (
                             <div key={index} className="max-w-lg overflow-hidden shadow-lg bg-white">

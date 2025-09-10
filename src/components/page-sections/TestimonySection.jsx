@@ -74,13 +74,13 @@ const TestimonySection = () => {
                     level={1}
                     color="text-[#2563EB]"
                     fontFamily="akira"
-                    className="text-3xl md:text-4xl lg:text-5xl flex justify-start"
+                    className="text-xl lg:text-4xl 2xl:text-5xl flex justify-start"
                 >
                     Clients<br /> Testimonial
                 </Heading>
                 <div className="relative w-full h-auto">
                     {/* Left Side: Carousel */}
-                    <div className="w-full md:w-10/12 h-[400px] lg:h-[500px]">
+                    <div className="w-full lg:w-10/12 h-[400px] lg:h-[500px]">
                         <Carousel
                             current={current}
                             next={next}
@@ -122,7 +122,7 @@ const TestimonySection = () => {
                                 </div>
                             ))}
                         </Carousel>
-                        <div className="absolute bottom-12 right-4 lg:bottom-10 lg:right-44 flex items-center gap-2 z-10">
+                        <div className="absolute bottom-12 right-4 lg:bottom-10 lg:right-24 xl:right-40 2xl:right-44 flex items-center gap-2 z-10">
                             <Button
                                 onClick={next}
                                 icon={<FiArrowLeft />}

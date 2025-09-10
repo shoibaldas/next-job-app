@@ -46,7 +46,6 @@ const socials = [
   { icon: <FaWhatsapp />, href: "#" },
   { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/iceltech" },
   { icon: <FaFacebookF />, href: "https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" },
-  { icon: <FaTwitter />, href: "#" },
 ];
 
 const Footer = () => {
@@ -60,7 +59,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="mb-1 xs:mb-2 sm:mb-3">
           <Image
-            src="/logo.png"
+            src="/logo2.png"
             alt="ICEL TECH"
             width={120}
             height={60}

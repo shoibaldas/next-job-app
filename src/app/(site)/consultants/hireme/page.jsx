@@ -325,7 +325,7 @@ const HireMe = () => {
                                     {/* Work Hours (Radio Buttons) */}
                                     <div>
                                         <label className="block font-medium">Work Hours</label>
-                                        {["As_Per_Customer_Requirement", "Mon_-_Fri", "Sat_-_Sun"].map(value => (
+                                        {["As_Requested", "Mon_-_Fri", "Sat_-_Sun"].map(value => (
                                             <label key={value} className="block">
                                                 <input type="radio" value={value} {...register("workHours")} className="mr-2" />
                                                 {value.replace(/_/g, " ")}

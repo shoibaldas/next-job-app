@@ -41,7 +41,7 @@ const Header = () => {
       <div className="mx-4 sm:mx-8 lg:mx-12 xl:mx-16 flex justify-between items-center">
         <Link href="/">
           <Image
-            src='/logo.png'
+            src='/logo1.png'
             alt="ICEL TECH"
             width={100}
             height={50}

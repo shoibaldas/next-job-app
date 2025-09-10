@@ -10,9 +10,9 @@ const AboutSection = () => {
   return (
     <section className="">
       <div className="mx-auto">
-        <div className="flex flex-col lg:flex-row gap-28 items-center">
+        <div className="flex flex-col xl:flex-row gap-10 items-center">
           {/* Images with gradient backgrounds */}
-          <div className="flex-1">
+          <div className="w-full lg:max-w-7xl">
             <Image
                   src={aboutimg}
                   alt="Future technology"
@@ -21,31 +21,37 @@ const AboutSection = () => {
           </div>
 
           {/* Text content */}
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-4 w-full lg:max-w-3xl">
             <Heading
               level={2}
               color="text-[#2563EB]"
               fontFamily="akira"
-              className="text-3xl md:text-4xl lg:text-5xl"
+              className="text-xl lg:text-4xl 2xl:text-5xl"
             >
               WHO WE ARE ?
             </Heading>
 
-            <Text size="lg" color="text-gray-600">
-              ICEL TECH LLC is an IT solutions company specializing in cybersecurity,
-              digital marketing, project management, and software development. We
-              leverage advanced technology and skilled professionals to help businesses
-              grow and stay protected in the digital age.
+            <Text size="md" color="text-gray-600">
+              ICEL TECH LLC is a global software and IT solutions company with decades of collective experience in enterprise software engineering, cybersecurity, cloud technologies, and artificial intelligence.<br/>
+              We specialize in cybersecurity, cloud computing, digital transformation, project management, and software development, delivering scalable, secure, and innovative solutions tailored to modern business needs.
+            
             </Text>
 
             <ul className="space-y-3">
-              {['Lorem ipsum dolor sit amet', 'consectetur adipiscing elit', 'Lorem ipsum dolor sit amet'].map((item, i) => (
+              {['Enterprise-grade cybersecurity and identity solutions', 'Cloud-native, AI-driven software development', 'Scalable digital transformation and IT project delivery'].map((item, i) => (
                 <li key={i} className="flex items-center">
                   <FiCheck className="text-[#2563EB] mr-2" />
                   <Text size="base" color="text-gray-700">{item}</Text>
                 </li>
               ))}
             </ul>
+
+            <div className='mt-4'>
+              <Text size="md" color="text-gray-600">
+              At ICEL TECH LLC, our mission is to empower organizations with cutting-edge solutions that protect, modernize, and accelerate growth in the digital era.
+            
+            </Text>
+            </div>
 
             <div className="pt-4">
               <Link href="/about" passHref legacyBehavior>

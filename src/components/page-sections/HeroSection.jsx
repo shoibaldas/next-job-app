@@ -10,9 +10,9 @@ const HeroSection = () => {
     <div className="relative h-screen w-full">
       {/* Hero Image with overlay and mirror effect */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="h-full w-full [transform:scaleX(-1)]">
+        <div className="h-full w-full">
           <Image
-            src="/hero/hero-img.jpg"
+            src="/hero/hero-img.png"
             alt="Technology for a better tomorrow"
             layout="fill"
             objectFit="cover"
@@ -20,12 +20,12 @@ const HeroSection = () => {
             priority
           />
         </div>
-        <div className="absolute inset-0 bg-black bg-opacity-70" />
+        {/* <div className="absolute inset-0 bg-black bg-opacity-70" /> */}
       </div>
 
       {/* Text Content */}
       <div className="relative z-10 h-full flex items-center">
-        <div className="container mx-auto px-4 sm:px-6 md:px-12">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 mt-10 2xl:mt-0">
           <div className="max-w-2xl">
             {/* Small heading */}
             <Text
@@ -41,7 +41,7 @@ const HeroSection = () => {
               level={1}
               color="text-white"
               fontFamily="akira"
-              className="mb-3 sm:mb-6 leading-tight text-2xl sm:text-4xl md:text-5xl"
+              className="mb-3 sm:mb-6 leading-tight xs:text-xl sm:text-2xl md:text-3xl 2xl:text-6xl"
             >
               TECHNOLOGY
               <br />
@@ -56,7 +56,7 @@ const HeroSection = () => {
             <Text
               size="base"
               color="text-gray-300"
-              className="mb-6 sm:mb-8 max-w-md sm:max-w-lg text-sm sm:text-base"
+              className="mb-6 sm:mb-8 max-w-md sm:max-w-lg text-sm md:text-base"
             >
               We make the complex simple, bringing ease and efficiency
               <br/>

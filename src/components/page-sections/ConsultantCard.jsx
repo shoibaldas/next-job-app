@@ -49,7 +49,7 @@ const ConsultantCard = ({ member }) => {
                     </div>
                     <div className="footer-item flex items-center gap-2">
                         <MdOutlineEventAvailable size={16} color='green' />
-                        <div><span>{formatText(member.availability)}</span></div>
+                        <div><span>{member.availability}</span></div>
                     </div>
                 </div>
             </div>

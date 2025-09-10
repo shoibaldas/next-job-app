@@ -89,14 +89,14 @@ const About = () => {
       designation: "Software Engineer Lead",
       image: "/persons/shoibal.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/shoibaldas/" },
-      department: "Engineer"
+      department: "Dev"
     },
     {
       name: "Nahid Amin",
       designation: "Software Engineer",
       image: "/persons/nahid.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
-      department: "Engineer"
+      department: "Dev"
     },
     {
       name: "Shihab Shahin",
@@ -107,7 +107,7 @@ const About = () => {
     },
     {
       name: "Nazmus Shakib",
-      designation: "Product Marketing | Worldwide",
+      designation: "Product Marketing",
       image: "/persons/sakib2.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/md-nazmus-sakib-864659125/" },
       department: "Marketing"
@@ -118,23 +118,81 @@ const About = () => {
       image: "/persons/rumi.jpeg",
       socials: { linkedin: "https://www.linkedin.com/in/nazmun-nahar-a74065254/" },
       department: "HR"
-    }
+    },
+    {
+      name: "Saima Zannat",
+      designation: "UI/UX Designer",
+      image: "/persons/saima.jpg",
+      socials: { linkedin: "https://www.linkedin.com/in/saima-sraboni/" },
+      department: "Design"
+    },
+    {
+      name: "Md. Sakhawat Hosen",
+      designation: "Mobile App Developer",
+      image: "/persons/rudra.jpeg",
+      socials: { linkedin: "https://www.linkedin.com/in/shr88/" },
+      department: "Dev"
+    },
+    {
+      name: "Rakibul Hasan",
+      designation: "Front-end Developer",
+      image: "/persons/rakib.jpg",
+      socials: { linkedin: "https://www.linkedin.com/in/101rakibulhasan/" },
+      department: "Dev"
+    },
   ];
 
   return (
     <div className='min-h-screen'>
       <div className='relative'>
         <Banner customTitle="About ICEL TECH LLC" ></Banner>
-        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-52 px-6 md:px-10 lg:px-10 xl:px-20">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-48 2xl:top-52 px-6 lg:px-10 xl:px-10 2xl:px-20 md:px-6">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
       {/* Vision Section */}
-      <section className="px-6 md:px-12 lg:px-32 py-16 bg-white">
+      <section className="px-6 md:px-12 2xl:px-32 py-16 bg-white">
         {/* 1st */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 2xl:grid-cols-2 gap-10 items-start">
+          {/* Right Side */}
+          <div className="visible 2xl:hidden relative bg-transparent min-h-[610px] w-full rounded-xl overflow-hidden">
+            <Image
+              src="/about/mission.png"
+              alt="Our Story"
+              fill
+              objectFit="cover"
+              className="absolute inset-0"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col px-10 py-10">
+              <Heading
+                level={4}
+                color="text-gray-50"
+                fontFamily="akira"
+                className="uppercase mb-4 text-sm sm:text-lg lg:text-4xl"
+              >
+                Innovating with Purpose, Securing with Trust, Delivering with Excellence
+              </Heading>
+              <p className="text-gray-200 text-sm">
+                We shape the future of business by delivering innovative and tailored technology solutions. Building trust through transparency and reliability is at the core of everything we do. Our commitment to excellence ensures quality and security in every project. Together, we empower organizations to navigate today&apos;s challenges and seize tomorrow&apos;s opportunities.
+              </p>
+              <div className='mt-10'>
+                <Link href="/contact">
+                  <Button
+                    variant="secondary"
+                    size="md"
+                    icon={<FiArrowRight />}
+                    iconPosition="right"
+                  // asChild
+                  >
+                    Get Connected
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
           {/* Left Side */}
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-4">
+
             {/* Our Vision */}
             <div className="bg-[#1A46A7] text-white p-6 rounded-xl shadow-xl">
               <div className="bg-gray-50 w-28 h-10 py-1 rounded-lg ">
@@ -143,7 +201,7 @@ const About = () => {
                 </div>
               </div>
               <div className='mt-4'>
-                <p className='text-gray-50'>
+                <p className='text-gray-50 text-sm 2xl:text-base'>
                   At ICEL TECH LLC, our mission is to simplify technology through secure, innovative, and tailored IT solutions. We aim to empower businesses by delivering reliable services in cybersecurity, software development, digital marketing, and project management.
                 </p>
               </div>
@@ -157,7 +215,7 @@ const About = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm 2xl:text-base">
                   We envision becoming a globally trusted technology partner known for excellence, innovation, and security. Through a client-centric approach and a passion for progress, we strive to build a smarter and safer digital future for businesses worldwide.
                 </p>
               </div>
@@ -170,7 +228,7 @@ const About = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-sm 2xl:text-base">
                   ICEL TECH LLC was founded with the vision of providing secure and innovative IT solutions to businesses of all sizes. What began as a small team of tech enthusiasts has grown into a trusted name in the industry.
                 </p>
               </div>
@@ -178,7 +236,7 @@ const About = () => {
 
           </div>
           {/* Right Side */}
-          <div className="relative bg-transparent min-h-[610px] w-full rounded-xl overflow-hidden">
+          <div className="hidden 2xl:block relative bg-transparent min-h-[610px] 2xl:min-h-[670px] 2x w-full rounded-xl overflow-hidden">
             <Image
               src="/about/mission.png"
               alt="Our Story"
@@ -216,7 +274,7 @@ const About = () => {
         </div>
       </section>
       {/* Value Section */}
-      <section className="px-6 md:px-12 lg:px-32 py-16 bg-white">
+      <section className="px-6 md:px-12 xl:px-20 2xl:px-32 py-16 bg-white">
         <Heading
           level={3}
           color="text-[#2563EB]"
@@ -226,9 +284,9 @@ const About = () => {
           Our Core Values
         </Heading>
         {/* Top Section */}
-        <div className="flex flex-col lg:flex-row gap-10 items-start mt-12">
+        <div className="flex flex-col xl:flex-row gap-6 items-start mt-12">
           {/* Left Side */}
-          <div className="w-full lg:w-7/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
+          <div className="w-full xl:w-7/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
             <Image
               src="/about/value.png"
               alt="Our Story"
@@ -240,44 +298,58 @@ const About = () => {
             </div>
           </div>
           {/* Right Side */}
-          <div className="w-full lg:w-5/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
+          <div className="w-full xl:w-5/12 relative bg-transparent min-h-[450px] rounded-xl overflow-hidden" style={{ background: "linear-gradient(180deg, #1A46A7 0%, #0A1B41 100%)" }}>
             <div className="absolute inset-0 flex flex-col items-center justify-center px-10 py-10">
               <Heading
                 level={4}
                 color="text-gray-50"
                 fontFamily="akira"
-                className="uppercase text-xl md:text-2xl lg:3xl xl:text-4xl tracking-wider text-center max-w-lg"
+                className="uppercase text-xl md:text-2xl lg:3xl 2xl:text-4xl tracking-wider text-center max-w-lg"
               >
                 Drive More Impact with
               </Heading>
               <Heading
                 level={4}
                 fontFamily="akira"
-                className="uppercase text-xl md:text-2xl lg:3xl xl:text-4xl outline-text-white tracking-wider text-center"
+                className="uppercase text-xl md:text-2xl lg:3xl 2xl:text-4xl outline-text-white tracking-wider text-center"
               >
                 Our Support
               </Heading>
               <div className="mt-4">
-                <Link href="/contact">
-                  <Button
-                    variant="secondary"
-                    size="md"
-                    icon={<FiArrowRight />}
-                    iconPosition="right"
-                  >
-                    Explore Our Service
-                  </Button>
-                </Link>
+                <div className='block lg:hidden'>
+                  <Link href="/contact">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      icon={<FiArrowRight />}
+                      iconPosition="right"
+                    >
+                      Explore Our Service
+                    </Button>
+                  </Link>
+                </div>
+                <div className='hidden lg:block'>
+                  <Link href="/contact">
+                    <Button
+                      variant="secondary"
+                      size="md"
+                      icon={<FiArrowRight />}
+                      iconPosition="right"
+                    >
+                      Explore Our Service
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
         {/* Bottom Section */}
-        <div className="flex flex-col lg:flex-row gap-10 mt-8">
+        <div className="flex flex-col xl:flex-row gap-5 mt-8">
           {/* Icon/Image */}
           {valueData.map((value, index) => (
             <div key={index} className="bg-[#E9EFFD] rounded-xl shadow-xl overflow-hidden p-4 md:p-6 min-h-[250px]">
-              <div className="w-16 h-16 md:w-20 md:h-20 flex-shrink-0 mb-8">
+              <div className="w-16 h-16 md:w-20 xl:h-20 flex-shrink-0 mb-8">
                 <div className="flex items-start justify-start">
                   <SvgIcon svg={value.icon} />
                 </div>
@@ -285,8 +357,8 @@ const About = () => {
               <div className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6">
                 {/* Header and Text */}
                 <div className="text-left">
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-700 mb-2">{value.title}</h3>
-                  <p className="text-sm md:text-base text-gray-500">
+                  <h3 className="text-xl 2xl:text-2xl font-bold text-gray-700 mb-2">{value.title}</h3>
+                  <p className="text-sm 2xl:text-base text-gray-500">
                     {value.description}
                   </p>
                 </div>
@@ -297,7 +369,7 @@ const About = () => {
         </div>
       </section>
       <div className="flex flex-col items-center justify-center bg-lightBackground text-lightText mb-12">
-        <section className="w-full px-6 md:px-12 lg:px-32 py-16 bg-white">
+        <section className="w-full px-6 md:px-12 xl:px-20 2xl:px-32 py-16 bg-white">
           {/* Header Section */}
           <Heading
             level={3}
@@ -309,7 +381,7 @@ const About = () => {
           </Heading>
 
           {/* Team Members */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 items-start mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8 items-start mt-10">
             {teamMembers.map((member, index) => (
               <Card
                 key={index}
@@ -342,15 +414,15 @@ const About = () => {
                       </Badge>
                     </div>
                     <div className="absolute top-1/2 right-[-50px] transform -translate-y-1/2 transition-all duration-300 opacity-0 group-hover:right-4 group-hover:opacity-100">
-                  <Link
-                    href={member.socials.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full shadow-md hover:bg-yellow-500 hover:outline-yellow-500 transition-colors"
-                  >
-                    <FaLinkedin size={20} />
-                  </Link>
-                </div>
+                      <Link
+                        href={member.socials.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-10 h-10 bg-blue-600 text-white rounded-full shadow-md hover:bg-yellow-500 hover:outline-yellow-500 transition-colors"
+                      >
+                        <FaLinkedin size={20} />
+                      </Link>
+                    </div>
                     {/* Decorative Element */}
                     <div className="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full" />
                   </div>

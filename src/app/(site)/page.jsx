@@ -14,10 +14,10 @@ const Home = () => {
 
   return (
     <section className="min-h-screen bg-lightBackground text-lightText">
-      <div className="pb-16 sm:pb-12 md:pb-20 lg:pb-24">
+      <div className="pb-12 sm:pb-8 md:pb-16 lg:pb-20">
         <HeroSection></HeroSection>
       </div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 sm:py-12 md:py-20 lg:py-24">
+      <div className="px-4 pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 sm:py-12 md:pb-20 lg:pb-24">
         <AboutSection />
       </div>
       <div className="w-full h-full bg-[url('/service/service-bg.jpg')] bg-cover bg-no-repeat bg-center">
@@ -32,13 +32,13 @@ const Home = () => {
         </div>
       </div>
       </div>
-      <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:py-12 md:py-20 lg:py-24">
+      <div className="pb-12 mx-auto sm:max-w-xl md:max-w-full sm:py-8 md:pb-16 lg:pb-20">
         <ChooseUsSection />
       </div>
-      <div className="py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:py-12 md:py-20 lg:py-24">
+      {/* <div className="pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:py-12 md:pb-20 lg:pb-24">
         <TestimonySection />
-      </div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl md:px-10 lg:px-8 sm:py-12 md:py-20 lg:py-24">
+      </div> */}
+      <div className="pb-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-2xl sm:pb-12 md:pb-20 lg:pb-24">
         <ContactSection />
       </div>
     </section>

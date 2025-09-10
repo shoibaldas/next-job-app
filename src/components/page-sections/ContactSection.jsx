@@ -51,23 +51,30 @@ const ContactSection = () => {
 
 
     return (
-        <div className="flex flex-col lg:flex-row items-center justify-between px-8">
-            <div className="lg:w-7/12 w-full mb-16 lg:mb-0">
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-10 px-8 md:px-12">
+            <div className="w-full xl:w-7/12 mb-16 lg:mb-0 hidden xl:block">
                 <Image
                     src={subtract}
                     alt="Future technology"
                     className=""
                 />
             </div>
-            <div className="lg:w-5/12 w-full p-6 md:p-8">
+            <div className="w-full xl:w-5/12">
                 <Heading
                     level={1}
                     color="text-[#2563EB]"
                     fontFamily="akira"
-                    className="text-3xl md:text-4xl lg:text-5xl text-center lg:text-left"
+                    className="text-sm sm:text-lg lg:text-4xl text-left"
                 >
                     Get in Touch
                 </Heading>
+                <div className="2xl:w-7/12 w-full mb-16 lg:mb-0 block xl:hidden">
+                    <Image
+                        src={subtract}
+                        alt="Future technology"
+                        className=""
+                    />
+                </div>
                 <div className='mt-10'>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">

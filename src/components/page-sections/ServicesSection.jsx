@@ -61,8 +61,8 @@ const ServicesSection = () => {
     ];
 
     return (
-        <section className="px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+        <section className="sm:px-6 lg:px-8">
+            <div className="w-full xl:max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
                     <div className='flex justify-center'>
@@ -70,18 +70,17 @@ const ServicesSection = () => {
                             level={2}
                             color="text-white"
                             fontFamily="akira"
-                            className="uppercase mb-4 text-4xl md:text-5xl"
+                            className="text-xl lg:text-4xl 2xl:text-5xl"
                         >
                             OUR SERVICES<br />
                         </Heading>
                     </div>
-                    <Text
-                        size="lg"
-                        color="text-gray-300"
-                        className="max-w-4xl mx-auto"
-                    >
-                        Discover the wide range of services we offer, designed to meet your needs and help you succeed.<br />
-                    </Text>
+                    <div className=''>
+                        
+                        <p className='text-gray-200 text-base xl:text-lg'>
+                            Discover the wide range of services we offer, designed to meet your needs and help you succeed.<br />
+                        </p>
+                    </div>
                     <div className='mt-12'>
                         <Link href="/services">
                             <Button
@@ -100,7 +99,7 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
                     {servicesData.map((service, index) => (
                         <div
                             key={index}

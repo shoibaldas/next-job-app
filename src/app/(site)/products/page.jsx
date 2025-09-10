@@ -6,12 +6,7 @@ import usePageTitle from "@/components/hooks/usePageTitle";
 import Button from "@/components/ui/button";
 import { Heading } from "@/components/ui/Typography";
 import Link from "next/link";
-import { useState } from "react";
 import { FiArrowRight } from 'react-icons/fi';
-import subtract from '../../../../public/contact/subtract.png';
-import { IoPersonCircle } from "react-icons/io5";
-import { MdAlternateEmail, MdOutlineMessage } from "react-icons/md";
-import { IoIosSend } from "react-icons/io";
 import Image from 'next/image';
 
 const Products = () => {
@@ -19,62 +14,26 @@ const Products = () => {
 
   const productData = [
     {
-      title: "iConnect",
+      title: "iMed",
       image: "/products/connect.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien."
+      description: "AI-powered healthcare platform for smarter patient care and hospital management. iMed improves diagnostics, secures records, and enhances treatment outcomes."
     },
     {
-      title: "iShop",
+      title: "iStore",
       image: "/products/ishop.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien."
+      description: "A next-gen digital retail platform unifying AI, analytics, and e-commerce. iStore helps businesses boost sales, optimize inventory, and personalize shopping."
     },
     {
-      title: "iCareBot",
+      title: "iDelivery",
       image: "/products/carebot.jpg",
-      description: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi.Pellentesque sit amet sapien."
+      description: "Smart logistics and delivery system with real-time tracking, optimized routes, and automation. iDelivery ensures faster, more reliable, and cost-efficient delivery."
+    },
+    {
+      title: "iGov",
+      image: "/products/gov.jpg",
+      description: "A unified smart platform for government services. iGov simplifies citizen access, enhances transparency, and drives digital transformation in governance."
     }
   ];
-
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const result = await response.json();
-      if (result.success) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("Failed to send message. Please try again.");
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("An error occurred. Please try again later.");
-    }
-  };
 
   return (
     <div className="min-h-screen">
@@ -84,7 +43,7 @@ const Products = () => {
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
-      <div className="max-w-full mx-auto px-4 xs:px-6 sm:px-6 md:px-6 lg:px-10 xl:px-18 2xl:px-20 py-8 xs:py-10 sm:py-12 md:py-14 lg:py-16">
+      <div className="max-w-full mx-auto px-4 xs:px-6 sm:px-6 md:px-6 lg:px-10 xl:px-18 2xl:px-32 py-8 xs:py-10 sm:py-12 md:py-14 lg:py-16">
         <div className="text-left">
           <Heading
             level={1}
@@ -105,7 +64,7 @@ const Products = () => {
                   <div className="font-bold text-lg xs:text-xl sm:text-xl md:text-xl lg:text-xl xl:text-2xl mb-1 xs:mb-2 sm:mb-2 md:mb-2 lg:mb-2">
                     {product.title}
                   </div>
-                  <p className="text-gray-700 text-sm xs:text-base sm:text-base md:text-base lg:text-base xl:text-lg">
+                  <p className="text-gray-700 text-base">
                     {product.description}
                   </p>
                   <div className="my-4 xs:my-5 sm:my-6">
@@ -127,103 +86,42 @@ const Products = () => {
         </div>
 
         {/*Contact Section*/}
-      <Heading
-        level={1}
-        color="text-[#2563EB]"
-        fontFamily="akira"
-        className="text-lg xs:text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-left"
-      >
-        Get in Touch
-      </Heading>
-      <div className="flex flex-col xl:flex-row items-center justify-between">
-        <div className="xl:5/12 2xl:w-7/12 w-full mb-16 lg:mb-0 flex justify-center">
-
-          <Image
-            src={subtract}
-            alt="Future technology"
-            className=""
-          />
-        </div>
-        {/*Form Section*/}
-        <div className="xl:w-7/12 2xl:w-5/12 w-full p-0 md:p-8">
-
-          <div className='mt-10'>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-4">
-                <div className="flex items-center">
-                  <div className="pe-1 text-blue-600">
-                    <IoPersonCircle className="text-xl" />
-                  </div>
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name<span className="text-red-600">*</span></label>
-                  </div>
-                </div>
-                <input
-                  type="text"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <div className="flex items-center">
-                  <div className="pe-1 text-blue-600">
-                    <MdAlternateEmail className="text-xl" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email<span className="text-red-600">*</span></label>
-                  </div>
-                </div>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Your Email"
-                  required
-                />
-              </div>
-              <div className="mb-4">
-                <div className="flex items-center">
-                  <div className="pe-1 text-blue-600">
-                    <MdOutlineMessage className="text-xl" />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message<span className="text-red-600">*</span></label>
-                  </div>
-                </div>
-                <textarea
-                  id="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Your Message"
-                  required
-                ></textarea>
-              </div>
+         <section className="relative bg-transparent min-h-[500px] w-full overflow-hidden mb-44 flex justify-center items-center">
+        <Image
+          src="/products/contact-p.png"
+          alt="Our Story"
+          fill
+          objectFit="cover"
+          className="absolute inset-0"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center px-10 py-10 text-center">
+          <Heading
+            level={3}
+            color="text-gray-50"
+            fontFamily="akira"
+            className="uppercase mb-4 text-2xl md:text-4xl text-center"
+          >
+            Ready To Grow Your Business?
+          </Heading>
+          <p className="text-gray-200 text-sm">
+            Join the thousands of creators who have transformed their ideas into wearable art and memorable gifts. Our intuitive design tools make it effortless and fun
+          </p>
+          <div className="mt-10">
+            <Link href="/contact">
               <Button
-                variant="primary"
+                variant="secondary"
                 size="md"
-                icon={<IoIosSend />}
+                icon={<FiArrowRight />}
                 iconPosition="right"
-                className="w-full mt-4"
-              // asChild
               >
-                Send Message
-
+                Get Connected
               </Button>
-              {status && <p className="mt-4 text-center">{status}</p>}
-            </form>
+            </Link>
           </div>
         </div>
+      </section>
       </div>
-      </div>
-      
+
     </div>
   );
 };
