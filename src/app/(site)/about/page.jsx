@@ -66,7 +66,7 @@ const About = () => {
     {
       name: "Mouad EL Jamil",
       designation: "Chief Technology Officer",
-      image: "/persons/avatar.png",
+      image: "/persons/mouadd.png",
       socials: { linkedin: "https://www.linkedin.com/in/mouadeljamil/" },
       department: "Leadership"
     },
