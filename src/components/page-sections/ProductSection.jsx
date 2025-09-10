@@ -93,16 +93,14 @@ const ProductSection = () => {
                                         {product.description}
                                     </p>
                                     <div className="my-6">
-                                        <Link href="#">
+                                        <Link href={`/products/${product.title.toLowerCase() === 'imed' ? 'imed' : product.title.toLowerCase() === 'istore' ? 'istore' : product.title.toLowerCase() === 'idelivery' ? 'idelivery' : product.title.toLowerCase() === 'igov' ? 'igov' : ''}`}>
                                             <Button
                                                 variant="primary"
                                                 size="md"
                                                 icon={<FiArrowRight />}
                                                 iconPosition="right"
-                                            // asChild
                                             >
                                                 View Details
-
                                             </Button>
                                         </Link>
                                     </div>

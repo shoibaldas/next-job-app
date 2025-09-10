@@ -33,8 +33,9 @@ const productData = [
   }
 ];
 
-export default function ProductDetailPage({ params }) {
-  const { slug } = params;
+
+export default async function ProductDetailPage({ params }) {
+  const { slug } = await params;
   const product = productData.find(p => p.slug === slug);
 
   if (!product) return notFound();
