@@ -4,7 +4,7 @@ import { MdAlternateEmail, MdOutlineMessage } from "react-icons/md";
 import { IoIosSend } from "react-icons/io";
 import { Heading } from '../ui/Typography';
 import Button from '../ui/button';
-import subtract from '../../../public/contact/subtract.png'
+import subtract from '../../../public/contact/Subtract.png'
 import Image from 'next/image';
 
 const ContactSection = () => {
