@@ -211,7 +211,7 @@ const About = () => {
             <div className="bg-white p-6 rounded-xl shadow-xl">
               <div className="bg-[#1A46A7] w-28 h-10 py-1 rounded-lg ">
                 <div className='flex items-center justify-center mt-1'>
-                  <h6 className="text-base text-gray-50">Our Mission</h6>
+                  <h6 className="text-base text-gray-50">Our Vission</h6>
                 </div>
               </div>
               <div className="mt-4">
