@@ -6,7 +6,6 @@ import usePageTitle from "@/components/hooks/usePageTitle";
 import { FaCode } from "react-icons/fa6";
 import { LuDatabaseZap, LuZap, LuServer } from "react-icons/lu";
 import { FiLayout, FiPlus } from "react-icons/fi";
-import { PiUsersThree } from "react-icons/pi";
 import { MdNavigateNext } from "react-icons/md";
 import Link from "next/link";
 
@@ -80,7 +79,7 @@ export default function AzureSolution() {
     <div className="min-h-screen">
       <div className='relative'>
         <Banner customTitle="Ready to go Solutions"></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-48 2xl:top-52 px-6 lg:px-10 xl:px-10 2xl:px-20 md:px-6">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
@@ -113,7 +112,7 @@ export default function AzureSolution() {
           </div>
         </div>
         {/* Services Section */}
-        <div className="py-16 mt-0 md:mt-10 bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 to-blue-800">
+        <div className="py-16 mt-0 md:mt-10 bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70">
           <div className="container mx-auto px-6 md:px-12 lg:px-24">
             <h2 className="text-3xl font-bold text-white text-center mb-12">Our Services</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -149,7 +148,7 @@ export default function AzureSolution() {
         </div>
 
         {/* CTA Section */}
-        7<div className="bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 text-white py-16 px-4">
+        <div className="bg-gradient-to-r from-purple-800/70 via-purple-800/100 to-blue-800/70 text-white py-16 px-4">
           <div className="container mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">

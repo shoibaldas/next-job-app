@@ -1,4 +1,4 @@
-'user client';
+'use client';
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -11,10 +11,11 @@ const links = [
     { name: "contact", path: "/contact", sectionName: "contact" }
 ];
 
-const Nav = ({ isScrolled, activeSection }) => {
+const Nav = ({ activeSection }) => {
     const pathname = usePathname();
+    
     return (
-        <nav className="flex gap-8">
+        <nav className="flex gap-6 lg:gap-8">
             {links.map((link, index) => {
                 const isActive = link.path === pathname || (pathname === '/' && link.sectionName.toLowerCase() === activeSection);
 
@@ -24,10 +25,19 @@ const Nav = ({ isScrolled, activeSection }) => {
                         key={index}
                         scroll={false}
                         className={`
+                            relative
+                            text-text-primary
+                            font-family-primary
+                            font-weight-bold
+                            text-base
+                            capitalize
+                            transition-all
+                            duration-200
+                            hover:text-brand-primary
                             ${isActive 
-                                ? (isScrolled ? 'text-blue-600 border-b-2 border-blue-400' : 'text-white border-b-2 border-white') 
-                                : (isScrolled ? 'text-blue-600' : 'text-white')}
-                            capitalize font-medium transition-all
+                                ? 'text-brand-primary after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-primary after:transform after:scale-x-100' 
+                                : 'after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-brand-primary after:transform after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200'
+                            }
                         `}
                     >
                         {link.name}

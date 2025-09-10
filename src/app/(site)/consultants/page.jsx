@@ -1,7 +1,7 @@
 'use client';
 import Banner from '@/components/Banner';
 import BreadCrumbs from '@/components/BreadCrumbs';
-import ConsultantCard from '@/components/ConsultantCard';
+import ConsultantCard from '@/components/page-sections/ConsultantCard';
 import usePageTitle from '@/components/hooks/usePageTitle';
 import Loader from '@/components/Loader';
 import axios from 'axios';
@@ -10,6 +10,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { FiPlus, FiSearch, FiClock } from "react-icons/fi";
 import { MdOutlineEventAvailable } from "react-icons/md";
+import Button from '@/components/ui/button';
 
 const Consultants = () => {
   usePageTitle("Consultants");
@@ -52,7 +53,7 @@ const Consultants = () => {
     <div className='min-h-screen'>
       <div className='relative'>
         <Banner customTitle="Consultants"></Banner>
-        <div className="absolute top-40 xl:top-52 px-24 md:px-32">
+        <div className="absolute top-32 md:top-36 lg:top-36 xl:top-48 2xl:top-52 px-6 lg:px-10 xl:px-10 2xl:px-20 md:px-6">
           <BreadCrumbs></BreadCrumbs>
         </div>
       </div>
@@ -77,9 +78,16 @@ const Consultants = () => {
 
               {/* Button */}
               <div className="w-full md:w-1/2 flex justify-center md:justify-end">
-                <Link href="/consultants/hireme" className="inline-flex items-center rounded-lg font-semibold px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 transition duration-200">
-                  <span className="mx-2">Become a Consultant</span>
-                  <FiPlus className="text-2xl" />
+                <Link href="/consultants/hireme" passHref legacyBehavior>
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    icon={<FiPlus />}
+                    iconPosition="right"
+                    className="text-xs sm:text-sm mt-8"
+                  >
+                    Become a Consultant
+                  </Button>
                 </Link>
               </div>
             </div>
