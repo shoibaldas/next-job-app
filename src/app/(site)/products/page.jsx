@@ -68,7 +68,7 @@ const Products = () => {
                     {product.description}
                   </p>
                   <div className="my-4 xs:my-5 sm:my-6">
-                    <Link href="#">
+                    <Link href={`/products/${product.title.toLowerCase() === 'imed' ? 'imed' : product.title.toLowerCase() === 'istore' ? 'istore' : product.title.toLowerCase() === 'idelivery' ? 'idelivery' : product.title.toLowerCase() === 'igov' ? 'igov' : ''}`}>
                       <Button
                         variant="primary"
                         size="md"
@@ -85,8 +85,11 @@ const Products = () => {
           })}
         </div>
 
-        {/*Contact Section*/}
-         <section className="relative bg-transparent min-h-[500px] w-full overflow-hidden mb-44 flex justify-center items-center">
+
+      </div>
+
+      {/*Contact Section*/}
+      <section className="relative bg-transparent min-h-[500px] w-full overflow-hidden mb-44 flex justify-center items-center">
         <Image
           src="/products/contact-p.png"
           alt="Our Story"
@@ -120,7 +123,6 @@ const Products = () => {
           </div>
         </div>
       </section>
-      </div>
 
     </div>
   );
