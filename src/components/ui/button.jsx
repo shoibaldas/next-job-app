@@ -207,6 +207,18 @@ const Button = ({
     return children;
   };
 
+  if (props.href) {
+    return (
+      <a
+        className={buttonClasses}
+        aria-disabled={disabled || loading || props.href === '#'}
+        tabIndex={disabled || loading || props.href === '#' ? -1 : 0}
+        {...props}
+      >
+        {renderContent()}
+      </a>
+    );
+  }
   return (
     <button
       className={buttonClasses}
