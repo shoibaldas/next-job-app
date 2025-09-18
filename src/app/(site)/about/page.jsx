@@ -89,19 +89,19 @@ const About = () => {
       designation: "Software Engineer Lead",
       image: "/persons/shoibal.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/shoibaldas/" },
-      department: "Dev"
+      department: "Backend"
     },
     {
       name: "Nahid Amin",
-      designation: "Software Engineer",
+      designation: "Software Engineer Lead",
       image: "/persons/nahid.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/nahid-amin-283950220/" },
-      department: "Dev"
+      department: "Frontend"
     },
     {
       name: "Shihab Shahin",
       designation: "UI/UX Designer",
-      image: "/persons/avatar.png",
+      image: "/persons/shihab.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/hasinshihab/" },
       department: "Design"
     },
@@ -131,14 +131,14 @@ const About = () => {
       designation: "Mobile App Developer",
       image: "/persons/rudra.jpeg",
       socials: { linkedin: "https://www.linkedin.com/in/shr88/" },
-      department: "Dev"
+      department: "Frontend"
     },
     {
       name: "Rakibul Hasan",
       designation: "Front-end Developer",
       image: "/persons/rakib.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/101rakibulhasan/" },
-      department: "Dev"
+      department: "Frontend"
     },
   ];
 
