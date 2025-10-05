@@ -299,51 +299,6 @@ export default function AzureSolution() {
                         </div>
                     </div>
                 </div>
-            </section> <section className="py-8 xs:py-10 sm:py-12 md:py-14 lg:py-16 px-4 xs:px-6 sm:px-8 md:px-10 lg:px-12 xl:px-10 2xl:px-20">
-                <Heading
-                    level={1}
-                    color="text-[#2563EB]"
-                    fontFamily="akira"
-                    className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
-                >
-                    Service Features
-                </Heading>
-                <div className="flex xs:flex-col sm:flex-col md:flex-col lg:flex-col xl:flex-row items-center justify-between mt-16">
-                    <div className="xl:w-6/12 w-full mb-16 lg:mb-0">
-                        <Image
-                            src={feature}
-                            alt="Future technology"
-                            className=""
-                        />
-                    </div>
-                    <div className="xl:w-6/12 w-full pe-0 md:pe-16">
-
-                        <div className='mt-10 space-y-16'>
-                            {featureData.map((feature, index) => (
-                                <div
-                                    key={index}
-                                    className="w-full"
-                                >
-                                    {/* Title and Description */}
-                                    <div className="flex-grow text-left">
-                                        <div className="flex items-start">
-                                            <div className="w-12 h-12 flex items-center justify-center rounded-lg -translate-y-2 xs:-translate-y-2.5 sm:-translate-y-3 md:-translate-y-3.5 lg:-translate-y-4">
-                                                <SvgIcon svg={feature.icon} />
-                                            </div>
-                                            <div className="mx-4">
-                                                <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
-                                            </div>
-                                        </div>
-                                        <div className="ms-16 mt-2">
-                                            <p className="text-gray-600">{feature.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            ))}
-                        </div>
-                    </div>
-                </div>
             </section>
             {/* Choose */}
         </div>

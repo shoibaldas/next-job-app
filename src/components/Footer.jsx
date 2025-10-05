@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Heading, Text } from "@/components/ui/Typography";
-import { FaLinkedin, FaFacebookF, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaFacebookF, FaTwitter, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { FiMail, FiPhone, FiMapPin, FiGlobe } from "react-icons/fi";
 
 const footerLinks = [
@@ -12,8 +12,8 @@ const footerLinks = [
     heading: "Company",
     links: [
       { label: "Who we Are", href: "/about" },
-      { label: "Career", href: "/career" },
-      { label: "Blog", href: "/blog" },
+      { label: "Career", href: "mailto:contactus@iceltech.com", isEmail: true },
+      // { label: "Blog", href: "/blog" },
     ],
   },
   {
@@ -33,7 +33,11 @@ const contactInfo = [
   },
   {
     icon: <FiPhone className="inline mr-2 text-xl align-text-top" />,
-    text: "+1-813-563-2612 (America and Canada), +216-23-189-129 (Africa)",
+    text: "+1-813-563-2612",
+  },
+  {
+    icon: <FaWhatsapp className="inline mr-2 text-xl align-text-top" />,
+    text: "+971503709082",
   },
   {
     icon: <FiMail className="inline mr-2 text-xl align-text-top" />,
@@ -43,7 +47,7 @@ const contactInfo = [
 ];
 
 const socials = [
-  { icon: <FaWhatsapp />, href: "#" },
+  { icon: <FaInstagram />, href: "https://www.instagram.com/iceltech_llc/" },
   { icon: <FaLinkedin />, href: "https://www.linkedin.com/company/iceltech" },
   { icon: <FaFacebookF />, href: "https://www.facebook.com/people/ICEL-Technology-and-Entertainment/100090846309695/" },
 ];
@@ -59,12 +63,12 @@ const Footer = () => {
         {/* Logo */}
         <div className="mb-1 xs:mb-2 sm:mb-3">
           <Image
-            src="/logo2.png"
+            src="/logo3.png"
             alt="ICEL TECH"
             width={120}
-            height={60}
-            sizes="(max-width: 480px) 100px, (max-width: 640px) 120px, 80px"
-            className="mb-1 xs:mb-2 sm:mb-3"
+            height={40}
+            // sizes="(max-width: 480px) 100px, (max-width: 640px) 120px, 80px"
+            // className="mb-1 xs:mb-2 sm:mb-3"
           />
         </div>
         <Text size="xs" color="text-white" fontFamily="primary" className="opacity-90 sm:text-sm">I CHOOSE EASY LIFE <br /> TECHNOLOGY SOLUTIONS.</Text>
@@ -77,9 +81,15 @@ const Footer = () => {
           <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
             {section.links.map((link) => (
               <li key={link.label}>
-                <Link href={link.href} className="opacity-90 hover:text-brand-secondary transition-opacity">
-                  <Text size="xs" color="text-white" fontFamily="primary" className="opacity-90 sm:text-sm"> {link.label}</Text>
-                </Link>
+                {link.isEmail ? (
+                  <a href={link.href} className="opacity-90 hover:text-brand-secondary transition-opacity">
+                    <Text size="xs" color="text-white" fontFamily="primary" className="opacity-90 sm:text-sm"> {link.label}</Text>
+                  </a>
+                ) : (
+                  <Link href={link.href} className="opacity-90 hover:text-brand-secondary transition-opacity">
+                    <Text size="xs" color="text-white" fontFamily="primary" className="opacity-90 sm:text-sm"> {link.label}</Text>
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -89,7 +99,7 @@ const Footer = () => {
       {/* Contact */}
       <div className="lg:w-1/3 mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-0">
         <Heading level={4} color="text-white" fontFamily="primary" className="mb-2 xs:mb-3 sm:mb-4 text-base xs:text-lg sm:text-xl md:text-base lg:text-lg">Contact</Heading>
-        <ul className="space-y-2 xs:space-y-3 sm:space-y-4">
+        <ul className="space-y-1 xs:space-y-1.5 sm:space-y-2">
           {contactInfo.map((item, idx) => (
             <li key={idx}>
               {item.isMail ? (

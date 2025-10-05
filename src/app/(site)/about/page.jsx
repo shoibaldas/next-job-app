@@ -140,6 +140,20 @@ const About = () => {
       socials: { linkedin: "https://www.linkedin.com/in/101rakibulhasan/" },
       department: "Frontend"
     },
+    {
+      name: "Faiyaz Mahmud",
+      designation: "Backend Developer",
+      image: "/persons/faiyaz.jpg",
+      socials: { linkedin: "https://www.linkedin.com/in/faiyaz-mahmud27/" },
+      department: "Backend"
+    },
+    {
+      name: "Nishat Taaha",
+      designation: "ML Engineer",
+      image: "/persons/faiyaz.jpg",
+      socials: { linkedin: "https://www.linkedin.com/in/nishat-taaha-0571a2216/" },
+      department: "Backend"
+    },
   ];
 
   return (
@@ -211,7 +225,7 @@ const About = () => {
             <div className="bg-white p-6 rounded-xl shadow-xl">
               <div className="bg-[#1A46A7] w-28 h-10 py-1 rounded-lg ">
                 <div className='flex items-center justify-center mt-1'>
-                  <h6 className="text-base text-gray-50">Our Vission</h6>
+                  <h6 className="text-base text-gray-50">Our Vision</h6>
                 </div>
               </div>
               <div className="mt-4">
