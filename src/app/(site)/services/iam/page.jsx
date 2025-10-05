@@ -191,7 +191,7 @@ export default function IdentityAccessManagementPage() {
                 <div className="mx-auto max-w-7xl px-6">
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900">FAQs</h2>
                     <div className="mt-8 grid gap-6 md:grid-cols-2">
-                        <FaqItem q="Entra ID vs. Entra External ID — what's the difference?" a="Entra ID secures your employees/partners (workforce identity). Entra External ID is CIAM for customers and external users with tailored sign‑up/sign‑in, branding and data controls." />
+                        <FaqItem q="Entra ID vs. Entra External ID — what&apos;s the difference?" a="Entra ID secures your employees/partners (workforce identity). Entra External ID is CIAM for customers and external users with tailored sign‑up/sign‑in, branding and data controls." />
                         <FaqItem q="Can we enable passwordless across the company?" a="Yes. We deploy FIDO2 keys, Passkeys and Microsoft Authenticator with Conditional Access for step‑up verification where required." />
                         <FaqItem q="How do you enforce least privilege?" a="We combine PIM, access packages and access reviews to grant just‑in‑time permissions with approvals, auditing and automatic expiry." />
                     </div>
@@ -203,11 +203,11 @@ export default function IdentityAccessManagementPage() {
                 <div className="mx-auto max-w-7xl px-6 grid gap-8 md:grid-cols-3 items-center">
                     <div className="md:col-span-2">
                         <h3 className="text-2xl font-bold text-gray-900">Make identity your new perimeter.</h3>
-                        <p className="mt-2 text-gray-600">We'll align policies, apps and governance to a Zero‑Trust model—without slowing your teams down.</p>
+                        <p className="mt-2 text-gray-600">We&apos;ll align policies, apps and governance to a Zero‑Trust model—without slowing your teams down.</p>
                     </div>
                     <div className="flex gap-3 md:justify-end">
                         <Link href="/contact" className="inline-flex items-center gap-2 rounded-2xl bg-blue-600 hover:bg-blue-500 px-5 py-3 font-semibold text-white transition">
-                            Book a free consult <FiArrowRight className="h-4 w-4" />
+                            Book a free consultation <FiArrowRight className="h-4 w-4" />
                         </Link>
                     </div>
                 </div>

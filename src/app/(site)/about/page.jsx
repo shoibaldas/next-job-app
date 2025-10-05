@@ -117,7 +117,7 @@ const About = () => {
       designation: "Marketing Head | Asia Pacific",
       image: "/persons/rumi.jpeg",
       socials: { linkedin: "https://www.linkedin.com/in/nazmun-nahar-a74065254/" },
-      department: "HR"
+      department: "Marketing"
     },
     {
       name: "Saima Zannat",
