@@ -182,7 +182,7 @@ const Services = () => {
 
                 {/* Button that appears on hover */}
                 <div className="hidden lg:flex absolute bottom-8 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Link href="/services" >
+                  <Link href={service.url} >
                     <Button
                       variant="primary"
                       size="lg"

@@ -150,7 +150,7 @@ const About = () => {
     {
       name: "Nishat Taaha",
       designation: "ML Engineer",
-      image: "/persons/faiyaz.jpg",
+      image: "/persons/nishat.jpg",
       socials: { linkedin: "https://www.linkedin.com/in/nishat-taaha-0571a2216/" },
       department: "Backend"
     },
@@ -331,7 +331,7 @@ const About = () => {
               </Heading>
               <div className="mt-4">
                 <div className='block lg:hidden'>
-                  <Link href="/contact">
+                  <Link href="/services">
                     <Button
                       variant="secondary"
                       size="sm"
@@ -343,7 +343,7 @@ const About = () => {
                   </Link>
                 </div>
                 <div className='hidden lg:block'>
-                  <Link href="/contact">
+                  <Link href="/services">
                     <Button
                       variant="secondary"
                       size="md"
