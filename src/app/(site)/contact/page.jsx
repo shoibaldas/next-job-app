@@ -11,7 +11,7 @@ import { Heading } from "@/components/ui/Typography";
 const Contact = () => {
   usePageTitle("Contact Us");
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -35,20 +35,33 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
+      console.log("Response status:", response.status);
+      // console.log("Response headers:", response.headers);
 
-      const result = await response.json();
-      if (result.success) {
-        setStatus("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+      let result;
+      const contentType = response.headers.get("content-type");
+      
+      if (contentType && contentType.includes("application/json")) {
+        result = await response.json();
+        console.log("Parsed JSON result:", result);
       } else {
-        setStatus("Failed to send message. Please try again.");
+        const textResult = await response.text();
+        console.log("Response text:", textResult);
+        result = { error: "Invalid response format", details: textResult };
+      }
+      
+      if (response.ok && result.success) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        // Handle both HTTP errors and API errors
+        const errorMessage = result.error || result.details || `HTTP error! status: ${response.status}`;
+        console.error("API Error:", result);
+        setStatus(`Error: ${errorMessage}`);
       }
     } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("An error occurred. Please try again later.");
+      console.error("Network or parsing error:", error);
+      setStatus(`Network error: ${error.message}`);
     }
   };
 

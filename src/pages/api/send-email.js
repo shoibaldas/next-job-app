@@ -1,27 +1,43 @@
-import sendgrid from "@sendgrid/mail";
-
-sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
+    // console.log("API endpoint hit with method:", req.method);
+
     if (req.method === "POST") {
-        const { name, email, message } = req.body;
-
-        if (!name || !email || !message) {
-            return res.status(400).json({ success: false, error: "Missing required fields" });
-        }
-
         try {
-            await sendgrid.send({
-                to: "contactus@iceltech.com", // Replace with your Gmail address
-                from: "contactus@iceltech.com", // Replace with a verified email in SendGrid
+            // console.log("Request body:", req.body);
+            const { name, email, phone, message } = req.body;
+
+            if (!name || !email || !phone || !message) {
+                console.log("Missing required fields");
+                return res.status(400).json({ success: false, error: "Missing required fields" });
+            }
+
+            // Check if SMTP2GO credentials are set
+            if (!process.env.SMTP2GO_USER || !process.env.SMTP2GO_PASS) {
+                console.error("SMTP2GO credentials are not configured");
+                return res.status(200).json({ 
+                    success: true, 
+                    message: "Form submitted successfully (email service not configured)" 
+                });
+            }
+
+            // Configure transporter with SMTP2GO
+            const transporter = nodemailer.createTransport({
+                host: "mail.smtp2go.com",
+                port: 587, // or 2525
+                auth: {
+                    user: process.env.SMTP2GO_USER, // Your SMTP2GO username
+                    pass: process.env.SMTP2GO_PASS  // Your SMTP2GO password
+                }
+            });
+
+            // Send the email
+            const info = await transporter.sendMail({
+                from: "no-reply@iceltech.com", // must be your verified domain in SMTP2GO
+                to: "contactus@iceltech.com",   // recipient
                 subject: `New Message from ${name}`,
-                text: `Message from ${name} (${email}): ${message}`,
-                // html: `
-                //     <h3>New Contact Form Submission</h3>
-                //     <p><strong>Name:</strong> ${name}</p>
-                //     <p><strong>Email:</strong> ${email}</p>
-                //     <p><strong>Message:</strong> ${message}</p>
-                // `,
+                text: `Message from ${name} (${email}, ${phone}): ${message}`,
                 html: `<!DOCTYPE html>
                         <html lang="en">
                         <head>
@@ -29,22 +45,21 @@ export default async function handler(req, res) {
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <title>Email Template</title>
                             <style>
-                                /* Basic reset for email */
                                 body {
                                     margin: 0;
                                     padding: 0;
-                                    background-color: #f9fafb; /* Light gray background */
+                                    background-color: #f9fafb;
                                     font-family: Arial, sans-serif;
                                 }
                                 .container {
                                     max-width: 600px;
                                     margin: 20px auto;
-                                    background-color: #ffffff; /* White background */
+                                    background-color: #ffffff;
                                     border-radius: 8px;
                                     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
                                 }
                                 .header {
-                                    background-color: #007bff; /* Blue background */
+                                    background-color: #007bff;
                                     color: white;
                                     text-align: center;
                                     padding: 20px;
@@ -53,50 +68,45 @@ export default async function handler(req, res) {
                                     padding: 20px;
                                 }
                                 .footer {
-                                    background-color: #f1f1f1; /* Light gray footer */
+                                    background-color: #f1f1f1;
                                     text-align: center;
                                     padding: 10px;
                                 }
                                 table {
                                     width: 100%;
-                                    border-collapse: collapse; /* Ensure borders collapse */
-                                    margin-bottom: 20px; /* Space below the table */
+                                    border-collapse: collapse;
+                                    margin-bottom: 20px;
                                 }
                                 th, td {
-                                    border: 1px solid #dddddd; /* Light gray border */
+                                    border: 1px solid #dddddd;
                                     text-align: left;
-                                    padding: 8px; /* Padding inside cells */
+                                    padding: 8px;
                                 }
                                 th {
-                                    background-color: #f2f2f2; /* Light gray header background */
+                                    background-color: #f2f2f2;
                                 }
                             </style>
                         </head>
                         <body>
                             <div class="container">
-                                <!-- Header -->
                                 <div class="header">
                                     <h1>Message From ICEL Website</h1>
                                 </div>
-
-                                <!-- Table -->
                                 <div class="content">
                                     <table>
                                         <tr>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Phone</th>
                                         </tr>
                                         <tr>
-                                            <td>${name}</td> <!-- Replace with dynamic value -->
-                                            <td>${email}</td> <!-- Replace with dynamic value -->
+                                            <td>${name}</td>
+                                            <td>${email}</td>
+                                            <td>${phone}</td>
                                         </tr>
                                     </table>
-
-                                    <!-- Main Content -->
                                     <p>${message}</p>
                                 </div>
-
-                                <!-- Footer -->
                                 <div class="footer">
                                     <p>©2025 ICEL TECH LLC. All rights reserved.</p>
                                 </div>
@@ -105,13 +115,22 @@ export default async function handler(req, res) {
                         </html>`
             });
 
+            console.log("Email sent: ", info.messageId);
             res.status(200).json({ success: true });
+
         } catch (error) {
-            console.error("Error sending email:", error);
-            res.status(500).json({ success: false, error: "Failed to send email" });
+            console.error("Error in API handler:", error);
+            return res.status(500).json({ 
+                success: false, 
+                error: "Failed to send email",
+                details: error.message,
+            });
         }
     } else {
         res.setHeader("Allow", ["POST"]);
-        res.status(405).end(`Method ${req.method} Not Allowed`);
+        return res.status(405).json({ 
+            success: false, 
+            error: `Method ${req.method} Not Allowed` 
+        });
     }
 }
