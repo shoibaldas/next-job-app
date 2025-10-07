@@ -350,23 +350,38 @@ export default function ArtificialIntelligencePage() {
             </section>
 
             {/* CTA Footer */}
-            <section className="bg-gray-50 py-8 sm:py-12 md:py-16">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6 grid gap-6 sm:gap-8 md:grid-cols-3 items-center">
-                    <div className="md:col-span-2 text-center md:text-left">
-                        <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900">Let&apos;s turn ideas into intelligent products.</h3>
-                        <p className="mt-2 text-sm sm:text-base text-gray-600">From prototype to production, we&apos;ll help you ship AI that&apos;s reliable, responsible and fast.</p>
-                    </div>
-                    <div className="flex gap-3 justify-center md:justify-end">
-                        <Link href="/contact">
-                            <Button
-                                variant="primary"
-                                size="md"
-                                icon={<FiArrowRight />}
-                                iconPosition="right"
+            <section
+                className="relative py-8 sm:py-12 md:py-16 bg-cover bg-center bg-no-repeat mb-16"
+                style={{
+                    backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/aim.png')"
+                }}
+            >
+                <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                    <div className="xl:flex xl:items-center xl:justify-between">
+                        <div className="text-left">
+                            <Heading
+                                level={3}
+                                color="text-gray-50"
+                                fontFamily="akira"
+                                className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-left"
                             >
-                                Book a free consultation
-                            </Button>
-                        </Link>
+                                Let&apos;s turn ideas ,<br/> into intelligent products
+                            </Heading>
+                            {/* <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white"></h3> */}
+                            <p className="mt-2 text-sm sm:text-base text-gray-200 max-w-3xl">From prototype to production, we&apos;ll help you ship AI that&apos;s reliable, responsible and fast.</p>
+                        </div>
+                        <div className="mt-6 xl:mt-0 xl:ml-8 xl:flex-shrink-0">
+                            <Link href="/contact">
+                                <Button
+                                    variant="primary"
+                                    size="md"
+                                    icon={<FiArrowRight />}
+                                    iconPosition="right"
+                                >
+                                    Book a free consultation
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
