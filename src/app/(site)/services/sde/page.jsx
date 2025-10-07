@@ -364,7 +364,7 @@ export default function SoftwareDevelopmentPage() {
                                         className="w-full h-full object-contain"
                                     />
                                 </div>
-                                <span className="text-xs sm:text-sm text-gray-600 font-medium">{tech.name}</span>
+                                <span className="text-xs sm:text-sm text-gray-600 font-medium mt-4">{tech.name}</span>
                             </div>
                         ))}
                     </div>
