@@ -76,12 +76,12 @@ export default function AzureSolution() {
                         >
                             Protecting your business <br className="hidden sm:block" /> in a connected world
                         </Heading>
-                        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">We design and implement <span className="font-semibold">cloud identity</span> on Azure Entra™ — secure SSO, MFA & Conditional Access for your workforce, and modern CIAM with Entra External ID for your customers and partners.</p>
+                        <p className="mt-3 sm:mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">We secure your hybrid estate using Microsoft&apos;s <span className="font-semibold">Cybersecurity Reference Architectures</span> and <span className="font-semibold">Zero Trust</span> principles—across identities, devices, apps, infrastructure, data, and operations.</p>
                         <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-2 text-gray-600">
                             {[
-                                "Zero‑Trust baseline with MFA, device & risk signals",
-                                "SSO (OIDC/SAML) to SaaS and custom apps",
-                                "Identity Governance with PIM, access reviews & least privilege",
+                                "Zero‑Trust baselines with strong identity, device signals, and least‑privilege access",
+                                "Integrated XDR + SIEM for detection, investigation, and automated response",
+                                "Continuous posture management across cloud, on‑prem, and multicloud",
                             ].map((text) => (
                                 <li key={text} className="flex items-start gap-2 sm:gap-3">
                                     <svg className="mt-1 sm:mt-2 flex-shrink-0" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@ export default function AzureSolution() {
                     <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-6 lg:mt-0">
                         <div className="rounded-xl sm:rounded-2xl bg-gray-50 p-3 sm:p-4 md:p-6 border border-gray-200">
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M13.3352 9.75414C13.3352 10.6682 13.3352 11.5541 13.6234 12.3838C10.593 15.9416 2.59141 25.3424 1.84609 26.0596C1.69796 26.1925 1.57947 26.3551 1.4983 26.5368C1.41714 26.7185 1.37513 26.9153 1.375 27.1143C1.375 27.712 1.74062 28.2885 2.05 28.612C2.51406 29.0971 4.49687 30.9323 4.8625 30.5807C5.94531 29.526 6.16328 29.2448 6.60625 28.8088C7.27422 28.1549 6.53594 26.819 6.76797 26.2776C7 25.7362 7.24609 25.6307 7.64687 25.5463C8.04766 25.462 8.75781 25.7502 9.31328 25.7573C9.89687 25.7643 10.2133 25.5182 10.6492 25.1104C11.0008 24.787 11.2539 24.4846 11.2609 24.0135C11.275 23.3807 10.3609 22.544 11.043 21.876C11.725 21.208 12.7094 22.312 13.4336 22.2276C14.1578 22.1432 15.0367 21.1377 15.1281 20.7088C15.2195 20.2799 14.3055 19.176 14.4461 18.5502C14.4953 18.3393 14.9242 17.8471 15.2477 17.7768C15.5711 17.7065 17.0055 18.262 17.3289 18.1916C17.7227 18.1073 18.1797 17.6924 18.5523 17.4604C19.6422 17.9315 20.6336 18.1213 21.9062 18.1213C26.7227 18.1213 30.625 14.3666 30.625 9.74008C30.625 5.11352 26.7227 1.375 21.9062 1.375C17.0898 1.375 13.3352 5.12758 13.3352 9.75414ZM26.125 8.125C26.125 8.57001 25.993 9.00502 25.7458 9.37503C25.4986 9.74504 25.1472 10.0334 24.736 10.2037C24.3249 10.374 23.8725 10.4186 23.436 10.3318C22.9996 10.245 22.5987 10.0307 22.284 9.71599C21.9693 9.40132 21.755 9.00041 21.6682 8.56395C21.5814 8.1275 21.626 7.6751 21.7963 7.26396C21.9666 6.85283 22.255 6.50143 22.625 6.25419C22.995 6.00696 23.43 5.875 23.875 5.875C24.4717 5.875 25.044 6.11205 25.466 6.53401C25.8879 6.95597 26.125 7.52826 26.125 8.125Z" stroke="url(#paint0_linear_574_516)" stroke-linejoin="round" />
+                                <path d="M13.3352 9.75414C13.3352 10.6682 13.3352 11.5541 13.6234 12.3838C10.593 15.9416 2.59141 25.3424 1.84609 26.0596C1.69796 26.1925 1.57947 26.3551 1.4983 26.5368C1.41714 26.7185 1.37513 26.9153 1.375 27.1143C1.375 27.712 1.74062 28.2885 2.05 28.612C2.51406 29.0971 4.49687 30.9323 4.8625 30.5807C5.94531 29.526 6.16328 29.2448 6.60625 28.8088C7.27422 28.1549 6.53594 26.819 6.76797 26.2776C7 25.7362 7.24609 25.6307 7.64687 25.5463C8.04766 25.462 8.75781 25.7502 9.31328 25.7573C9.89687 25.7643 10.2133 25.5182 10.6492 25.1104C11.0008 24.787 11.2539 24.4846 11.2609 24.0135C11.275 23.3807 10.3609 22.544 11.043 21.876C11.725 21.208 12.7094 22.312 13.4336 22.2276C14.1578 22.1432 15.0367 21.1377 15.1281 20.7088C15.2195 20.2799 14.3055 19.176 14.4461 18.5502C14.4953 18.3393 14.9242 17.8471 15.2477 17.7768C15.5711 17.7065 17.0055 18.262 17.3289 18.1916C17.7227 18.1073 18.1797 17.6924 18.5523 17.4604C19.6422 17.9315 20.6336 18.1213 21.9062 18.1213C26.7227 18.1213 30.625 14.3666 30.625 9.74008C30.625 5.11352 26.7227 1.375 21.9062 1.375C17.0898 1.375 13.3352 5.12758 13.3352 9.75414ZM26.125 8.125C26.125 8.57001 25.993 9.00502 25.7458 9.37503C25.4986 9.74504 25.1472 10.0334 24.736 10.2037C24.3249 10.374 23.8725 10.4186 23.436 10.3318C22.9996 10.245 22.5987 10.0307 22.284 9.71599C21.9693 9.40132 21.755 9.00041 21.6682 8.56395C21.5814 8.1275 21.626 7.6751 21.7963 7.26396C21.9666 6.85283 22.255 6.50143 22.625 6.25419C22.995 6.00696 23.43 5.875 23.875 5.875C24.4717 5.875 25.044 6.11205 25.466 6.53401C25.8879 6.95597 26.125 7.52826 26.125 8.125Z" stroke="url(#paint0_linear_574_516)" strokeLinejoin="round" />
                                 <defs>
                                     <linearGradient id="paint0_linear_574_516" x1="30.625" y1="30.6251" x2="30.625" y2="1.375" gradientUnits="userSpaceOnUse">
                                         <stop stop-color="#512C7D" />
@@ -132,8 +132,7 @@ export default function AzureSolution() {
                                 </defs>
                             </svg>
 
-                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">Identity, MFA
-                                Conditional security</p>
+                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">Identity, MFA, Conditional Access</p>
                         </div>
                         <div className="rounded-xl sm:rounded-2xl bg-gray-50 p-3 sm:p-4 md:p-6 border border-gray-200">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -153,8 +152,7 @@ export default function AzureSolution() {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">Endpoints & devices
-                                EDR/MDR</p>
+                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">Endpoints & devices (EDR/MDR)</p>
                         </div>
                         <div className="rounded-xl sm:rounded-2xl bg-gray-50 p-3 sm:p-4 md:p-6 border border-gray-200">
                             <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,8 +194,7 @@ export default function AzureSolution() {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">App
-                                Infra & cloud security</p>
+                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">Apps, infra & cloud security</p>
                         </div>
                         <div className="rounded-xl sm:rounded-2xl bg-gray-50 p-3 sm:p-4 md:p-6 border border-gray-200">
                             <svg width="36" height="34" viewBox="0 0 36 34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,8 +206,7 @@ export default function AzureSolution() {
                                     </linearGradient>
                                 </defs>
                             </svg>
-                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">SecOps:
-                                XDR + SIEM/SOAR</p>
+                            <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-600">SecOps: XDR + SIEM/SOAR</p>
                         </div>
                     </div>
                 </div>
