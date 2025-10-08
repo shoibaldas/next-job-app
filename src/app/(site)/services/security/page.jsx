@@ -3,38 +3,51 @@
 import Banner from "@/components/Banner";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import usePageTitle from "@/components/hooks/usePageTitle";
-import { FiCheck, FiArrowRight, FiMail, FiShield, FiKey, FiUsers, FiAward, FiGlobe, FiTool } from "react-icons/fi";
+import { FiCheck, FiArrowRight, FiMail, FiShield, FiKey, FiUsers, FiAward, FiGlobe, FiTool, FiDatabase } from "react-icons/fi";
 import { Heading } from "@/components/ui/Typography";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/ui/button";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { GiRadarSweep } from "react-icons/gi";
 
 function getTechItems() {
     return [
         {
-            name: "Microsoft Defender Suite",
-            icon: "/svgs/suite.png"
-        },
-        {
-            name: "Azure Security Center",
-            icon: "/svgs/center.png"
-        },
-        {
-            name: "Azure Entra ID (P1/P2)",
+            name: "Azure Entra ID",
             icon: "/svgs/entra.png"
         },
         {
-            name: "Azure Firewall",
-            icon: "/svgs/wall.png"
+            name: "Microsoft Defender XDR",
+            icon: "/svgs/defender.png"
         },
         {
-            name: "Azure Key Vault",
+            name: "Microsoft Defender for Cloud",
+            icon: "/svgs/access.png"
+        },
+        {
+            name: "Microsoft Sentinel (SIEM/SOAR)",
+            icon: "/svgs/sent.png"
+        },
+        {
+            name: "Microsoft Purview",
+            icon: "/svgs/purview.png"
+        },
+        {
+            name: "Intune/ Device Compliance",
+            icon: "/svgs/intune.png"
+        },
+        {
+            name: "Azure Policy",
+            icon: "/svgs/policy.png"
+        },
+        {
+            name: "Azure Key Vault / Managed HSM",
             icon: "/svgs/key.png"
         },
         {
-            name: "Azure Front Door",
-            icon: "/svgs/door.png"
+            name: "Azure Firewall / WAF / DDoS",
+            icon: "/svgs/wall.png"
         }
     ];
 }
@@ -226,6 +239,112 @@ export default function AzureSolution() {
                 </div>
             </section>
 
+            {/* Core Services */}
+            <section id="core-services" className="bg-slate-950 py-8 sm:py-12 md:py-16">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                    <div className="text-center sm:text-left">
+                        <Heading
+                            level={2}
+                            color="text-white"
+                            fontFamily="akira"
+                            className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+                        >
+                            Core Services
+                        </Heading>
+                        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-slate-300 max-w-4xl">A pragmatic set of workstreams mapped to the Microsoft Cybersecurity Reference Architectures capability areas and Zero‑Trust pillars.</p>
+                    </div>
+
+                    <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+                        <ServiceCard
+                            number={1}
+                            title="Microsoft Cybersecurity Reference Architectures Assessment & Roadmap"
+                            bullets={[
+                                "Architecture mapping and capability gaps",
+                                "Zero‑Trust maturity review",
+                                "Prioritized roadmap with quick wins",
+                                "Executive briefing & artifacts",
+                            ]}
+                            icon={<FiShield className="h-4 w-4 sm:h-5 sm:w-5" />}
+                        />
+
+                        <ServiceCard
+                            number={2}
+                            title="Identity & Access (Entra)"
+                            bullets={[
+                                "MFA, Conditional Access, Passwordless",
+                                "SSO (OIDC/SAML) and B2B/B2C/External ID",
+                                "PIM & Identity Governance",
+                                "Hybrid identity & device compliance",
+                            ]}
+                            icon={<FiKey className="h-4 w-4 sm:h-5 sm:w-5" />}
+                        />
+
+                        <ServiceCard
+                            number={3}
+                            title="Threat Protection (Defender XDR)"
+                            bullets={[
+                                "Endpoint, Email, Identity & Cloud signals",
+                                "Attack surface reduction and EDR",
+                                "Incident response runbooks & automation",
+                                "Threat hunting & advanced analytics",
+                            ]}
+                            icon={<FiShield className="h-4 w-4 sm:h-5 sm:w-5" />}
+                            star
+                        />
+
+                        <ServiceCard
+                            number={4}
+                            title="Cloud Security Posture (CNAPP)"
+                            bullets={[
+                                "CSPM/CWPP with Defender for Cloud",
+                                "Multicloud connectors (Azure/AWS/GCP)",
+                                "Kubernetes & container security",
+                                "Policy/compliance & drift management",
+                            ]}
+                            icon={<FiGlobe className="h-4 w-4 sm:h-5 sm:w-5" />}
+                            star
+                        />
+
+                        <ServiceCard
+                            number={5}
+                            title="Data Security & Compliance (Purview)"
+                            bullets={[
+                                "Data classification & DLP",
+                                "Information protection & encryption",
+                                "Insider risk & eDiscovery",
+                                "Records management & retention",
+                            ]}
+                            icon={<FiDatabase className="h-4 w-4 sm:h-5 sm:w-5" />}
+                        />
+
+                        <ServiceCard
+                            number={6}
+                            title="Security Operations (Sentinel)"
+                            bullets={[
+                                "SIEM/SOAR architecture & content packs",
+                                "Data connectors & analytics rules",
+                                "Playbooks, UEBA & fusion",
+                                "Dashboards, KQL & MITRE mapping",
+                            ]}
+                            icon={<GiRadarSweep className="h-4 w-4 sm:h-5 sm:w-5" />}
+                        />
+                    </div>
+
+                    <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                        <Link href="/contact">
+                            <Button
+                                variant="primary"
+                                size="md"
+                                icon={<FiArrowRight />}
+                                iconPosition="right"
+                            >
+                                Get your security roadmap
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Tools & Platforms */}
             <section className="bg-gray-50 py-8 sm:py-12 md:py-16">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -267,7 +386,7 @@ export default function AzureSolution() {
                         Frequently <br /> Asked Questions
                     </Heading>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-start">
                         {/* Left side - Image */}
                         <div className="order-2 lg:order-1">
                             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-12">
@@ -291,11 +410,13 @@ export default function AzureSolution() {
 
                         {/* Right side - FAQ Content */}
                         <div className="order-1 lg:order-2">
-
-                            <div className="mt-6 sm:mt-8 grid gap-4 sm:gap-6 grid-cols-1">
-                                <FaqItem q="Entra ID vs. Entra External ID — what&apos;s the difference?" a="Entra ID secures your employees/partners (workforce identity). Entra External ID is CIAM for customers and external users with tailored sign‑up/sign‑in, branding and data controls." />
-                                <FaqItem q="Can we enable passwordless across the company?" a="Yes. We deploy FIDO2 keys, Passkeys and Microsoft Authenticator with Conditional Access for step‑up verification where required." />
-                                <FaqItem q="How do you enforce least privilege?" a="We combine PIM, access packages and access reviews to grant just‑in‑time permissions with approvals, auditing and automatic expiry." />
+                            <div className="grid gap-4 sm:gap-6 grid-cols-1">
+                                <FaqItem q="Why align to Microsoft’s Cybersecurity Reference Architectures?" a="The Microsoft Cybersecurity Reference Architectures describe end‑to‑end security using Zero‑Trust principles across hybrid, multicloud, and on‑prem estates. We use it to ensure comprehensive, integrated coverage and a prioritized roadmap." />
+                                <FaqItem q="Do we have to adopt every Microsoft product?" a="No. Microsoft Cybersecurity Reference Architectures is vendor‑neutral at the architectural level. We select the minimal set of controls to meet your risks and compliance needs and integrate with third‑party tools where required." />
+                                <FaqItem q="How long does a typical program take?" a="Assessments run 2–4 weeks; full rollout (identity, XDR, SecOps, posture) 6–16 weeks depending on scope, app count, and change management." />
+                                <FaqItem q="Can you support multicloud and on‑prem?" a="Yes—Defender for Cloud, Sentinel, and Entra support Azure, AWS, GCP and on‑prem workloads with unified policies and analytics." />
+                                <FaqItem q="How do you measure progress?" a="We track Zero‑Trust maturity, coverage of Microsoft Cybersecurity Reference Architectures capabilities, incident mean‑time metrics, and configuration/compliance scores." />
+                                {/* <FaqItem q="What is your pricing model?" a="Fixed‑scope quickstarts plus time‑and‑materials for complex integrations. All engagements include a clear SOW and milestones." /> */}
                             </div>
                         </div>
                     </div>
@@ -318,7 +439,7 @@ export default function AzureSolution() {
                                 fontFamily="akira"
                                 className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-left"
                             >
-                                Redefine Security: Identity <br/> as the New Perimeter
+                                Redefine Security: Identity <br /> as the New Perimeter
                             </Heading>
                             {/* <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white"></h3> */}
                             <p className="mt-2 text-sm sm:text-base text-gray-200 max-w-3xl">We&apos;ll strengthen your defenses with a Zero-Trust model that puts identity at the core—aligning policies, apps, and governance for secure, compliant, and seamless productivity.</p>

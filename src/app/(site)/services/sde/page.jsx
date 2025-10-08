@@ -258,18 +258,19 @@ export default function SoftwareDevelopmentPage() {
             </section>
 
             {/* Core Services */}
-            <section className="bg-white py-8 sm:py-12 md:py-16">
+            <section className="bg-slate-950 py-8 sm:py-12 md:py-16">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                    <Heading
-                        level={2}
-                        color="text-[#2563EB]"
-                        fontFamily="akira"
-                        className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-center sm:text-left"
-                    >
-                        Core Services
-                    </Heading>
-                    <p className="mt-2 text-sm sm:text-base text-gray-600 text-center sm:text-left">Pick a starting point below. We can tailor every package for your brand, scale, and compliance needs.</p>
-
+                    <div className="text-center sm:text-left">
+                        <Heading
+                            level={2}
+                            color="text-white"
+                            fontFamily="akira"
+                            className="text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-4xl"
+                        >
+                            Core Services
+                        </Heading>
+                        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-slate-300 max-w-4xl">Pick a starting point below. We can tailor every package for your brand, scale, and compliance needs.</p>
+                    </div>
                     <div className="mt-6 sm:mt-8 md:mt-10 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                         <ServiceCard number={1} title="Started Sites" bullets={[
                             "1‑Page website",
@@ -383,7 +384,7 @@ export default function SoftwareDevelopmentPage() {
                         Frequently <br /> Asked Questions
                     </Heading>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-1 xl:grid-cols-2 gap-8 lg:gap-12 items-start">
                         {/* Left side - Image */}
                         <div className="order-2 lg:order-1">
                             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 p-8 lg:p-12">
