@@ -238,7 +238,7 @@ export default function IdentityAccessManagementPage() {
                         >
                             Core Services
                         </Heading>
-                        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-slate-300 max-w-4xl">Azure Entra ID for workforce identity and Entra External ID for CIAM. Choose a package and we'll tailor it to your environment.</p>
+                        <p className="mt-2 sm:mt-4 text-sm sm:text-base text-slate-300 max-w-4xl">Azure Entra ID for workforce identity and Entra External ID for CIAM. Choose a package and we&apos;ll tailor it to your environment.</p>
                     </div>
                     <div className="mt-6 sm:mt-8 md:mt-10 grid gap-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                         <ServiceCard
